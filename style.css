@@ -19,7 +19,7 @@ body {
 .page-wrapper {
     position: relative;
     width: 1920px; /* Fixed width as per description */
-    height: 1212px; /* Fixed height as per description */
+    height: 1000px; /* Fixed height as per description */
     margin: 0 auto; /* Center the page wrapper */
     background-color: #F1F1F1;
     overflow: hidden; /* Hide overflowing elements */

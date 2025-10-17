@@ -4,7 +4,7 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    margin-top: -10px; /* Move down by 50px */
+    margin-top: 50px; /* Move down by 50px */
     width: 1345px; /* Increased width by 50px */
     height: 963px;
     z-index: 10; /* Ensure it's above home-main backgrounds */
@@ -202,4 +202,10 @@
 .sell-button:active {
     transform: translateY(0);
     background-color: #FF5858;
+}
+
+/* Specific styles for token_detail.html page-wrapper */
+.page-wrapper {
+    height: 1212px !important; /* Specific height for token detail page */
+    overflow-y: auto !important; /* Enable vertical scroll for token detail page */
 }
