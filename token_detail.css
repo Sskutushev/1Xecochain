@@ -1,0 +1,205 @@
+/* Token Detail Main Container */
+.token-detail-main-container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -10px; /* Move down by 50px */
+    width: 1345px; /* Increased width by 50px */
+    height: 963px;
+    z-index: 10; /* Ensure it's above home-main backgrounds */
+    display: flex;
+    justify-content: space-between; /* Space between left and right containers */
+    padding: 20px; /* Adjust as needed */
+    box-sizing: border-box;
+}
+
+/* Left Container */
+.token-detail-left-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between blocks */
+    width: 766px; /* Adjusted to fit layout */
+}
+
+/* Block 1 (Top Block) */
+.token-detail-top-block {
+    width: 764px;
+    height: 74px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between logo and text */
+}
+
+.token-detail-logo {
+    width: 74px;
+    height: 74px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.token-detail-header-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.token-detail-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #1C4430;
+    margin: 0;
+}
+
+.token-detail-subtitle {
+    font-size: 14px;
+    font-weight: 400;
+    color: #1C4430;
+    margin: 0;
+}
+
+/* Block 2 (Graph Block) */
+.token-detail-graph-block {
+    width: 764px;
+    height: 479px;
+    border-radius: 10px;
+    overflow: hidden; /* Ensure image respects border-radius */
+    background-color: #FFFFFF; /* Placeholder background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.token-detail-graph {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the block area */
+}
+
+/* Block 3 (Text Block) */
+.token-detail-text-block {
+    width: 766px;
+    height: 342px;
+    background-color: transparent; /* Background removed */
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: hidden; /* Internal scroll removed */
+    color: #1C4430;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Right Container */
+.token-detail-right-container {
+    width: 493px;
+    height: 665px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between elements */
+}
+
+.token-detail-price {
+    font-size: 50px;
+    font-weight: 700;
+    color: #5B9D07;
+    margin: 0;
+}
+
+.token-detail-raised {
+    font-size: 20px;
+    margin: 0;
+}
+
+.token-detail-raised strong {
+    font-weight: 700;
+    color: #1C4430;
+}
+
+.token-detail-raised span {
+    font-weight: 400;
+    color: rgba(28, 68, 48, 0.5); /* 50% transparency */
+}
+
+.token-detail-summary-title {
+    font-size: 30px;
+    font-weight: 700;
+    color: #5B9D07;
+    margin: 0;
+    margin-top: 20px; /* Space above summary title */
+}
+
+.token-summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+}
+
+.summary-key {
+    color: rgba(28, 68, 48, 0.5); /* 50% transparency */
+    font-weight: 400;
+}
+
+.summary-value {
+    color: #1C4430; /* 100% opacity */
+    font-weight: 400;
+}
+
+/* Buttons */
+.token-detail-button {
+    width: 444px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.quantity-button {
+    background-color: #F5F5F5;
+    color: rgba(5, 82, 26, 0.2); /* 20% transparency */
+    border: none;
+    cursor: not-allowed;
+}
+
+.buy-button {
+    background-color: #5B9D07;
+    color: #FFFFFF;
+    border: 1px solid rgba(28, 68, 48, 0.5); /* 50% transparent border */
+}
+
+.buy-button:hover {
+    background-color: #6BB20A; /* Slightly lighter green on hover */
+    transform: translateY(-2px);
+}
+
+.buy-button:active {
+    transform: translateY(0);
+    background-color: #5B9D07;
+}
+
+.sell-button {
+    background-color: #FF5858;
+    color: #FFFFFF;
+    border: 1px solid rgba(255, 88, 88, 0.5); /* Darker shade of red */
+}
+
+.sell-button:hover {
+    background-color: #FF6A6A; /* Slightly lighter red on hover */
+    transform: translateY(-2px);
+}
+
+.sell-button:active {
+    transform: translateY(0);
+    background-color: #FF5858;
+}

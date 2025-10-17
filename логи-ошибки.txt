@@ -1,0 +1,43 @@
+PS C:\Users\sskut\Desktop\1xecochain\ecochain-frontend> npm run dev
+
+> ecochain-frontend@0.0.0 dev
+> vite
+
+
+  VITE v7.1.10  ready in 283 ms
+
+  ➜  Local:   http://localhost:5173/
+  ➜  Network: use --host to expose
+  ➜  press h + enter to show help
+(!) Failed to run dependency scan. Skipping dependency pre-bundling. Error: The following dependencies are imported but could not be resolved:
+
+  zustand (imported by C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/src/store/useStore.ts)
+
+Are they installed?
+    at file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:10888:33
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:34335:15
+[plugin:vite:css] [postcss] Missing "./base" specifier in "tailwindcss" package
+C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/src/styles/globals.css:undefined:null
+    at e (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:8823:8)
+    at n (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:8835:14)
+    at o (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:8863:10)
+    at resolveExportsOrImports (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:11869:45)
+    at resolveDeepImport (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:11883:22)
+    at tryNodeResolve (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:11758:70)
+    at ResolveIdContext.handler (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:11597:16)
+    at EnvironmentPluginContainer.resolveId (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:30824:56)
+    at async resolve$4 (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:31364:10)
+    at async file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:31376:11
+    at async file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:35871:12
+    at async Object.resolve (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:31991:21)
+    at async resolveImportId (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-CwrJo3zV.js:375:18)
+    at async parseStyles$1 (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-CwrJo3zV.js:340:4)
+    at async Object.Once (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-CwrJo3zV.js:465:20)
+    at async LazyResult.runAsync (C:\Users\sskut\Desktop\1xecochain\ecochain-frontend\node_modules\postcss\lib\lazy-result.js:293:11)
+    at async runPostCSS (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:32051:19)
+    at async compilePostCSS (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:32035:6)
+    at async compileCSS (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:31965:26)
+    at async TransformPluginContext.handler (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:31498:54)
+    at async EnvironmentPluginContainer.transform (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:30904:14)
+    at async loadAndTransform (file:///C:/Users/sskut/Desktop/1xecochain/ecochain-frontend/node_modules/vite/dist/node/chunks/dep-B0GuR2De.js:26042:26)

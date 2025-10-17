@@ -1,0 +1,98 @@
+/* Listing Container */
+.listing-container {
+    position: absolute;
+    left: 313px;
+    top: 22px; /* Moved down by 20px from 2px */
+    width: 1296px;
+    height: 763px;
+    z-index: 5; /* Above background elements */
+    /* background-color: rgba(255, 0, 0, 0.1); /* For debugging layout */
+}
+
+.all-tokens-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #5B9D07;
+    font-size: 30px;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Token Cards Grid */
+.token-cards-grid {
+    position: absolute;
+    top: 77px; /* Below the title (152 + 77 = 229, which is the y-coord of the first card) */
+    width: 1296px;
+    height: 686px;
+    display: grid;
+    grid-template-columns: repeat(3, 408px); /* 3 columns, each 408px wide */
+    grid-template-rows: repeat(5, 114px); /* 5 rows, each 114px high */
+    gap: 31px 24px; /* Vertical gap 31px, Horizontal gap 24px */
+    justify-content: start; /* Align grid to the start */
+    align-content: start; /* Align grid to the start */
+}
+
+/* Individual Token Card */
+.token-card {
+    width: 408px;
+    height: 114px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    align-items: center;
+    padding: 0 15px; /* Adjust padding as needed */
+    box-sizing: border-box;
+}
+
+.token-logo {
+    width: 81px;
+    height: 81px;
+    background-color: #D9D9D9; /* Gray circle */
+    border-radius: 50%;
+    margin-right: 15px; /* Space between logo and text */
+}
+
+.token-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-grow: 1;
+}
+
+.token-details p {
+    margin: 0;
+    font-size: 14px;
+    color: #1C4430;
+    line-height: 1.4; /* Adjust line height for better readability */
+}
+
+.token-details .created-by {
+    color: rgba(28, 68, 48, 0.5); /* 50% opacity */
+}
+
+.token-details .creator-name {
+    color: #5B9D07;
+}
+
+.token-details strong {
+    font-weight: 700;
+}
+
+.token-tag {
+    position: absolute;
+    right: 15px; /* Adjust as needed */
+    top: 15px; /* Adjust as needed */
+    width: 65px;
+    height: 24px;
+    background-color: #E2E2E2;
+    border-radius: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    color: #1C4430;
+    white-space: nowrap;
+}
