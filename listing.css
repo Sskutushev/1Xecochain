@@ -96,3 +96,9 @@
     color: #1C4430;
     white-space: nowrap;
 }
+.token-card-link { 
+     text-decoration: none;                                                                                  
+ } 
+  .token-card-link .token-details p {                                                                         
+     text-decoration: none;                                                                                  
+}  
