@@ -99,8 +99,7 @@ body.dark-theme .card__image-placeholder {
 }
 
 body.dark-theme .popup-content {
-    background-color: #2C2C2C;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    background-color: transparent;
 }
 
 body.dark-theme .popup-content h2 {
@@ -203,6 +202,55 @@ body.dark-theme .sell-button {
 
 body.dark-theme .page-wrapper {
     background-color: #1A1A1A; /* Dark background for page wrapper */
+}
+
+body.dark-theme .upload-text {
+    color: #FFFFFF;
+}
+
+body.dark-theme .token-detail-main-container {
+    backdrop-filter: blur(5px);
+}
+
+body.dark-theme .token-detail-top-block {
+    background-color: transparent;
+}
+
+body.dark-theme .input-section label,
+body.dark-theme .textarea-section label {
+    color: #E0E0E0;
+}
+
+body.dark-theme .input-section input,
+body.dark-theme .textarea-wrapper {
+    background-color: #3A3A3A;
+}
+
+body.dark-theme .input-section input,
+body.dark-theme .textarea-section textarea {
+    color: #E0E0E0;
+}
+
+body.dark-theme .input-section input::placeholder,
+body.dark-theme .textarea-section textarea::placeholder {
+    color: rgba(224, 224, 224, 0.5);
+}
+
+body.dark-theme .upload-button {
+    border: 0.78px solid #FFFFFF;
+    color: #FFFFFF;
+}
+
+body.dark-theme .upload-button img {
+    filter: invert(1);
+}
+
+body.dark-theme .create-token-form-container {
+    background-color: #2C2C2C;
+}
+
+body.dark-theme .create-token-title {
+    color: #7ED321;
 }
 
 /* Card Top Images Theme Switching */
