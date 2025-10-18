@@ -205,12 +205,22 @@ body.dark-theme .quantity-input {
 
 body.dark-theme .buy-button {
     background-color: #5B9D07;
-    border: 1px solid rgba(91, 157, 7, 0.5);
+    border: 1px solid rgba(28, 68, 48, 0.5);
+    transition: background-color 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: #4A8B06; /* Slightly darker green */
 }
 
 body.dark-theme .sell-button {
     background-color: #FF5858;
     border: 1px solid rgba(255, 88, 88, 0.5);
+    transition: background-color 0.2s ease;
+}
+
+.sell-button:hover {
+    background-color: #E04C4C; /* Slightly darker red */
 }
 
 body.dark-theme .page-wrapper {
@@ -430,8 +440,12 @@ body.dark-theme .card-top-image.dark-theme-image {
     justify-content: center;
     gap: 10px;
     padding: 0 15px;
-    box-sizing: border-box;
     white-space: nowrap;
+    transition: background-color 0.2s ease;
+}
+
+.header__create-token-btn:hover {
+    background-color: #4A8B06; /* Slightly darker green */
 }
 
 .header__create-token-btn img {
@@ -746,6 +760,11 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
     gap: 7px;
+    transition: background-color 0.2s ease;
+}
+
+.card__button:hover {
+    background-color: #4A8B06; /* Slightly darker green */
 }
 
 .card__button img {
@@ -811,12 +830,24 @@ input:checked + .slider:before {
     background-color: #5B9D07;
     color: #FFFFFF;
     border: none;
+    transition: background-color 0.2s ease;
+}
+
+.green-button:hover {
+    background-color: #4A8B06; /* Slightly darker green */
 }
 
 .transparent-button {
     background-color: transparent;
     color: #5B9D07;
     border: 2px solid #5B9D07;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.transparent-button:hover {
+    background-color: rgba(91, 157, 7, 0.1); /* Less transparent */
+    color: #7ED321; /* Brighter green */
+    border-color: #7ED321; /* Brighter green */
 }
 
 .centered-content {
