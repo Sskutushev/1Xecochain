@@ -1,0 +1,9 @@
+.liquidity-container .create-token-form-container {
+    height: 482px;
+    justify-content: center; /* Center the items vertically */
+    gap: 15px;
+}
+
+.liquidity-container .create-token-submit-btn {
+    margin-top: 20px;
+}

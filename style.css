@@ -1,6 +1,3 @@
-:root {
-    --card-top-element-opacity: 0.33;
-}
 
 /* Basic Reset */
 html, body {
@@ -158,6 +155,8 @@ body {
     right: 25px; /* Relative to header's right edge */
     top: 42px; /* Relative to page-wrapper */
     transform: translateY(-50%);
+    top: 42px; /* Relative to page-wrapper */
+    transform: translateY(-50%);
     display: flex;
     align-items: center;
     gap: 10px;
@@ -208,6 +207,147 @@ body {
     opacity: 0.6;
 }
 
+/* Settings Dropdown */
+.settings-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 55px; /* Position below the user profile section */
+    right: 0;
+    width: 280px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    overflow: hidden;
+    padding: 8px 0;
+}
+
+.settings-dropdown.show {
+    display: block;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    gap: 12px;
+    font-size: 14px;
+    color: #1C4430;
+}
+
+.dropdown-item:hover {
+    background-color: #F1F1F1;
+}
+
+.dropdown-item img {
+    width: 20px;
+    height: 20px;
+}
+
+.dropdown-item .balance-amount {
+    margin-left: auto;
+    font-weight: 700;
+}
+
+/* Language Submenu */
+.language-item {
+    position: relative;
+}
+
+.dropdown-arrow {
+    width: 12px !important;
+    height: 12px !important;
+    margin-left: auto;
+    transition: transform 0.2s ease;
+}
+
+.language-item.submenu-active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+.language-submenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%; /* Position it below the language item */
+    width: 100%;
+    background-color: #E0E0E0; /* Slightly different background for submenu */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    padding: 8px 0;
+    z-index: 101; /* Above the main dropdown */
+}
+
+.language-item.submenu-active .language-submenu {
+    display: block;
+}
+
+.language-option {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    gap: 10px;
+}
+
+.language-option:hover {
+    background-color: #F1F1F1;
+}
+
+.flag-icon {
+    width: 16px !important; /* Use important to override general icon size */
+    height: 16px !important;
+}
+
+/* Theme Switcher */
+.theme-switcher {
+    margin-left: auto; /* Push the switcher to the right */
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+}
+
+.theme-switcher input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 22px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 2px;
+    bottom: 2px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #5B9D07;
+}
+
+input:checked + .slider:before {
+    transform: translateX(18px);
+}
+
+
 /* Main Content Styling */
 .home-main {
     position: relative;
@@ -236,6 +376,7 @@ body {
     height: auto; /* Maintain aspect ratio */
     max-height: 100%; /* Ensure it's not overflow its container */
     z-index: 1;
+    mix-blend-mode: overlay;
 }
 
 .cards-container {
@@ -259,28 +400,14 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.card__top-element {
+.card-top-image {
     position: absolute;
-    top: -65px; /* Half of its height to be outside */
+    top: -180px; /* Adjusted for internal SVG offset */
     left: 50%;
     transform: translateX(-50%);
-    width: 250px;
-    height: 130px;
-    border-radius: 500px;
-    z-index: 3;
-    opacity: var(--card-top-element-opacity);
-}
-
-.card__top-element--orange {
-    background-color: #5B9D07;
-}
-
-.card__top-element--purple {
-    background-color: #8247E5;
-}
-
-.card__top-element--yellow {
-    background-color: #F0B90B;
+    width: 450px;   /* Match SVG canvas width */
+    height: 330px;  /* Match SVG canvas height */
+    z-index: 4;     /* Above the placeholder */
 }
 
 .card__image-placeholder {
@@ -292,7 +419,7 @@ body {
     top: 17px;
     left: 16px;
     right: 16px;
-    z-index: 4;
+    z-index: 3; /* Below the top image */
 }
 
 .card__title {

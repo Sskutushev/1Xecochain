@@ -7,7 +7,6 @@
     margin-top: 50px; /* Move down by 50px */
     width: 1345px; /* Increased width by 50px */
     height: 963px;
-    margin-top: -10px;
     z-index: 10; /* Ensure it's above home-main backgrounds */
     display: flex;
     justify-content: space-between; /* Space between left and right containers */

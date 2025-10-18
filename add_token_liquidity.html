@@ -5,37 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Token Liquidity</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="create_new_token.css"> <!-- Reusing styles -->
+    <link rel="stylesheet" href="add_token_liquidity.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <a href="https://x1ecochain.com/" class="header__logo">
-            <img src="assets/Logo X1 Ecochain.svg" alt="1x Ecochain Logo">
-        </a>
-        <nav class="header__nav">
-            <a href="index.html" class="header__nav-link">Dashboard</a>
-            <a href="listing.html" class="header__nav-link">Listing</a>
-            <a href="my_tokens.html" class="header__nav-link">My Tokens</a>
-        </nav>
-        <div class="header__search">
-            <img src="assets/Icon-loop.svg" alt="Search Icon" class="header__search-icon">
-            <input type="text" placeholder="Search tokens" class="header__search-input">
-        </div>
-        <button class="header__create-token-btn create-new-token-btn">
-            Create new token
-            <img src="assets/Icon.svg" alt="Arrow Icon">
-        </button>
-        <div class="header__user-profile">
-            <div class="header__user-info">
-                <span class="header__user-name">Noname</span>
-                <span class="header__user-address">0x2...006728</span>
+    <div class="page-wrapper">
+        <header class="header">
+            <a href="https://x1ecochain.com/" class="header__logo">
+                <img src="assets/Logo X1 Ecochain.svg" alt="1x Ecochain Logo">
+            </a>
+            <nav class="header__nav">
+                <a href="index.html" class="header__nav-link">Dashboard</a>
+                <a href="listing.html" class="header__nav-link">Listing</a>
+                <a href="my_tokens.html" class="header__nav-link">My Tokens</a>
+            </nav>
+            <div class="header__search">
+                <img src="assets/Icon-loop.svg" alt="Search Icon" class="header__search-icon">
+                <input type="text" placeholder="Search tokens" class="header__search-input">
             </div>
-            <img src="assets/Frame 9.svg" alt="User Avatar" class="header__user-avatar">
-                                            <img src="assets/Icon-sett.svg" alt="Settings Icon" class="header__settings-icon">
-                                        </div>    </header>
+            <button class="header__create-token-btn create-new-token-btn">
+                Create new token
+                <img src="assets/Icon.svg" alt="Arrow Icon">
+            </button>
+            <div class="header__user-profile">
+                <div class="header__user-info">
+                    <span class="header__user-name">Noname</span>
+                    <span class="header__user-address">0x2...006728</span>
+                </div>
+                <img src="assets/Frame 9.svg" alt="User Avatar" class="header__user-avatar">
+                <img src="assets/Icon-sett.svg" alt="Settings Icon" class="header__settings-icon">
+                <div class="settings-dropdown" id="settingsDropdown">
+                    <div class="dropdown-item">
+                        <img src="assets/schoolteacher.svg" alt="Profile Settings">
+                        <span>Profile Settings</span>
+                    </div>
+                    <div class="dropdown-item language-item">
+                        <img src="assets/site.svg" alt="Language">
+                        <span>Language</span>
+                        <img src="assets/Icon-down-arrow.svg" alt="v" class="dropdown-arrow">
+                        <div class="language-submenu">
+                            <div class="language-option">
+                                <img src="assets/Rus.svg" alt="Russian Flag" class="flag-icon">
+                                <span>Russian</span>
+                            </div>
+                            <div class="language-option">
+                                <img src="assets/Eng.svg" alt="English Flag" class="flag-icon">
+                                <span>English</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown-item">
+                        <img src="assets/Group 884.svg" alt="Theme">
+                        <span>Theme</span>
+                        <label class="theme-switcher">
+                            <input type="checkbox" id="themeToggle">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <div class="dropdown-item">
+                        <img src="assets/wallet.svg" alt="Balance">
+                        <span>Balance:</span>
+                        <span class="balance-amount">1,234.56 USDT</span>
+                    </div>
+                    <div class="dropdown-item">
+                        <img src="assets/exit.svg" alt="Logout">
+                        <span>Logout</span>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-    <div class="main-content centered-content">
-        <h1>Add Token Liquidity Page</h1>
-        <p>Content for adding token liquidity will go here.</p>
+        <main class="home-main">
+            <img src="assets/Vector.svg" alt="Background Vector" class="home-main__vector-bg">
+            <img src="assets/Create token.svg" alt="Create Token Background" class="home-main__incubator-bg">
+
+            <div class="create-token-container liquidity-container">
+                <h1 class="create-token-title">Add token liquidity</h1>
+                <div class="create-token-form-container">
+                    <div class="form-section input-section">
+                        <label for="x1-token-amount">X1 Token Amount</label>
+                        <input type="text" id="x1-token-amount" placeholder="100 000">
+                    </div>
+                    <div class="form-section input-section">
+                        <label for="nkt-token-amount">NKT Token Amount</label>
+                        <input type="text" id="nkt-token-amount" placeholder="NKT">
+                    </div>
+                    <div class="form-section input-section">
+                        <label for="token-price-usd">Token Price (USD)</label>
+                        <input type="text" id="token-price-usd" placeholder="$0.004">
+                    </div>
+                    <div class="form-section input-section">
+                        <label for="token-price-x1">Token Price (X1)</label>
+                        <input type="text" id="token-price-x1" placeholder="4">
+                    </div>
+                    <a href="token_detail.html" class="submit-button-link">
+                    <button class="create-token-submit-btn">Create token</button>
+                </a>
+                </div>
+            </div>
+        </main>
     </div>
 
     <!-- Popup Overlay -->
