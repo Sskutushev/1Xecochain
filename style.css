@@ -13,6 +13,215 @@ body {
     overflow-x: hidden; /* Prevent horizontal scroll from absolute positioning */
 }
 
+/* Dark Theme Styles */
+body.dark-theme {
+    background-color: #1A1A1A; /* Dark background */
+    color: #E0E0E0; /* Light text */
+}
+
+body.dark-theme .header {
+    background-color: #2C2C2C; /* Darker header */
+}
+
+body.dark-theme .header__nav-link {
+    color: #E0E0E0;
+}
+
+body.dark-theme .header__search {
+    background-color: #3A3A3A; /* Darker search background */
+}
+
+body.dark-theme .header__search-input {
+    color: #E0E0E0;
+}
+
+body.dark-theme .header__search-input::placeholder {
+    color: #B0B0B0;
+}
+
+body.dark-theme .header__user-name,
+body.dark-theme .header__user-address {
+    color: #E0E0E0;
+}
+
+body.dark-theme .settings-dropdown {
+    background-color: #2C2C2C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .dropdown-item {
+    color: #E0E0E0;
+}
+
+body.dark-theme .dropdown-item:hover {
+    background-color: #3A3A3A;
+}
+
+body.dark-theme .language-submenu {
+    background-color: #3A3A3A;
+}
+
+body.dark-theme .language-option:hover {
+    background-color: #4A4A4A;
+}
+
+body.dark-theme .slider {
+    background-color: #555;
+}
+
+body.dark-theme input:checked + .slider {
+    background-color: #5B9D07; /* Green remains for active state */
+}
+
+body.dark-theme .home-main__vector-bg {
+    filter: invert(1) hue-rotate(180deg); /* Invert colors for dark theme */
+}
+
+body.dark-theme .home-main__incubator-bg {
+    filter: invert(1) hue-rotate(180deg); /* Invert colors for dark theme */
+}
+
+body.dark-theme .cards-container .card {
+    background-color: #2C2C2C;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .card__title {
+    color: #7ED321; /* Lighter green for dark theme */
+}
+
+body.dark-theme .card__text {
+    color: #E0E0E0;
+}
+
+body.dark-theme .card__image-placeholder {
+    background-color: #3A3A3A;
+}
+
+body.dark-theme .popup-content {
+    background-color: #2C2C2C;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .popup-content h2 {
+    color: #7ED321;
+}
+
+body.dark-theme .transparent-button {
+    color: #7ED321;
+    border: 2px solid #7ED321;
+}
+
+body.dark-theme .token-card {
+    background-color: #2C2C2C;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .token-details p {
+    color: #E0E0E0;
+}
+
+body.dark-theme .token-details .created-by {
+    color: rgba(224, 224, 224, 0.5);
+}
+
+body.dark-theme .token-details .creator-name {
+    color: #7ED321;
+}
+
+body.dark-theme .token-tag {
+    background-color: #3A3A3A;
+    color: #E0E0E0;
+}
+
+body.dark-theme .token-detail-main-container {
+    background-color: #1A1A1A;
+}
+
+body.dark-theme .token-detail-top-block {
+    background-color: #2C2C2C;
+}
+
+body.dark-theme .token-detail-title {
+    color: #E0E0E0;
+}
+
+body.dark-theme .token-detail-subtitle {
+    color: #B0B0B0;
+}
+
+body.dark-theme .token-detail-graph-block {
+    background-color: #2C2C2C;
+}
+
+body.dark-theme .token-detail-text-block {
+    color: #E0E0E0;
+}
+
+body.dark-theme .token-detail-right-container {
+    background-color: #2C2C2C;
+}
+
+body.dark-theme .token-detail-price {
+    color: #7ED321;
+}
+
+body.dark-theme .token-detail-raised strong {
+    color: #E0E0E0;
+}
+
+body.dark-theme .token-detail-raised span {
+    color: rgba(224, 224, 224, 0.5);
+}
+
+body.dark-theme .token-detail-summary-title {
+    color: #7ED321;
+}
+
+body.dark-theme .summary-key {
+    color: rgba(224, 224, 224, 0.5);
+}
+
+body.dark-theme .summary-value {
+    color: #E0E0E0;
+}
+
+body.dark-theme .quantity-button {
+    background-color: #3A3A3A;
+    color: rgba(224, 224, 224, 0.5);
+}
+
+body.dark-theme .buy-button {
+    background-color: #5B9D07;
+    border: 1px solid rgba(91, 157, 7, 0.5);
+}
+
+body.dark-theme .sell-button {
+    background-color: #FF5858;
+    border: 1px solid rgba(255, 88, 88, 0.5);
+}
+
+body.dark-theme .page-wrapper {
+    background-color: #1A1A1A; /* Dark background for page wrapper */
+}
+
+/* Card Top Images Theme Switching */
+.card-top-image.light-theme-image {
+    display: block; /* Show by default in light theme */
+}
+
+.card-top-image.dark-theme-image {
+    display: none; /* Hide by default in light theme */
+}
+
+body.dark-theme .card-top-image.light-theme-image {
+    display: none; /* Hide in dark theme */
+}
+
+body.dark-theme .card-top-image.dark-theme-image {
+    display: block; /* Show in dark theme */
+}
+
 .page-wrapper {
     position: relative;
     width: 1920px; /* Fixed width as per description */
@@ -129,7 +338,7 @@ body {
     left: 1496px;
     top: 42px; /* Relative to page-wrapper */
     transform: translateY(-50%);
-    width: 161px;
+    width: 181px;
     height: 36px;
     background-color: #5B9D07;
     color: #FFFFFF;
@@ -140,9 +349,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 5px;
+    gap: 10px;
     padding: 0 15px;
     box-sizing: border-box;
+    white-space: nowrap;
 }
 
 .header__create-token-btn img {
@@ -450,7 +660,7 @@ input:checked + .slider:before {
     background-color: #5B9D07;
     color: #FFFFFF;
     border: none;
-    border-radius: 5px;
+    border-radius: 27px;
     padding: 10px 20px;
     font-size: 14px;
     cursor: pointer;

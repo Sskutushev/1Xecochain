@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+
+    <title>X1 EcoChain</title>
+    <link rel="icon" href="assets/Group 2087327156.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -14,16 +15,16 @@
                 <img src="assets/Logo X1 Ecochain.svg" alt="1x Ecochain Logo">
             </a>
             <nav class="header__nav">
-                <a href="index.html" class="header__nav-link active">Dashboard</a>
-                <a href="listing.html" class="header__nav-link">Listing</a>
-                <a href="my_tokens.html" class="header__nav-link">My Tokens</a>
+                <a href="index.html" class="header__nav-link active" data-i18n-key="nav_dashboard">Dashboard</a>
+                <a href="listing.html" class="header__nav-link" data-i18n-key="nav_listing">Listing</a>
+                <a href="my_tokens.html" class="header__nav-link" data-i18n-key="nav_my_tokens">My Tokens</a>
             </nav>
             <div class="header__search">
                 <img src="assets/Icon-loop.svg" alt="Search Icon" class="header__search-icon">
-                <input type="text" placeholder="Search tokens" class="header__search-input">
+                <input type="text" placeholder="Search tokens" class="header__search-input" data-i18n-key="search_placeholder">
             </div>
             <button class="header__create-token-btn create-new-token-btn">
-                Create new token
+                <span data-i18n-key="create_token_btn">Create new token</span>
                 <img src="assets/Icon.svg" alt="Arrow Icon">
             </button>
             <div class="header__user-profile">
@@ -36,26 +37,26 @@
                 <div class="settings-dropdown" id="settingsDropdown">
                     <div class="dropdown-item">
                         <img src="assets/schoolteacher.svg" alt="Profile Settings">
-                        <span>Profile Settings</span>
+                        <span data-i18n-key="dd_profile_settings">Profile Settings</span>
                     </div>
                     <div class="dropdown-item language-item">
                         <img src="assets/site.svg" alt="Language">
-                        <span>Language</span>
+                        <span data-i18n-key="dd_language">Language</span>
                         <img src="assets/Icon-down-arrow.svg" alt="v" class="dropdown-arrow">
                         <div class="language-submenu">
                             <div class="language-option">
                                 <img src="assets/Rus.svg" alt="Russian Flag" class="flag-icon">
-                                <span>Russian</span>
+                                <span data-i18n-key="dd_lang_russian">Russian</span>
                             </div>
                             <div class="language-option">
                                 <img src="assets/Eng.svg" alt="English Flag" class="flag-icon">
-                                <span>English</span>
+                                <span data-i18n-key="dd_lang_english">English</span>
                             </div>
                         </div>
                     </div>
                     <div class="dropdown-item">
                         <img src="assets/Group 884.svg" alt="Theme">
-                        <span>Theme</span>
+                        <span data-i18n-key="dd_theme">Theme</span>
                         <label class="theme-switcher">
                             <input type="checkbox" id="themeToggle">
                             <span class="slider"></span>
@@ -63,16 +64,17 @@
                     </div>
                     <div class="dropdown-item">
                         <img src="assets/wallet.svg" alt="Balance">
-                        <span>Balance:</span>
+                        <span data-i18n-key="dd_balance">Balance:</span>
                         <span class="balance-amount">1,234.56 USDT</span>
                     </div>
                     <div class="dropdown-item">
                         <img src="assets/exit.svg" alt="Logout">
-                        <span>Logout</span>
+                        <span data-i18n-key="dd_logout">Logout</span>
                     </div>
                 </div>
             </div>
         </header>
+
 
         <main class="home-main">
             <img src="assets/Vector.svg" alt="Background Vector" class="home-main__vector-bg">
@@ -80,32 +82,35 @@
 
             <div class="cards-container">
                 <div class="card card--orange">
-                    <img src="assets/Rectangle 1.svg" class="card-top-image" alt="">
+                    <img src="assets/Rectangle 1.svg" class="card-top-image light-theme-image" alt="">
+                    <img src="assets/Rectangle 1.png" class="card-top-image dark-theme-image" alt="">
                     <div class="card__image-placeholder"></div>
-                    <h2 class="card__title">New tokens</h2>
-                    <p class="card__text">Create, Manage, and Distribute X1 based tokens with X1 no code solution</p>
+                    <h2 class="card__title" data-i18n-key="card_title_new_tokens">New tokens</h2>
+                    <p class="card__text" data-i18n-key="card_text_no_code">Create, Manage, and Distribute X1 based tokens with X1 no code solution</p>
                     <button class="card__button">
-                        Discover all tokens
+                        <span data-i18n-key="card_btn_discover">Discover all tokens</span>
                         <img src="assets/Icon.svg" alt="Arrow Icon">
                     </button>
                 </div>
                 <div class="card card--purple">
-                    <img src="assets/Rectangle 1 (1).svg" class="card-top-image" alt="">
+                    <img src="assets/Rectangle 1 (1).svg" class="card-top-image light-theme-image" alt="">
+                    <img src="assets/Rectangle 1 (1).png" class="card-top-image dark-theme-image" alt="">
                     <div class="card__image-placeholder"></div>
-                    <h2 class="card__title">New tokens</h2>
-                    <p class="card__text">Create, Manage, and Distribute X1 based tokens with X1 no code solution</p>
+                    <h2 class="card__title" data-i18n-key="card_title_new_tokens">New tokens</h2>
+                    <p class="card__text" data-i18n-key="card_text_no_code">Create, Manage, and Distribute X1 based tokens with X1 no code solution</p>
                     <button class="card__button">
-                        Discover all tokens
+                        <span data-i18n-key="card_btn_discover">Discover all tokens</span>
                         <img src="assets/Icon.svg" alt="Arrow Icon">
                     </button>
                 </div>
                 <div class="card card--yellow">
-                    <img src="assets/Rectangle 1 (2).svg" class="card-top-image" alt="">
+                    <img src="assets/Rectangle 1 (2).svg" class="card-top-image light-theme-image" alt="">
+                    <img src="assets/Rectangle 1 (2).png" class="card-top-image dark-theme-image" alt="">
                     <div class="card__image-placeholder"></div>
-                    <h2 class="card__title">New tokens</h2>
-                    <p class="card__text">Create, Manage, and Distribute X1 based tokens with X1 no code solution</p>
+                    <h2 class="card__title" data-i18n-key="card_title_new_tokens">New tokens</h2>
+                    <p class="card__text" data-i18n-key="card_text_no_code">Create, Manage, and Distribute X1 based tokens with X1 no code solution</p>
                     <button class="card__button">
-                        Discover all tokens
+                        <span data-i18n-key="card_btn_discover">Discover all tokens</span>
                         <img src="assets/Icon.svg" alt="Arrow Icon">
                     </button>
                 </div>
@@ -117,12 +122,13 @@
     <div id="createTokenPopup" class="popup-overlay">
         <!-- Popup Content -->
         <div class="popup-content">
-            <h2>Create new token</h2>
-            <button class="popup-button green-button" onclick="location.href='create_new_token.html'">Launch without liquidity</button>
-            <button class="popup-button transparent-button" onclick="location.href='add_token_liquidity.html'">Launch with own liquidity</button>
+            <h2 data-i18n-key="popup_title">Create new token</h2>
+            <button class="popup-button green-button" onclick="location.href='create_new_token.html'" data-i18n-key="popup_btn_no_liq">Launch without liquidity</button>
+            <button class="popup-button transparent-button" onclick="location.href='add_token_liquidity.html'" data-i18n-key="popup_btn_liq">Launch with own liquidity</button>
         </div>
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

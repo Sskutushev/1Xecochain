@@ -2,28 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Token Detail</title>
+
+    <title>X1 EcoChain</title>
+    <link rel="icon" href="assets/Group 2087327156.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="token_detail.css">
 </head>
 <body>
     <div class="page-wrapper">
         <header class="header">
+
+
+            <!-- Desktop Header Elements -->
             <a href="https://x1ecochain.com/" class="header__logo">
                 <img src="assets/Logo X1 Ecochain.svg" alt="1x Ecochain Logo">
             </a>
             <nav class="header__nav">
-                <a href="index.html" class="header__nav-link">Dashboard</a>
-                <a href="listing.html" class="header__nav-link">Listing</a>
-                <a href="my_tokens.html" class="header__nav-link">My Tokens</a>
+                <a href="index.html" class="header__nav-link" data-i18n-key="nav_dashboard">Dashboard</a>
+                <a href="listing.html" class="header__nav-link" data-i18n-key="nav_listing">Listing</a>
+                <a href="my_tokens.html" class="header__nav-link" data-i18n-key="nav_my_tokens">My Tokens</a>
             </nav>
             <div class="header__search">
                 <img src="assets/Icon-loop.svg" alt="Search Icon" class="header__search-icon">
-                <input type="text" placeholder="Search tokens" class="header__search-input">
+                <input type="text" placeholder="Search tokens" class="header__search-input" data-i18n-key="search_placeholder">
             </div>
             <button class="header__create-token-btn create-new-token-btn">
-                Create new token
+                <span data-i18n-key="create_token_btn">Create new token</span>
                 <img src="assets/Icon.svg" alt="Arrow Icon">
             </button>
             <div class="header__user-profile">
@@ -32,30 +36,30 @@
                     <span class="header__user-address">0x2...006728</span>
                 </div>
                 <img src="assets/Frame 9.svg" alt="User Avatar" class="header__user-avatar">
-                                            <img src="assets/Icon-sett.svg" alt="Settings Icon" class="header__settings-icon">
+                <img src="assets/Icon-sett.svg" alt="Settings Icon" class="header__settings-icon">
                 <div class="settings-dropdown" id="settingsDropdown">
                     <div class="dropdown-item">
                         <img src="assets/schoolteacher.svg" alt="Profile Settings">
-                        <span>Profile Settings</span>
+                        <span data-i18n-key="dd_profile_settings">Profile Settings</span>
                     </div>
                     <div class="dropdown-item language-item">
                         <img src="assets/site.svg" alt="Language">
-                        <span>Language</span>
+                        <span data-i18n-key="dd_language">Language</span>
                         <img src="assets/Icon-down-arrow.svg" alt="v" class="dropdown-arrow">
                         <div class="language-submenu">
                             <div class="language-option">
                                 <img src="assets/Rus.svg" alt="Russian Flag" class="flag-icon">
-                                <span>Russian</span>
+                                <span data-i18n-key="dd_lang_russian">Russian</span>
                             </div>
                             <div class="language-option">
                                 <img src="assets/Eng.svg" alt="English Flag" class="flag-icon">
-                                <span>English</span>
+                                <span data-i18n-key="dd_lang_english">English</span>
                             </div>
                         </div>
                     </div>
                     <div class="dropdown-item">
                         <img src="assets/Group 884.svg" alt="Theme">
-                        <span>Theme</span>
+                        <span data-i18n-key="dd_theme">Theme</span>
                         <label class="theme-switcher">
                             <input type="checkbox" id="themeToggle">
                             <span class="slider"></span>
@@ -63,15 +67,18 @@
                     </div>
                     <div class="dropdown-item">
                         <img src="assets/wallet.svg" alt="Balance">
-                        <span>Balance:</span>
+                        <span data-i18n-key="dd_balance">Balance:</span>
                         <span class="balance-amount">1,234.56 USDT</span>
                     </div>
                     <div class="dropdown-item">
                         <img src="assets/exit.svg" alt="Logout">
-                        <span>Logout</span>
+                        <span data-i18n-key="dd_logout">Logout</span>
                     </div>
                 </div>
-                                        </div>    </header>
+            </div>
+        </header>
+
+
 
         <main class="home-main">
             <img src="assets/Vector.svg" alt="Background Vector" class="home-main__vector-bg">
@@ -84,8 +91,8 @@
                     <div class="token-detail-top-block">
                         <img src="assets/Ellipse 4.png" alt="Token Logo" class="token-detail-logo">
                         <div class="token-detail-header-text">
-                            <h2 class="token-detail-title">My New Token</h2>
-                            <p class="token-detail-subtitle">Loin us in building a better, decentralized futures.</p>
+                            <h2 class="token-detail-title" data-i18n-key="td_title">My New Token</h2>
+                            <p class="token-detail-subtitle" data-i18n-key="td_subtitle">Join us in building a better, decentralized futures.</p>
                         </div>
                     </div>
 
@@ -95,7 +102,7 @@
                     </div>
 
                     <!-- Block 3 (Text Block) -->
-                    <div class="token-detail-text-block">
+                    <div class="token-detail-text-block" data-i18n-key="td_description">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natu error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natu error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natu error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
@@ -106,31 +113,31 @@
                 <div class="token-detail-right-container">
                     <h3 class="token-detail-price">$7.5K</h3>
                     <p class="token-detail-raised"><strong>150%</strong> of $2 400 000 Raised</p>
-                    <h3 class="token-detail-summary-title">Token summary</h3>
+                    <h3 class="token-detail-summary-title" data-i18n-key="td_summary_title">Token summary</h3>
                     <div class="token-summary-item">
-                        <span class="summary-key">Symbol</span>
+                        <span class="summary-key" data-i18n-key="td_summary_symbol">Symbol</span>
                         <span class="summary-value">$MNT</span>
                     </div>
                     <div class="token-summary-item">
-                        <span class="summary-key">Blockchain</span>
+                        <span class="summary-key" data-i18n-key="td_summary_blockchain">Blockchain</span>
                         <span class="summary-value">X1</span>
                     </div>
                     <div class="token-summary-item">
-                        <span class="summary-key">Price</span>
+                        <span class="summary-key" data-i18n-key="td_summary_price">Price</span>
                         <span class="summary-value">$0,048</span>
                     </div>
                     <div class="token-summary-item">
-                        <span class="summary-key">Holders</span>
+                        <span class="summary-key" data-i18n-key="td_summary_holders">Holders</span>
                         <span class="summary-value">6 845</span>
                     </div>
                     <div class="token-summary-item">
-                        <span class="summary-key">Volume</span>
+                        <span class="summary-key" data-i18n-key="td_summary_volume">Volume</span>
                         <span class="summary-value">$385, 069,594</span>
                     </div>
 
-                    <button class="token-detail-button quantity-button" disabled>Quantity of tokens</button>
-                    <button class="token-detail-button buy-button">Buy</button>
-                    <button class="token-detail-button sell-button">Sell</button>
+                    <button class="token-detail-button quantity-button" data-i18n-key="td_btn_quantity" disabled>Quantity of tokens</button>
+                    <button class="token-detail-button buy-button" data-i18n-key="td_btn_buy">Buy</button>
+                    <button class="token-detail-button sell-button" data-i18n-key="td_btn_sell">Sell</button>
                 </div>
             </div>
         </main>
@@ -146,5 +153,6 @@
         </div>
     </div>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>
