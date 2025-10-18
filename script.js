@@ -554,7 +554,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                languageItem.addEventListener('click', (event) => {
+                                languageItem.addEventListener('click', (event) => {
 
 
 
@@ -562,7 +562,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                    event.stopPropagation();
+                
 
 
 
@@ -570,7 +570,479 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                    languageItem.classList.toggle('submenu-active');
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                                    event.stopPropagation();
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                                    languageItem.classList.toggle('submenu-active');
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                                });
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                            }
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                    // Input field for token quantity on token_detail.html
+
+
+
+
+
+
+
+                    const quantityInput = document.querySelector('.quantity-input');
+
+
+
+
+
+
+
+                
+
+
+
+
+
+
+
+                    if (quantityInput) {
+
+
+
+
+
+
+
+                                quantityInput.addEventListener('input', (event) => {
+
+
+
+
+
+
+
+                                    let value = event.target.value;
+
+
+
+
+
+
+
+                                    const start = event.target.selectionStart;
+
+
+
+
+
+
+
+                                    const end = event.target.selectionEnd;
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+                                    // 1. Replace commas with periods
+
+
+
+
+
+
+
+                                    value = value.replace(/,/g, '.');
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+                                    // 2. Filter out non-numeric and non-period characters
+
+
+
+
+
+
+
+                                    value = value.replace(/[^0-9.]/g, '');
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+                                    // 3. Ensure only one decimal point
+
+
+
+
+
+
+
+                                    const firstPeriodIndex = value.indexOf('.');
+
+
+
+
+
+
+
+                                    if (firstPeriodIndex !== -1) {
+
+
+
+
+
+
+
+                                        const beforePeriod = value.substring(0, firstPeriodIndex);
+
+
+
+
+
+
+
+                                        const afterPeriod = value.substring(firstPeriodIndex + 1).replace(/\./g, ''); // Remove any other periods
+
+
+
+
+
+
+
+                                        value = beforePeriod + '.' + afterPeriod;
+
+
+
+
+
+
+
+                                    }
+
+
+
+
+
+
+
+                        
+
+
+
+
+
+
+
+                                    // Update the input value only if it has changed
+
+
+
+
+
+
+
+                                    if (event.target.value !== value) {
+
+
+
+
+
+
+
+                                        event.target.value = value;
+
+
+
+
+
+
+
+                                        // Restore cursor position
+
+
+
+
+
+
+
+                                        event.target.setSelectionRange(start, end);
+
+
+
+
+
+
+
+                                    }
+
+
+
+
+
+
+
+                                });
+
+
+
+
+
+
+
+                    }
+
+
+
+
+
+
+
+                
 
 
 
@@ -579,17 +1051,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
                 });
-
-
-
-
-
-
-
-            }
-
-
-
-});
 
 
