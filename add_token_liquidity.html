@@ -1,13 +1,22 @@
 <!DOCTYPE html>
+<!--
+    Корневой элемент HTML-документа. Атрибут 'lang' указывает основной язык содержимого страницы.
+-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
 
+    <!-- Заголовок страницы, отображаемый во вкладке браузера -->
     <title>X1 EcoChain</title>
+    <!-- Подключение иконки сайта (фавикон) -->
     <link rel="icon" href="assets/Group 2087327156.svg" type="image/svg+xml">
+    <!-- Подключение основного файла стилей для всей страницы -->
     <link rel="stylesheet" href="style.css">
+    <!-- Подключение файла стилей, используемого для форм создания токена (переиспользуется) -->
     <link rel="stylesheet" href="create_new_token.css"> <!-- Reusing styles -->
+    <!-- Подключение файла стилей, специфичного для страницы добавления ликвидности токена -->
     <link rel="stylesheet" href="add_token_liquidity.css">
+    <!-- Подключение шрифтов Google Fonts для использования на странице -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -15,39 +24,50 @@
         <header class="header">
 
 
-            <!-- Desktop Header Elements -->
+            <!-- Логотип проекта, ведет на главную страницу -->
             <a href="https://x1ecochain.com/" class="header__logo">
                 <img src="assets/Logo X1 Ecochain.svg" alt="1x Ecochain Logo">
             </a>
+            <!-- Основная навигация по сайту, содержит ссылки на ключевые разделы -->
             <nav class="header__nav">
                 <a href="index.html" class="header__nav-link" data-i18n-key="nav_dashboard">Dashboard</a>
                 <a href="listing.html" class="header__nav-link" data-i18n-key="nav_listing">Listing</a>
                 <a href="my_tokens.html" class="header__nav-link" data-i18n-key="nav_my_tokens">My Tokens</a>
             </nav>
+            <!-- Строка поиска токенов с иконкой -->
             <div class="header__search">
                 <img src="assets/Icon-loop.svg" alt="Search Icon" class="header__search-icon">
                 <input type="text" placeholder="Search tokens" class="header__search-input" data-i18n-key="search_placeholder">
             </div>
+            <!-- Кнопка для создания нового токена, открывает всплывающее окно -->
             <button class="header__create-token-btn create-new-token-btn">
                 <span data-i18n-key="create_token_btn">Create new token</span>
                 <img src="assets/Icon.svg" alt="Arrow Icon">
             </button>
+            <!-- Секция профиля пользователя с информацией и настройками -->
             <div class="header__user-profile">
+                <!-- Информация о пользователе (имя, адрес кошелька) -->
                 <div class="header__user-info">
                     <span class="header__user-name">Noname</span>
                     <span class="header__user-address">0x2...006728</span>
                 </div>
+                <!-- Аватар пользователя -->
                 <img src="assets/Frame 9.svg" alt="User Avatar" class="header__user-avatar">
+                <!-- Иконка настроек, при нажатии открывает выпадающее меню -->
                 <img src="assets/Icon-sett.svg" alt="Settings Icon" class="header__settings-icon">
+                <!-- Выпадающее меню настроек пользователя -->
                 <div class="settings-dropdown" id="settingsDropdown">
+                    <!-- Пункт меню: Настройки профиля -->
                     <div class="dropdown-item">
                         <img src="assets/schoolteacher.svg" alt="Profile Settings">
                         <span data-i18n-key="dd_profile_settings">Profile Settings</span>
                     </div>
+                    <!-- Пункт меню: Выбор языка с подменю -->
                     <div class="dropdown-item language-item">
                         <img src="assets/site.svg" alt="Language">
                         <span data-i18n-key="dd_language">Language</span>
                         <img src="assets/Icon-down-arrow.svg" alt="v" class="dropdown-arrow">
+                        <!-- Подменю выбора языка -->
                         <div class="language-submenu">
                             <div class="language-option">
                                 <img src="assets/Rus.svg" alt="Russian Flag" class="flag-icon">
@@ -59,6 +79,7 @@
                             </div>
                         </div>
                     </div>
+                    <!-- Пункт меню: Переключение темы (светлая/темная) -->
                     <div class="dropdown-item">
                         <img src="assets/Group 884.svg" alt="Theme">
                         <span data-i18n-key="dd_theme">Theme</span>
@@ -67,11 +88,13 @@
                             <span class="slider"></span>
                         </label>
                     </div>
+                    <!-- Пункт меню: Баланс пользователя -->
                     <div class="dropdown-item">
                         <img src="assets/wallet.svg" alt="Balance">
                         <span data-i18n-key="dd_balance">Balance:</span>
                         <span class="balance-amount">1,234.56 USDT</span>
                     </div>
+                    <!-- Пункт меню: Выход из системы -->
                     <div class="dropdown-item">
                         <img src="assets/exit.svg" alt="Logout">
                         <span data-i18n-key="dd_logout">Logout</span>
@@ -82,28 +105,37 @@
 
         
         <main class="home-main">
+            <!-- Фоновое изображение в виде вектора, расположенное справа -->
             <img src="assets/Vector.svg" alt="Background Vector" class="home-main__vector-bg">
+            <!-- Фоновое изображение для страницы создания токена (переиспользуется) -->
             <img src="assets/Create token.svg" alt="Create Token Background" class="home-main__incubator-bg">
 
+            <!-- Контейнер для формы добавления ликвидности токена -->
             <div class="create-token-container liquidity-container">
                 <h1 class="create-token-title" data-i18n-key="al_title">Add token liquidity</h1>
+                <!-- Контейнер самой формы -->
                 <div class="create-token-form-container">
+                    <!-- Секция ввода количества токенов X1 -->
                     <div class="form-section input-section">
                         <label for="x1-token-amount" data-i18n-key="al_label_x1">X1 Token Amount</label>
                         <input type="text" id="x1-token-amount" placeholder="100 000" data-i18n-key="al_placeholder_x1">
                     </div>
+                    <!-- Секция ввода количества токенов NKT -->
                     <div class="form-section input-section">
                         <label for="nkt-token-amount" data-i18n-key="al_label_nkt">NKT Token Amount</label>
                         <input type="text" id="nkt-token-amount" placeholder="NKT" data-i18n-key="al_placeholder_nkt">
                     </div>
+                    <!-- Секция ввода цены токена в USD -->
                     <div class="form-section input-section">
                         <label for="token-price-usd" data-i18n-key="al_label_price_usd">Token Price (USD)</label>
                         <input type="text" id="token-price-usd" placeholder="$0.004" data-i18n-key="al_placeholder_price_usd">
                     </div>
+                    <!-- Секция ввода цены токена в X1 -->
                     <div class="form-section input-section">
                         <label for="token-price-x1" data-i18n-key="al_label_price_x1">Token Price (X1)</label>
                         <input type="text" id="token-price-x1" placeholder="4" data-i18n-key="al_placeholder_price_x1">
                     </div>
+                    <!-- Ссылка-обертка для кнопки отправки формы -->
                     <a href="token_detail.html" class="submit-button-link">
                     <button class="create-token-submit-btn" data-i18n-key="al_submit_btn">Create token</button>
                 </a>
@@ -112,9 +144,9 @@
         </main>
     </div>
 
-    <!-- Popup Overlay -->
+    <!-- Всплывающее окно для создания нового токена -->
     <div id="createTokenPopup" class="popup-overlay">
-        <!-- Popup Content -->
+        <!-- Содержимое всплывающего окна -->
         <div class="popup-content">
             <h2 data-i18n-key="popup_title">Create new token</h2>
             <button class="popup-button green-button" onclick="location.href='create_new_token.html'" data-i18n-key="popup_btn_no_liq">Launch without liquidity</button>
@@ -122,6 +154,7 @@
         </div>
     </div>
 
+    <!-- Подключение JavaScript файлов -->
     <script src="translations.js"></script>
     <script src="script.js"></script>
 </body>

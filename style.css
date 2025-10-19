@@ -1,26 +1,32 @@
 
-/* Basic Reset */
+/*
+ * style.css - Основной файл стилей для проекта X1 EcoChain.
+ * Содержит общие стили, стили для шапки, основного контента, всплывающих окон и темной темы.
+ */
+
+/* Базовый сброс стилей для HTML и Body */
 html, body {
-    height: 100%;
-    overflow-y: auto;
+    height: 100%; /* Устанавливает высоту HTML и body на 100% от высоты окна просмотра */
+    overflow-y: auto; /* Разрешает вертикальную прокрутку при необходимости */
 }
 
+/* Общие стили для элемента body */
 body {
-    margin: 0;
-    font-family: 'Nunito Sans', Arial, sans-serif;
-    background-color: #F1F1F1; /* Light theme background */
-    color: #1C4430;
-    overflow-x: hidden; /* Prevent horizontal scroll from absolute positioning */
+    margin: 0; /* Убирает внешние отступы по умолчанию */
+    font-family: 'Nunito Sans', Arial, sans-serif; /* Устанавливает основной шрифт */
+    background-color: #F1F1F1; /* Фоновый цвет для светлой темы */
+    color: #1C4430; /* Основной цвет текста для светлой темы */
+    overflow-x: hidden; /* Предотвращает горизонтальную прокрутку */
 }
 
-/* Dark Theme Styles */
+/* Стили для темной темы */
 body.dark-theme {
-    background-color: #1A1A1A; /* Dark background */
-    color: #E0E0E0; /* Light text */
+    background-color: #1A1A1A; /* Темный фон */
+    color: #E0E0E0; /* Светлый текст */
 }
 
 body.dark-theme .header {
-    background-color: #2C2C2C; /* Darker header */
+    background-color: #2C2C2C; /* Более темный заголовок */
 }
 
 body.dark-theme .header__nav-link {
@@ -28,7 +34,7 @@ body.dark-theme .header__nav-link {
 }
 
 body.dark-theme .header__search {
-    background-color: #3A3A3A; /* Darker search background */
+    background-color: #3A3A3A; /* Более темный фон поиска */
 }
 
 body.dark-theme .header__search-input {
@@ -70,15 +76,15 @@ body.dark-theme .slider {
 }
 
 body.dark-theme input:checked + .slider {
-    background-color: #5B9D07; /* Green remains for active state */
+    background-color: #5B9D07; /* Зеленый остается для активного состояния */
 }
 
 body.dark-theme .home-main__vector-bg {
-    filter: invert(1) hue-rotate(180deg); /* Invert colors for dark theme */
+    filter: invert(1) hue-rotate(180deg); /* Инвертирование цветов для темной темы */
 }
 
 body.dark-theme .home-main__incubator-bg {
-    filter: invert(1) hue-rotate(180deg); /* Invert colors for dark theme */
+    filter: invert(1) hue-rotate(180deg); /* Инвертирование цветов для темной темы */
 }
 
 body.dark-theme .cards-container .card {
@@ -87,7 +93,7 @@ body.dark-theme .cards-container .card {
 }
 
 body.dark-theme .card__title {
-    color: #7ED321; /* Lighter green for dark theme */
+    color: #7ED321; /* Более светлый зеленый для темной темы */
 }
 
 body.dark-theme .card__text {
@@ -128,17 +134,18 @@ body.dark-theme .token-details .creator-name {
     color: #7ED321;
 }
 
-/* Hide spinner buttons for number input */
+/* Скрытие кнопок-спиннеров для числового ввода */
 .quantity-input::-webkit-outer-spin-button,
 .quantity-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+    -webkit-appearance: none; /* Скрывает стандартные кнопки-спиннеры в WebKit-браузерах */
     margin: 0;
 }
 
 .quantity-input {
-    -moz-appearance: textfield; /* Firefox */
+    -moz-appearance: textfield; /* Скрывает стандартные кнопки-спиннеры в Firefox */
 }
 
+/* Стили для темной темы, специфичные для деталей токена и форм */
 body.dark-theme .token-detail-main-container {
     background-color: #1A1A1A;
 }
@@ -193,7 +200,7 @@ body.dark-theme .summary-value {
 
 .quantity-input {
     background-color: #F5F5F5;
-    color: rgba(5, 82, 26, 0.2); /* 20% transparency */
+    color: rgba(5, 82, 26, 0.2); /* 20% прозрачность */
     border: none;
     text-align: center;
 }
@@ -210,7 +217,7 @@ body.dark-theme .buy-button {
 }
 
 .buy-button:hover {
-    background-color: #4A8B06; /* Slightly darker green */
+    background-color: #4A8B06; /* Немного темнее зеленый */
 }
 
 body.dark-theme .sell-button {
@@ -220,11 +227,11 @@ body.dark-theme .sell-button {
 }
 
 .sell-button:hover {
-    background-color: #E04C4C; /* Slightly darker red */
+    background-color: #E04C4C; /* Немного темнее красный */
 }
 
 body.dark-theme .page-wrapper {
-    background-color: #1A1A1A; /* Dark background for page wrapper */
+    background-color: #1A1A1A; /* Темный фон для обертки страницы */
 }
 
 body.dark-theme .token-detail-main-container {
@@ -294,33 +301,34 @@ body.dark-theme .create-token-title {
     color: #7ED321;
 }
 
-/* Card Top Images Theme Switching */
+/* Переключение изображений карточек для темной темы */
 .card-top-image.light-theme-image {
-    display: block; /* Show by default in light theme */
+    display: block; /* Отображается по умолчанию в светлой теме */
 }
 
 .card-top-image.dark-theme-image {
-    display: none; /* Hide by default in light theme */
+    display: none; /* Скрыто по умолчанию в светлой теме */
 }
 
 body.dark-theme .card-top-image.light-theme-image {
-    display: none; /* Hide in dark theme */
+    display: none; /* Скрыто в темной теме */
 }
 
 body.dark-theme .card-top-image.dark-theme-image {
-    display: block; /* Show in dark theme */
+    display: block; /* Отображается в темной теме */
 }
 
+/* Обертка страницы */
 .page-wrapper {
-    position: relative;
-    width: 1920px; /* Fixed width as per description */
-    height: 1000px; /* Fixed height as per description */
-    margin: 0 auto; /* Center the page wrapper */
-    background-color: #F1F1F1;
-    overflow: hidden; /* Hide overflowing elements */
+    position: relative; /* Относительное позиционирование для дочерних элементов */
+    width: 1920px; /* Фиксированная ширина согласно макету */
+    height: 1000px; /* Фиксированная высота согласно макету */
+    margin: 0 auto; /* Центрирование обертки страницы по горизонтали */
+    background-color: #F1F1F1; /* Фоновый цвет обертки */
+    overflow: hidden; /* Скрытие содержимого, выходящего за пределы обертки */
 }
 
-/* Header Styling */
+/* Стилизация заголовка */
 .header {
     position: absolute;
     top: 25px;
@@ -331,49 +339,27 @@ body.dark-theme .card-top-image.dark-theme-image {
     border-radius: 8px;
     box-sizing: border-box;
     z-index: 10;
-}
-
-.header__middle-left-group {
-    /* This group contains the nav links */
-    display: flex;
-    align-items: center; /* Vertically center nav links */
-    margin-left: 264px; /* Approximate based on original x-coords */
-}
-
-.header__middle-right-group {
-    /* This group contains the search bar */
-    display: flex;
-    align-items: center; /* Vertically center search bar */
-    margin-left: 115px; /* Approximate based on original x-coords */
-}
-
-.header__right-group {
-    /* This group contains the create token button, user info, avatar, and settings */
-    display: flex;
-    align-items: center; /* Vertically center items */
-    gap: 20px; /* Adjust gap between elements */
-    margin-left: auto; /* Push to the right */
+    display: flex; /* Использование flexbox для выравнивания */
+    align-items: center; /* Вертикальное центрирование всех дочерних элементов */
+    padding: 0 55px; /* Горизонтальные отступы */
 }
 
 .header__logo {
-    position: absolute;
-    left: 55px;
-    top: 46px;
-    transform: translateY(-50%);
+    /* position, top, left, transform убраны */
+    flex-shrink: 0; /* Предотвращает сжатие логотипа */
 }
 
 .header__logo img {
     width: 198px;
     height: 27.42px;
+    display: block; /* Исправление для возможных проблем с выравниванием */
 }
 
 .header__nav {
-    position: absolute;
-    left: 319px; /* Start of Dashboard link */
-    top: 49px; /* Relative to page-wrapper, not header */
-    transform: translateY(-50%);
+    /* position, top, left, transform убраны */
     display: flex;
-    gap: 33px; /* Gap between nav links */
+    gap: 33px; /* Отступ между навигационными ссылками */
+    margin-left: 66px; /* Отступ от логотипа */
 }
 
 .header__nav-link {
@@ -385,14 +371,11 @@ body.dark-theme .card-top-image.dark-theme-image {
 }
 
 .header__nav-link.active {
-    font-weight: 700; /* Bold for active link */
+    font-weight: 700;
 }
 
 .header__search {
-    position: absolute;
-    left: 698px;
-    top: 42px; /* Relative to page-wrapper */
-    transform: translateY(-50%);
+    /* position, top, left, transform убраны */
     width: 480px;
     height: 36px;
     background-color: #F1F1F1;
@@ -401,6 +384,7 @@ body.dark-theme .card-top-image.dark-theme-image {
     align-items: center;
     padding: 0 15px;
     box-sizing: border-box;
+    margin-left: 115px; /* Отступ от навигации */
 }
 
 .header__search-icon {
@@ -423,10 +407,7 @@ body.dark-theme .card-top-image.dark-theme-image {
 }
 
 .header__create-token-btn {
-    position: absolute;
-    left: 1496px;
-    top: 42px; /* Relative to page-wrapper */
-    transform: translateY(-50%);
+    /* position, top, left, transform убраны */
     width: 181px;
     height: 36px;
     background-color: #5B9D07;
@@ -442,31 +423,29 @@ body.dark-theme .card-top-image.dark-theme-image {
     padding: 0 15px;
     white-space: nowrap;
     transition: background-color 0.2s ease;
+    flex-shrink: 0; /* Предотвращает сжатие кнопки */
+    margin-left: auto; /* Прижимает кнопку к правому краю, оставляя место для профиля */
+    margin-right: 10px; /* Добавляем отступ справа */
 }
 
 .header__create-token-btn:hover {
-    background-color: #4A8B06; /* Slightly darker green */
+    background-color: #4A8B06;
 }
 
 .header__create-token-btn img {
-    height: 12px; /* Adjust arrow icon size */
-    /* transform: rotate(180deg); /* Arrow pointing left */
+    height: 12px;
 }
 
 .header__user-profile {
-    position: absolute;
-    right: 25px; /* Relative to header's right edge */
-    top: 42px; /* Relative to page-wrapper */
-    transform: translateY(-50%);
-    top: 42px; /* Relative to page-wrapper */
-    transform: translateY(-50%);
+    /* position, top, right, transform убраны */
     display: flex;
     align-items: center;
     gap: 10px;
+    flex-shrink: 0; /* Предотвращает сжатие профиля */
 }
 
 .header__user-info {
-    /* No positioning properties, let flexbox handle it */
+    /* Контейнер для имени и адреса пользователя */
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -475,26 +454,24 @@ body.dark-theme .card-top-image.dark-theme-image {
 .header__user-name {
     color: #1C4430;
     font-size: 12.6px;
-    font-weight: 700; /* Nunito Sans Bold */
+    font-weight: 700; /* Жирный шрифт */
     white-space: nowrap;
 }
 
 .header__user-address {
     color: #1C4430;
     font-size: 12.6px;
-    font-weight: 400; /* Nunito Sans Regular */
+    font-weight: 400; /* Обычный шрифт */
     white-space: nowrap;
 }
 
 .header__user-avatar {
-    /* No positioning properties, let flexbox handle it */
     width: 37px;
     height: 35px;
-    border-radius: 50%; /* Assuming avatar is round */
+    border-radius: 50%; /* Круглый аватар */
 }
 
 .header__settings-icon {
-    /* No positioning properties, let flexbox handle it */
     width: 17.91px;
     height: 20px;
     cursor: pointer;
@@ -510,11 +487,11 @@ body.dark-theme .card-top-image.dark-theme-image {
     opacity: 0.6;
 }
 
-/* Settings Dropdown */
+/* Выпадающее меню настроек */
 .settings-dropdown {
-    display: none; /* Hidden by default */
-    position: absolute;
-    top: 55px; /* Position below the user profile section */
+    display: none; /* Скрыто по умолчанию */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 55px; /* Позиционирование ниже секции профиля пользователя */
     right: 0;
     width: 280px;
     background-color: #FFFFFF;
@@ -526,7 +503,7 @@ body.dark-theme .card-top-image.dark-theme-image {
 }
 
 .settings-dropdown.show {
-    display: block;
+    display: block; /* Отображается при наличии класса 'show' */
 }
 
 .dropdown-item {
@@ -554,7 +531,7 @@ body.dark-theme .card-top-image.dark-theme-image {
     font-weight: 700;
 }
 
-/* Language Submenu */
+/* Подменю выбора языка */
 .language-item {
     position: relative;
 }
@@ -574,13 +551,13 @@ body.dark-theme .card-top-image.dark-theme-image {
     display: none;
     position: absolute;
     left: 0;
-    top: 100%; /* Position it below the language item */
+    top: 100%; /* Позиционирование под элементом языка */
     width: 100%;
-    background-color: #E0E0E0; /* Slightly different background for submenu */
+    background-color: #E0E0E0; /* Немного другой фон для подменю */
     border-radius: 10px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
     padding: 8px 0;
-    z-index: 101; /* Above the main dropdown */
+    z-index: 101; /* Поверх основного выпадающего меню */
 }
 
 .language-item.submenu-active .language-submenu {
@@ -599,13 +576,13 @@ body.dark-theme .card-top-image.dark-theme-image {
 }
 
 .flag-icon {
-    width: 16px !important; /* Use important to override general icon size */
+    width: 16px !important;
     height: 16px !important;
 }
 
-/* Theme Switcher */
+/* Переключатель темы */
 .theme-switcher {
-    margin-left: auto; /* Push the switcher to the right */
+    margin-left: auto; /* Прижимает переключатель вправо */
     position: relative;
     display: inline-block;
     width: 40px;
@@ -651,45 +628,45 @@ input:checked + .slider:before {
 }
 
 
-/* Main Content Styling */
+/* Стилизация основного контента */
 .home-main {
-    position: relative;
+    position: relative; /* Относительное позиционирование для дочерних элементов */
     width: 100%;
-    height: calc(100% - 100px); /* Adjust height for header */
-    top: 100px; /* Position below header */
-    overflow: hidden;
+    height: calc(100% - 100px); /* Высота с учетом заголовка */
+    top: 100px; /* Позиционирование под заголовком */
+    overflow: hidden; /* Скрытие содержимого, выходящего за пределы */
 }
 
 .home-main__vector-bg {
-    position: absolute;
+    position: absolute; /* Абсолютное позиционирование фонового вектора */
     right: 0;
     top: 0;
-    height: 100%; /* Fills the right half */
-    width: 50%; /* Occupies right half */
+    height: 100%; /* Занимает всю высоту */
+    width: 50%; /* Занимает правую половину */
     object-fit: cover;
     z-index: 0;
 }
 
 .home-main__incubator-bg {
-    position: absolute;
+    position: absolute; /* Абсолютное позиционирование фонового изображения инкубатора */
     bottom: 0;
     left: 25px;
     right: 25px;
     width: calc(100% - 50px);
-    height: auto; /* Maintain aspect ratio */
-    max-height: 100%; /* Ensure it's not overflow its container */
+    height: auto; /* Сохранение пропорций */
+    max-height: 100%; /* Гарантирует, что не выходит за пределы контейнера */
     z-index: 1;
     mix-blend-mode: overlay;
 }
 
 .cards-container {
-    position: absolute;
+    position: absolute; /* Абсолютное позиционирование контейнера карточек */
     width: 1295px;
     height: 508px;
-    top: 132px; /* Relative to page-wrapper */
-    left: 313px; /* Relative to page-wrapper */
+    top: 132px; /* Относительно page-wrapper */
+    left: 313px; /* Относительно page-wrapper */
     display: flex;
-    gap: 46px;
+    gap: 46px; /* Отступ между карточками */
     z-index: 2;
 }
 
@@ -699,34 +676,34 @@ input:checked + .slider:before {
     background-color: #FFFFFF;
     border-radius: 20px;
     position: relative;
-    overflow: hidden; /* Hide overflowing top elements */
+    overflow: hidden; /* Скрытие выходящих за пределы элементов */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .card-top-image {
-    position: absolute;
-    top: -180px; /* Adjusted for internal SVG offset */
+    position: absolute; /* Абсолютное позиционирование верхнего изображения карточки */
+    top: -180px; /* Смещение для коррекции внутреннего отступа SVG */
     left: 50%;
-    transform: translateX(-50%);
-    width: 450px;   /* Match SVG canvas width */
-    height: 330px;  /* Match SVG canvas height */
-    z-index: 4;     /* Above the placeholder */
+    transform: translateX(-50%); /* Центрирование по горизонтали */
+    width: 450px;   /* Ширина холста SVG */
+    height: 330px;  /* Высота холста SVG */
+    z-index: 4;     /* Поверх плейсхолдера */
 }
 
 .card__image-placeholder {
     width: 369px;
     height: 221px;
-    background-color: #D9D9D9; /* Placeholder color */
+    background-color: #D9D9D9; /* Цвет плейсхолдера */
     border-radius: 8px;
     position: absolute;
     top: 17px;
     left: 16px;
     right: 16px;
-    z-index: 3; /* Below the top image */
+    z-index: 3; /* Под верхним изображением */
 }
 
 .card__title {
-    position: absolute;
+    position: absolute; /* Абсолютное позиционирование заголовка карточки */
     left: 35px;
     top: 268px;
     color: #5B9D07;
@@ -736,18 +713,18 @@ input:checked + .slider:before {
 }
 
 .card__text {
-    position: absolute;
+    position: absolute; /* Абсолютное позиционирование текста карточки */
     left: 35px;
     top: 317px;
     color: #1C4430;
     font-size: 16px;
     line-height: 1.5;
     margin: 0;
-    width: calc(100% - 70px); /* Adjust width for padding */
+    width: calc(100% - 70px); /* Ширина с учетом отступов */
 }
 
 .card__button {
-    position: absolute;
+    position: absolute; /* Абсолютное позиционирование кнопки карточки */
     left: 35px;
     top: 420px;
     background-color: #5B9D07;
@@ -764,57 +741,56 @@ input:checked + .slider:before {
 }
 
 .card__button:hover {
-    background-color: #4A8B06; /* Slightly darker green */
+    background-color: #4A8B06; /* Немного темнее зеленый при наведении */
 }
 
 .card__button img {
-    height: 12px; /* Adjust arrow icon size */
-    /* transform: rotate(180deg); /* Arrow pointing left */
+    height: 12px; /* Размер иконки стрелки */
 }
 
-/* Popup Overlay */
+/* Стилизация всплывающего окна */
 .popup-overlay {
-    display: none; /* Hidden by default */
-    position: fixed;
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.2); /* White with 20% transparency */
-    backdrop-filter: blur(5px); /* Blur the background */
-    z-index: 1000; /* Ensure it's on top of everything */
+    background-color: rgba(255, 255, 255, 0.2); /* Белый фон с прозрачностью */
+    backdrop-filter: blur(5px); /* Размытие фона */
+    z-index: 1000; /* Поверх всех элементов */
     justify-content: center;
     align-items: center;
 }
 
-/* Popup Content */
+/* Содержимое всплывающего окна */
 .popup-content {
     width: 442px;
     height: 196px;
-    background-color: transparent; /* No background fill */
+    background-color: transparent; /* Прозрачный фон */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
-    position: absolute; /* For precise positioning */
+    position: absolute; /* Для точного позиционирования */
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    gap: 10px; /* Added gap for spacing between buttons */
+    transform: translate(-50%, -50%); /* Центрирование */
+    gap: 10px; /* Отступ между кнопками */
 }
 
 .popup-content h2 {
-    color: #5B9D07; /* Changed to specified color */
-    font-size: 30px; /* Changed to 30px */
-    font-weight: 700; /* Changed to bold */
+    color: #5B9D07;
+    font-size: 30px;
+    font-weight: 700;
     margin-bottom: 20px;
     text-align: center;
 }
 
 .popup-button {
-    width: 350px; /* Changed to 350px */
+    width: 350px;
     height: 50px;
     border-radius: 37px;
     font-size: 18px;
@@ -823,7 +799,7 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    flex-shrink: 0; /* Prevent shrinking */
+    flex-shrink: 0; /* Предотвращает сжатие */
 }
 
 .green-button {
@@ -834,7 +810,7 @@ input:checked + .slider:before {
 }
 
 .green-button:hover {
-    background-color: #4A8B06; /* Slightly darker green */
+    background-color: #4A8B06; /* Немного темнее зеленый */
 }
 
 .transparent-button {
@@ -845,9 +821,9 @@ input:checked + .slider:before {
 }
 
 .transparent-button:hover {
-    background-color: rgba(91, 157, 7, 0.1); /* Less transparent */
-    color: #7ED321; /* Brighter green */
-    border-color: #7ED321; /* Brighter green */
+    background-color: rgba(91, 157, 7, 0.1); /* Менее прозрачный */
+    color: #7ED321; /* Более яркий зеленый */
+    border-color: #7ED321; /* Более яркий зеленый */
 }
 
 .centered-content {
@@ -856,6 +832,6 @@ input:checked + .slider:before {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: calc(100vh - 100px); /* Adjust height for header */
+    height: calc(100vh - 100px); /* Высота с учетом заголовка */
     width: 100%;
 }

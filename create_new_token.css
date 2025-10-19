@@ -1,9 +1,9 @@
-/* Main container for the create token form */
+/* Основной контейнер для формы создания токена */
 .create-token-container {
-    position: absolute;
+    position: absolute; /* Абсолютное позиционирование */
     top: 50px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%); /* Центрирование по горизонтали */
     width: 480px;
     display: flex;
     flex-direction: column;
@@ -11,18 +11,20 @@
     z-index: 5;
 }
 
+/* Заголовок формы создания токена */
 .create-token-title {
     font-size: 30px;
     font-weight: 700;
     color: #5B9D07;
     text-align: center;
     margin: 0;
-    margin-bottom: 26px; /* (199-132-41) = 26 */
+    margin-bottom: 26px;
 }
 
+/* Контейнер самой формы */
 .create-token-form-container {
     width: 480px;
-    /* height: 737px; /* Height will be auto based on content */
+    /* height: 737px; /* Высота будет автоматически подстраиваться под содержимое */
     background-color: #FFFFFF;
     border-radius: 10px;
     padding: 19px;
@@ -30,14 +32,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 7px; /* Spacing between form sections */
+    gap: 7px; /* Отступ между секциями формы */
 }
 
+/* Общие стили для секций формы */
 .form-section {
     width: 442px;
 }
 
-/* Upload Section */
+/* Секция загрузки изображения */
 .upload-section {
     height: 74px;
     display: flex;
@@ -91,85 +94,161 @@
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-/* Input Sections */
+/* Секции ввода (input) */
+
 .input-section {
+
     height: 84px;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: flex-end;
+
 }
+
+
 
 .input-section label {
+
     font-size: 12px;
+
     color: #1C4430;
+
     margin-bottom: 4px;
+
     margin-left: 10px;
+
 }
+
+
 
 .input-section input {
+
     width: 442px;
+
     height: 48px;
+
     border-radius: 10px;
+
     background-color: #F1F1F1;
+
     border: none;
+
     padding: 0 15px;
+
     box-sizing: border-box;
+
     font-family: 'Nunito Sans', sans-serif;
+
     font-size: 15px;
+
     color: #1C4430;
+
 }
+
+
 
 .input-section input::placeholder {
+
     color: #1C4430;
+
     opacity: 0.5;
+
 }
 
-/* Textarea Section */
+
+
+/* Секция текстового поля (textarea) */
+
 .textarea-section {
+
     height: 247px;
+
     display: flex;
+
     flex-direction: column;
+
 }
+
+
 
 .textarea-section label {
+
     font-size: 12px;
+
     color: #1C4430;
+
     margin-bottom: 4px;
+
     margin-left: 10px;
+
     margin-top: 10px;
+
 }
+
+
 
 .textarea-wrapper {
+
     width: 442px;
+
     height: 221px;
+
     background-color: #F1F1F1;
+
     border-radius: 10px;
+
     padding: 15px;
+
     box-sizing: border-box;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
+
 }
+
+
 
 .textarea-section textarea {
+
     width: 100%;
+
     height: 100%;
+
     background: none;
+
     border: none;
+
     resize: none;
+
     font-family: 'Nunito Sans', sans-serif;
-    font-weight: 300; /* Light */
+
+    font-weight: 300; /* Светлый */
+
     font-size: 14px;
+
     color: #1C4430;
+
     line-height: 1.5;
+
 }
+
+
 
 .textarea-section textarea::placeholder {
+
     color: rgba(28, 68, 48, 0.5);
+
     text-align: center;
+
 }
 
-/* Submit Button */
+/* Кнопка отправки формы */
 .create-token-submit-btn {
     width: 442px;
     height: 50px;

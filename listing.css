@@ -1,14 +1,15 @@
-/* Listing Container */
+/* Контейнер для страницы листинга */
 .listing-container {
-    position: absolute;
+    position: absolute; /* Абсолютное позиционирование */
     left: 313px;
-    top: 22px; /* Moved down by 20px from 2px */
+    top: 22px; /* Смещение вниз */
     width: 1296px;
     height: 763px;
-    z-index: 5; /* Above background elements */
-    /* background-color: rgba(255, 0, 0, 0.1); /* For debugging layout */
+    z-index: 5; /* Поверх фоновых элементов */
+    /* background-color: rgba(255, 0, 0, 0.1); /* Для отладки макета */
 }
 
+/* Заголовок 'Все токены' */
 .all-tokens-title {
     position: absolute;
     left: 0;
@@ -19,40 +20,40 @@
     margin: 0;
 }
 
-/* Token Cards Grid */
+/* Сетка карточек токенов */
 .token-cards-grid {
     position: absolute;
-    top: 77px; /* Below the title (152 + 77 = 229, which is the y-coord of the first card) */
+    top: 77px; /* Ниже заголовка */
     width: 1296px;
     height: 686px;
     display: grid;
-    grid-template-columns: repeat(3, 408px); /* 3 columns, each 408px wide */
-    grid-template-rows: repeat(5, 114px); /* 5 rows, each 114px high */
-    gap: 31px 24px; /* Vertical gap 31px, Horizontal gap 24px */
-    justify-content: start; /* Align grid to the start */
-    align-content: start; /* Align grid to the start */
+    grid-template-columns: repeat(3, 408px); /* 3 колонки по 408px */
+    grid-template-rows: repeat(5, 114px); /* 5 рядов по 114px */
+    gap: 31px 24px; /* Вертикальный и горизонтальный отступы */
+    justify-content: start; /* Выравнивание сетки по началу */
+    align-content: start; /* Выравнивание содержимого сетки по началу */
 }
 
-/* Individual Token Card */
+/* Отдельная карточка токена */
 .token-card {
     width: 408px;
     height: 114px;
     background-color: #FFFFFF;
     border-radius: 10px;
     position: relative;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легкая тень */
     display: flex;
     align-items: center;
-    padding: 0 15px; /* Adjust padding as needed */
+    padding: 0 15px; /* Внутренние отступы */
     box-sizing: border-box;
 }
 
 .token-logo {
     width: 81px;
     height: 81px;
-    background-color: #D9D9D9; /* Gray circle */
+    background-color: #D9D9D9; /* Серый круг */
     border-radius: 50%;
-    margin-right: 15px; /* Space between logo and text */
+    margin-right: 15px; /* Отступ между логотипом и текстом */
 }
 
 .token-details {
@@ -66,11 +67,11 @@
     margin: 0;
     font-size: 14px;
     color: #1C4430;
-    line-height: 1.4; /* Adjust line height for better readability */
+    line-height: 1.4; /* Межстрочный интервал для лучшей читаемости */
 }
 
 .token-details .created-by {
-    color: rgba(28, 68, 48, 0.5); /* 50% opacity */
+    color: rgba(28, 68, 48, 0.5); /* 50% прозрачность */
 }
 
 .token-details .creator-name {
@@ -83,8 +84,8 @@
 
 .token-tag {
     position: absolute;
-    right: 15px; /* Adjust as needed */
-    top: 15px; /* Adjust as needed */
+    right: 15px;
+    top: 15px;
     width: 65px;
     height: 24px;
     background-color: #E2E2E2;

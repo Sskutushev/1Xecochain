@@ -1,9 +1,11 @@
+/* Стили для контейнера формы добавления ликвидности */
 .liquidity-container .create-token-form-container {
     height: 482px;
-    justify-content: center; /* Center the items vertically */
+    justify-content: center; /* Центрирование элементов по вертикали */
     gap: 15px;
 }
 
+/* Стили для кнопки отправки формы добавления ликвидности */
 .liquidity-container .create-token-submit-btn {
     margin-top: 20px;
 }
