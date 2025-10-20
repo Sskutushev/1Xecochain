@@ -191,7 +191,9 @@ body.dark-theme .token-details .creator-name {
 }
 
 .quantity-input {
+    -webkit-appearance: textfield; /* Скрывает стандартные кнопки-спиннеры в WebKit-браузерах */
     -moz-appearance: textfield; /* Скрывает стандартные кнопки-спиннеры в Firefox */
+    appearance: textfield; /* Стандартизированное свойство */
 }
 
 /* Стили для темной темы, специфичные для деталей токена и форм */
