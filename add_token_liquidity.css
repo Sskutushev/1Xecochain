@@ -9,3 +9,33 @@
 .liquidity-container .create-token-submit-btn {
     margin-top: 20px;
 }
+
+.skip-button {
+    display: block;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400; /* Regular */
+    color: #5B9D07;
+    text-decoration: none;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.skip-button:hover {
+    opacity: 0.8;
+}
+
+.skip-button:active {
+    transform: scale(0.98);
+}
+
+@media (max-width: 767px) {
+    .skip-button {
+        font-size: 15px;
+        margin-top: 30px;
+    }
+    .liquidity-container .create-token-form-container {
+        height: auto;
+    }
+}

@@ -136,3 +136,101 @@ const translations = {
         'al_submit_btn': 'Создать токен',
     }
 };
+
+// Функция для получения текущего языка
+function getCurrentLanguage() {
+    return localStorage.getItem('language') || 'en';
+}
+
+// Функция для сохранения выбранного языка
+function setCurrentLanguage(lang) {
+    localStorage.setItem('language', lang);
+}
+
+// Функция для перевода текста
+function translate(key) {
+    const lang = getCurrentLanguage();
+    const translation = translations[lang] && translations[lang][key];
+    return translation || key; // Возвращаем ключ, если перевод не найден
+}
+
+// Функция для применения переводов ко всем элементам на странице
+function applyTranslations() {
+    const elements = document.querySelectorAll('[data-i18n-key]');
+    elements.forEach(element => {
+        const key = element.getAttribute('data-i18n-key');
+        const translatedText = translate(key);
+        
+        // Обрабатываем как обычный текст, так и placeholder
+        if (element.hasAttribute('placeholder')) {
+            element.placeholder = translatedText;
+        } else {
+            element.textContent = translatedText;
+        }
+    });
+}
+
+// Функция для инициализации переключения языка
+function initLanguageSwitcher() {
+    // Применяем переводы при загрузке
+    applyTranslations();
+    
+    // Добавляем обработчики для языковых элементов
+    const languageOptions = document.querySelectorAll('.language-option');
+    languageOptions.forEach(option => {
+        option.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Определяем язык по тексту или атрибутам
+            let lang = 'en'; // по умолчанию
+            const textContent = this.textContent.trim();
+            
+            if (textContent.includes('Русский') || textContent.includes('Russian')) {
+                lang = 'ru';
+            } else if (textContent.includes('Английский') || textContent.includes('English')) {
+                lang = 'en';
+            }
+            
+            // Проверяем также по изображению
+            if (lang === 'en') { // если язык еще не определен по тексту
+                const flagImg = this.querySelector('.flag-icon');
+                if (flagImg && flagImg.src.includes('Rus.svg')) {
+                    lang = 'ru';
+                } else if (flagImg && flagImg.src.includes('Eng.svg')) {
+                    lang = 'en';
+                }
+            }
+            
+            // Сохраняем и применяем язык
+            setCurrentLanguage(lang);
+            applyTranslations();
+            
+            // Закрываем подменю
+            const languageItem = this.closest('.language-item');
+            if (languageItem) {
+                languageItem.classList.remove('submenu-active');
+            }
+            
+            // Обновляем отображение текущего языка в основном элементе
+            const languageSpan = this.closest('.language-submenu').parentElement.querySelector('span[data-i18n-key="dd_language"]');
+            if (languageSpan) {
+                languageSpan.textContent = translate('dd_language');
+            }
+        });
+    });
+    
+    // Также добавляем обработчик для основного элемента языка, чтобы открывать подменю
+    document.querySelectorAll('.language-item').forEach(item => {
+        // Убираем предыдущий обработчик, если он был добавлен в script.js
+        // Оставляем только переключение подменю, а выбор языка будет в дочерних элементах
+    });
+}
+
+// Инициализируем переключение языка при загрузке DOM
+document.addEventListener('DOMContentLoaded', initLanguageSwitcher);
+
+// Экспортируем функции для использования в других файлах
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = { translate, getCurrentLanguage, setCurrentLanguage, applyTranslations, initLanguageSwitcher };
+}

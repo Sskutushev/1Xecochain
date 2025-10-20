@@ -1,17 +1,16 @@
 /* Token Detail Main Container */
 .token-detail-main-container {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    margin-top: 50px; /* Move down by 50px */
-    width: 1345px; /* Increased width by 50px */
-    height: 963px;
-    z-index: 10; /* Ensure it's above home-main backgrounds */
+    position: relative;
     display: flex;
-    justify-content: space-between; /* Space between left and right containers */
-    padding: 20px; /* Adjust as needed */
+    justify-content: space-between;
+    gap: 20px;
+    width: 1295px;
+    max-width: 100%;
+    margin: 150px auto 0 auto;
+    z-index: 10;
+    padding: 20px;
     box-sizing: border-box;
+    height: auto; /* Allow to grow */
 }
 
 /* Left Container */
@@ -24,7 +23,7 @@
 
 /* Block 1 (Top Block) */
 .token-detail-top-block {
-    width: 764px;
+    width: 100%;
     height: 74px;
     display: flex;
     align-items: center;
@@ -36,6 +35,7 @@
     height: 74px;
     border-radius: 50%;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .token-detail-header-text {
@@ -60,7 +60,7 @@
 
 /* Block 2 (Graph Block) */
 .token-detail-graph-block {
-    width: 764px;
+    width: 100%;
     height: 479px;
     border-radius: 10px;
     overflow: hidden; /* Ensure image respects border-radius */
@@ -78,13 +78,12 @@
 
 /* Block 3 (Text Block) */
 .token-detail-text-block {
-    width: 766px;
-    height: 342px;
+    width: 100%;
+    height: auto; /* Allow height to grow */
     background-color: transparent; /* Background removed */
     border-radius: 10px;
     padding: 20px;
     box-sizing: border-box;
-    overflow-y: hidden; /* Internal scroll removed */
     color: #1C4430;
     font-size: 16px;
     line-height: 1.5;
@@ -101,6 +100,7 @@
     display: flex;
     flex-direction: column;
     gap: 15px; /* Space between elements */
+    flex-shrink: 0;
 }
 
 .token-detail-price {
@@ -152,7 +152,7 @@
 
 /* Buttons */
 .token-detail-button {
-    width: 444px;
+    width: 100%;
     height: 50px;
     border-radius: 10px;
     font-size: 16px;
@@ -165,11 +165,11 @@
     transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-.quantity-button {
+.quantity-input {
     background-color: #F5F5F5;
     color: rgba(5, 82, 26, 0.2); /* 20% transparency */
     border: none;
-    cursor: not-allowed;
+    text-align: center;
 }
 
 .buy-button {
@@ -204,8 +204,121 @@
     background-color: #FF5858;
 }
 
-/* Specific styles for token_detail.html page-wrapper */
-.page-wrapper {
-    height: 1212px !important; /* Specific height for token detail page */
-    overflow-y: auto !important; /* Enable vertical scroll for token detail page */
+/* ============================================
+   АДАПТАЦИЯ TOKEN DETAIL
+   ============================================ */
+
+/* Tablet */
+@media (max-width: 1399px) and (min-width: 768px) {
+  .token-detail-main-container {
+    flex-direction: column;
+    align-items: center;
+    width: min(90%, 700px);
+    margin-top: 50px;
+  }
+
+  .token-detail-left-container,
+  .token-detail-right-container {
+    width: 100%;
+  }
+  
+  .token-detail-left-container {
+      display: contents;
+  }
+  
+  .token-detail-top-block { order: 1; }
+  .token-detail-graph-block { order: 2; margin-top: 15px; height: auto; }
+  .token-detail-right-container { order: 3; margin-top: 15px; height: auto; }
+  .token-detail-text-block { order: 4; margin-top: 15px; padding: 0; }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .token-detail-main-container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 350px;
+    gap: 15px;
+    margin: 30px auto;
+    padding: 0; /* Remove horizontal padding */
+  }
+
+  .token-detail-left-container,
+  .token-detail-right-container {
+    width: 100%;
+    gap: 0;
+  }
+
+  .token-detail-left-container {
+    display: contents;
+  }
+
+  .token-detail-top-block {
+    order: 1;
+    height: auto;
+    gap: 10px;
+    padding: 0 10px; /* Add padding here instead */
+    box-sizing: border-box;
+  }
+  
+  .token-detail-logo {
+      width: 52px;
+      height: 52px;
+  }
+  
+  .token-detail-title {
+      font-size: 20px;
+  }
+  .token-detail-subtitle {
+      font-size: 10px;
+  }
+
+  .token-detail-graph-block {
+    order: 2;
+    width: 100%;
+    max-width: 345px;
+    height: 216px;
+  }
+
+  .token-detail-right-container {
+    order: 3;
+    height: auto; /* Changed from 473px */
+    max-height: 473px;
+    padding: 15px;
+    gap: 10px; /* Adjust main gap */
+  }
+
+  .token-detail-text-block {
+    order: 4;
+    height: auto; /* Changed from 450px */
+    max-height: 450px;
+    padding: 0 10px; /* Add padding here */
+    overflow-y: auto;
+  }
+
+  .token-detail-button,
+  .quantity-input {
+    width: 316px !important;
+    height: 35px !important;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .quantity-input, .buy-button {
+      margin-bottom: 4px;
+  }
+  
+  .token-detail-price {
+      font-size: 30px;
+  }
+  .token-detail-raised {
+      font-size: 14px;
+  }
+  .token-detail-summary-title {
+      font-size: 20px;
+  }
+  .token-summary-item {
+      font-size: 14px;
+  }
 }

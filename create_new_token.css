@@ -276,3 +276,89 @@
 .submit-button-link {
     text-decoration: none;
 }
+
+/* ============================================
+   АДАПТАЦИЯ ФОРМЫ
+   ============================================ */
+
+@media (max-width: 767px) {
+  .create-token-container {
+    width: clamp(350px, 90vw, 583px);
+    max-width: 100%;
+    padding: 0 15px;
+    position: relative;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex; /* Ensure flex properties apply */
+    flex-direction: column;
+    align-items: center; /* Center form container inside */
+  }
+
+  .create-token-title {
+      text-align: left;
+      width: 100%;
+      max-width: 350px; /* Match form width */
+  }
+
+  .create-token-form-container {
+    width: 350px;
+    height: auto; /* Make height automatic */
+    padding: 15px;
+    align-items: center; /* Center form items */
+  }
+
+  .form-section {
+    width: 100% !important;
+    max-width: 323px; /* Max width for inputs */
+    height: auto;
+  }
+
+  .upload-icon {
+      width: 54px;
+      height: 54px;
+  }
+
+  .input-section {
+      height: auto;
+      margin-bottom: 5px;
+  }
+  .input-section label {
+      font-size: clamp(11px, 3vw, 12px);
+  }
+
+  .input-section input {
+    width: 323px !important;
+    max-width: 100%;
+    height: 40px;
+    font-size: clamp(13px, 4vw, 15px);
+  }
+
+  .textarea-section {
+      height: auto;
+  }
+
+  .textarea-wrapper {
+      width: 323px !important;
+      max-width: 100%;
+      height: 161px;
+  }
+
+  .create-token-submit-btn {
+    width: 323px !important;
+    max-width: 100%;
+    margin-top: 20px; /* Add some space when height is auto */
+  }
+
+  .upload-section {
+      flex-direction: row;
+      height: auto;
+      gap: 15px;
+      text-align: left;
+      max-width: 323px;
+  }
+  .upload-text {
+      font-size: clamp(12px, 3.5vw, 14px);
+  }
+}
+

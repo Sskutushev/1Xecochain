@@ -63,234 +63,87 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // Settings Dropdown Logic
+            // --- Combined Settings Dropdown Logic for Desktop and Mobile ---
 
 
 
-    const settingsIcon = document.querySelector('.header__settings-icon');
-    const settingsDropdown = document.querySelector('.settings-dropdown');
-    console.log('settingsIcon:', settingsIcon);
-    console.log('settingsDropdown:', settingsDropdown);
 
 
 
-    const languageItem = document.querySelector('.language-item');
 
+            const allSettingsIcons = document.querySelectorAll('.header__settings-icon, .mobile-menu-settings');
 
 
-    const themeToggle = document.getElementById('themeToggle');
 
 
 
 
 
+            allSettingsIcons.forEach(icon => {
 
 
-    if (settingsIcon && settingsDropdown) {
 
 
 
-        settingsIcon.addEventListener('click', (event) => {
-            console.log('Settings icon clicked!');
-            event.stopPropagation(); // Prevent the document click from firing immediately
-            // Because there are multiple dropdowns, we need to find the one next to the clicked icon
-            const parentProfile = event.currentTarget.closest('.header__user-profile');
-            const dropdown = parentProfile.querySelector('.settings-dropdown');
-            dropdown.classList.toggle('show');
-        });
 
 
+                icon.addEventListener('click', (event) => {
 
-    }
 
 
 
 
 
 
+                    console.log('Settings icon clicked!');
 
-    // Close dropdown when clicking outside
 
 
 
-    document.addEventListener('click', (event) => {
 
 
 
-        const allDropdowns = document.querySelectorAll('.settings-dropdown');
+                    event.stopPropagation();
 
 
 
-        allDropdowns.forEach(dropdown => {
 
 
 
-            if (dropdown.classList.contains('show') && !dropdown.contains(event.target) && !event.target.matches('.header__settings-icon')) {
 
+                    const parentProfile = event.currentTarget.closest('.header__user-profile, .mobile-menu-profile');
 
 
-                dropdown.classList.remove('show');
 
 
 
-            }
 
 
+                    if (parentProfile) {
 
-        });
 
 
 
-    });
 
 
 
-    
+                        const dropdown = parentProfile.querySelector('.settings-dropdown');
 
 
 
-            // Theme Switcher Logic
-            console.log('themeToggle element:', themeToggle);
 
-            const applyTheme = (theme) => {
-                console.log('Applying theme:', theme);
-                console.log('Body classList BEFORE:', Array.from(document.body.classList));
-                if (theme === 'dark') {
-                    document.body.classList.add('dark-theme');
-                    if (themeToggle) themeToggle.checked = true;
-                } else {
-                    document.body.classList.remove('dark-theme');
-                    if (themeToggle) themeToggle.checked = false;
-                }
-                console.log('Body classList AFTER:', Array.from(document.body.classList));
-            };
 
-            // Apply saved theme on page load
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            console.log('Saved theme:', savedTheme);
-            applyTheme(savedTheme);
 
-            // Add event listeners to both toggles
-            if (themeToggle) {
-                themeToggle.addEventListener('change', () => {
-                    console.log('Theme toggle changed. Checked state:', themeToggle.checked);
-                    const newTheme = themeToggle.checked ? 'dark' : 'light';
-                    localStorage.setItem('theme', newTheme);
-                    applyTheme(newTheme);
-                });
-            }
 
+                        if (dropdown) {
 
 
-    
 
 
 
 
 
-
-
-    
-
-
-
-
-
-
-
-    
-
-
-
-        
-
-
-
-
-
-
-
-            // --- I18n Language Switching Logic ---
-
-
-
-
-
-
-
-            const setLanguage = (lang) => {
-
-
-
-
-
-
-
-                document.querySelectorAll('[data-i18n-key]').forEach(element => {
-
-
-
-
-
-
-
-                    const key = element.getAttribute('data-i18n-key');
-
-
-
-
-
-
-
-                    const translation = translations[lang][key];
-
-
-
-
-
-
-
-                    if (translation) {
-
-
-
-
-
-
-
-                        // Handle different element types (e.g., inputs, buttons, text)
-
-
-
-
-
-
-
-                        if (element.placeholder !== undefined) {
-
-
-
-
-
-
-
-                            element.placeholder = translation;
-
-
-
-
-
-
-
-                        } else {
-
-
-
-
-
-
-
-                            element.textContent = translation;
+                            dropdown.classList.toggle('show');
 
 
 
@@ -322,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                // Save language choice
+            });
 
 
 
@@ -330,7 +183,95 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                localStorage.setItem('language', lang);
+        
+
+
+
+
+
+
+
+            // --- Combined Theme Switcher Logic ---
+
+
+
+
+
+
+
+            const themeToggles = document.querySelectorAll('#themeToggle, #themeToggleMobile');
+
+
+
+
+
+
+
+            const applyTheme = (theme) => {
+
+
+
+
+
+
+
+                if (theme === 'dark') {
+
+
+
+
+
+
+
+                    document.body.classList.add('dark-theme');
+
+
+
+
+
+
+
+                } else {
+
+
+
+
+
+
+
+                    document.body.classList.remove('dark-theme');
+
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+
+                themeToggles.forEach(toggle => {
+
+
+
+
+
+
+
+                    if(toggle) toggle.checked = (theme === 'dark');
+
+
+
+
+
+
+
+                });
 
 
 
@@ -346,6 +287,94 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+            const savedTheme = localStorage.getItem('theme') || 'light';
+
+
+
+
+
+
+
+            applyTheme(savedTheme);
+
+
+
+
+
+
+
+            themeToggles.forEach(toggle => {
+
+
+
+
+
+
+
+                if(toggle) {
+
+
+
+
+
+
+
+                    toggle.addEventListener('change', () => {
+
+
+
+
+
+
+
+                        const newTheme = toggle.checked ? 'dark' : 'light';
+
+
+
+
+
+
+
+                        localStorage.setItem('theme', newTheme);
+
+
+
+
+
+
+
+                        applyTheme(newTheme);
+
+
+
+
+
+
+
+                    });
+
+
+
+
+
+
+
+                }
+
+
+
+
+
+
+
+            });
+
+
+
+
+
+
+
         
 
 
@@ -354,7 +383,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            // Set language on page load
+            // --- Close dropdown when clicking outside ---
 
 
 
@@ -362,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            const savedLang = localStorage.getItem('language') || 'en';
+            document.addEventListener('click', (event) => {
 
 
 
@@ -370,7 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            setLanguage(savedLang);
+                document.querySelectorAll('.settings-dropdown').forEach(dropdown => {
 
 
 
@@ -378,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        
+                    const parentProfile = dropdown.closest('.header__user-profile, .mobile-menu-profile');
 
 
 
@@ -386,7 +415,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            // Add event listeners to language selection buttons
+                    const settingsIcon = parentProfile ? parentProfile.querySelector('.header__settings-icon, .mobile-menu-settings') : null;
 
 
 
@@ -394,63 +423,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            // Note: This needs to be robust against multiple dropdowns on the page
-
-
-
-
-
-
-
-            document.querySelectorAll('.language-option').forEach(button => {
-
-
-
-
-
-
-
-                button.addEventListener('click', (event) => {
-
-
-
-
-
-
-
-                    const lang = event.currentTarget.textContent.trim().toLowerCase() === 'russian' ? 'ru' : 'en';
-
-
-
-
-
-
-
-                    setLanguage(lang);
-
-
-
-
-
-
-
-                    // Optionally close the dropdown
-
-
-
-
-
-
-
-                    const dropdown = event.currentTarget.closest('.settings-dropdown');
-
-
-
-
-
-
-
-                    if (dropdown) {
+                    if (dropdown.classList.contains('show') && !dropdown.contains(event.target) && !(settingsIcon && settingsIcon.contains(event.target))) {
 
 
 
@@ -498,7 +471,56 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
+            // --- Language Submenu Logic ---
+            // NOTE: Language switching is handled in translations.js
 
+
+
+
+
+
+
+            document.querySelectorAll('.language-item').forEach(item => {
+
+
+
+
+
+
+
+                item.addEventListener('click', (event) => {
+
+
+
+
+
+
+
+                    event.stopPropagation();
+
+
+
+
+
+
+
+                    item.classList.toggle('submenu-active');
+
+
+
+
+
+
+
+                });
+
+
+
+
+
+
+
+            });
 
 
 
@@ -514,7 +536,79 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-            
+            // ============================================
+
+
+
+
+
+
+
+            // МОБИЛЬНОЕ МЕНЮ
+
+
+
+
+
+
+
+            // ============================================
+
+
+
+
+
+
+
+            (function () {
+
+
+
+
+
+
+
+              "use strict";
+
+
+
+
+
+
+
+              const burgerBtn = document.querySelector(".header__burger-menu");
+
+
+
+
+
+
+
+              const overlay = document.querySelector(".mobile-menu-overlay");
+
+
+
+
+
+
+
+              const drawer = document.querySelector(".mobile-menu-drawer");
+
+
+
+
+
+
+
+              const closeBtn = document.querySelector(".mobile-menu-close");
+
+
+
+
+
+
+
+              const navLinks = document.querySelectorAll(".mobile-menu-link");
 
 
 
@@ -530,7 +624,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                // Prevent dropdown from closing when language item is clicked and toggle submenu
+              if (!burgerBtn || !overlay || !drawer) {
+
+
+
+
+
+
+
+                console.error("Mobile menu elements not found!");
+
+
+
+
+
+
+
+                return;
+
+
+
+
+
+
+
+              }
 
 
 
@@ -546,7 +664,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                if (languageItem) {
+              const closeMenu = () => {
 
 
 
@@ -554,7 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                                languageItem.addEventListener('click', (event) => {
+                overlay.classList.remove("active");
 
 
 
@@ -562,7 +680,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                document.body.style.overflow = "";
 
 
 
@@ -570,7 +688,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                console.log("Menu closed");
 
 
 
@@ -578,7 +696,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+              }
 
 
 
@@ -586,7 +704,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                                    event.stopPropagation();
+        
 
 
 
@@ -594,7 +712,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+              burgerBtn.addEventListener("click", function (e) {
 
 
 
@@ -602,7 +720,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                e.preventDefault();
 
 
 
@@ -610,7 +728,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                e.stopPropagation();
 
 
 
@@ -618,7 +736,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                overlay.classList.add("active");
 
 
 
@@ -626,7 +744,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                document.body.style.overflow = "hidden";
 
 
 
@@ -634,7 +752,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+              });
 
 
 
@@ -642,7 +760,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+        
 
 
 
@@ -650,7 +768,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                                    languageItem.classList.toggle('submenu-active');
+              if (closeBtn) {
 
 
 
@@ -658,7 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                closeBtn.addEventListener("click", function (e) {
 
 
 
@@ -666,7 +784,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                  e.preventDefault();
 
 
 
@@ -674,7 +792,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                  e.stopPropagation();
 
 
 
@@ -682,7 +800,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                  closeMenu();
 
 
 
@@ -690,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                });
 
 
 
@@ -698,7 +816,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+              }
 
 
 
@@ -706,7 +824,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+        
 
 
 
@@ -714,7 +832,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                                });
+              overlay.addEventListener("click", function (e) {
 
 
 
@@ -722,7 +840,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                if (e.target === overlay) closeMenu();
 
 
 
@@ -730,7 +848,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+              });
 
 
 
@@ -738,7 +856,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+        
 
 
 
@@ -746,7 +864,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+              drawer.addEventListener("click", function (e) {
 
 
 
@@ -754,7 +872,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+                e.stopPropagation();
 
 
 
@@ -762,7 +880,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+              });
 
 
 
@@ -770,7 +888,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+        
 
 
 
@@ -778,7 +896,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                            }
+              navLinks.forEach(link => link.addEventListener("click", closeMenu));
 
 
 
@@ -786,7 +904,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+        
 
 
 
@@ -794,7 +912,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                    // Input field for token quantity on token_detail.html
+              document.addEventListener("keydown", function (e) {
 
 
 
@@ -802,7 +920,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                    const quantityInput = document.querySelector('.quantity-input');
+                if (e.key === "Escape" && overlay.classList.contains("active")) closeMenu();
 
 
 
@@ -810,7 +928,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                
+              });
 
 
 
@@ -818,223 +936,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-                    if (quantityInput) {
-
-
-
-
-
-
-
-                                quantityInput.addEventListener('input', (event) => {
-
-
-
-
-
-
-
-                                    let value = event.target.value;
-
-
-
-
-
-
-
-                                    const start = event.target.selectionStart;
-
-
-
-
-
-
-
-                                    const end = event.target.selectionEnd;
-
-
-
-
-
-
-
-                        
-
-
-
-
-
-
-
-                                    // 1. Replace commas with periods
-
-
-
-
-
-
-
-                                    value = value.replace(/,/g, '.');
-
-
-
-
-
-
-
-                        
-
-
-
-
-
-
-
-                                    // 2. Filter out non-numeric and non-period characters
-
-
-
-
-
-
-
-                                    value = value.replace(/[^0-9.]/g, '');
-
-
-
-
-
-
-
-                        
-
-
-
-
-
-
-
-                                    // 3. Ensure only one decimal point
-
-
-
-
-
-
-
-                                    const firstPeriodIndex = value.indexOf('.');
-
-
-
-
-
-
-
-                                    if (firstPeriodIndex !== -1) {
-
-
-
-
-
-
-
-                                        const beforePeriod = value.substring(0, firstPeriodIndex);
-
-
-
-
-
-
-
-                                        const afterPeriod = value.substring(firstPeriodIndex + 1).replace(/\./g, ''); // Remove any other periods
-
-
-
-
-
-
-
-                                        value = beforePeriod + '.' + afterPeriod;
-
-
-
-
-
-
-
-                                    }
-
-
-
-
-
-
-
-                        
-
-
-
-
-
-
-
-                                    // Update the input value only if it has changed
-
-
-
-
-
-
-
-                                    if (event.target.value !== value) {
-
-
-
-
-
-
-
-                                        event.target.value = value;
-
-
-
-
-
-
-
-                                        // Restore cursor position
-
-
-
-
-
-
-
-                                        event.target.setSelectionRange(start, end);
-
-
-
-
-
-
-
-                                    }
-
-
-
-
-
-
-
-                                });
-
-
-
-
-
-
-
-                    }
+            })();
 
 
 

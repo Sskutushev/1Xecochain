@@ -19,6 +19,9 @@
     <div class="page-wrapper">
         <header class="header">
 
+            <button class="header__burger-menu" style="display: none;">
+              <img src="assets/Frame 12.svg" alt="Menu" />
+            </button>
 
             <!-- Логотип проекта, ведет на главную страницу -->
             <a href="https://x1ecochain.com/" class="header__logo">
@@ -99,7 +102,87 @@
             </div>
         </header>
 
-
+        <!-- МОБИЛЬНОЕ МЕНЮ -->
+        <div class="mobile-menu-overlay">
+          <div class="mobile-menu-drawer">
+            <!-- Header с крестиком -->
+            <div class="mobile-menu-header">
+              <div class="mobile-menu-logo">
+                <img src="assets/Logo X1 Ecochain.svg" alt="Logo" />
+              </div>
+              <button class="mobile-menu-close">×</button>
+            </div>
+        
+            <!-- Поиск -->
+            <div class="mobile-menu-search">
+              <img src="assets/Icon-loop.svg" alt="Search" />
+              <input type="text" placeholder="Поиск токенов" />
+            </div>
+        
+            <!-- Навигация -->
+            <nav class="mobile-menu-nav">
+              <a href="index.html" class="mobile-menu-link">Dashboard</a>
+              <a href="listing.html" class="mobile-menu-link">Listing</a>
+              <a href="my_tokens.html" class="mobile-menu-link">My Tokens</a>
+            </nav>
+        
+            <!-- Профиль -->
+            <div class="mobile-menu-profile">
+              <div class="mobile-menu-profile-info">
+                <span class="mobile-menu-username">Noname</span>
+                <span class="mobile-menu-address">0x2...006728</span>
+              </div>
+              <img src="assets/Frame 9.svg" alt="Avatar" class="mobile-menu-avatar" />
+              <button class="mobile-menu-settings">
+                <img src="assets/Icon-sett.svg" alt="Settings" />
+              </button>
+              <div class="settings-dropdown">
+                    <!-- Пункт меню: Настройки профиля -->
+                    <div class="dropdown-item">
+                        <img src="assets/schoolteacher.svg" alt="Profile Settings">
+                        <span data-i18n-key="dd_profile_settings">Profile Settings</span>
+                    </div>
+                    <!-- Пункт меню: Выбор языка с подменю -->
+                    <div class="dropdown-item language-item">
+                        <img src="assets/site.svg" alt="Language">
+                        <span data-i18n-key="dd_language">Language</span>
+                        <img src="assets/Icon-down-arrow.svg" alt="v" class="dropdown-arrow">
+                        <!-- Подменю выбора языка -->
+                        <div class="language-submenu">
+                            <div class="language-option">
+                                <img src="assets/Rus.svg" alt="Russian Flag" class="flag-icon">
+                                <span data-i18n-key="dd_lang_russian">Russian</span>
+                            </div>
+                            <div class="language-option">
+                                <img src="assets/Eng.svg" alt="English Flag" class="flag-icon">
+                                <span data-i18n-key="dd_lang_english">English</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Пункт меню: Переключение темы (светлая/темная) -->
+                    <div class="dropdown-item">
+                        <img src="assets/Group 884.svg" alt="Theme">
+                        <span data-i18n-key="dd_theme">Theme</span>
+                        <label class="theme-switcher">
+                            <input type="checkbox" id="themeToggleMobile">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                    <!-- Пункт меню: Баланс пользователя -->
+                    <div class="dropdown-item">
+                        <img src="assets/wallet.svg" alt="Balance">
+                        <span data-i18n-key="dd_balance">Balance:</span>
+                        <span class="balance-amount">1,234.56 USDT</span>
+                    </div>
+                    <!-- Пункт меню: Выход из системы -->
+                    <div class="dropdown-item">
+                        <img src="assets/exit.svg" alt="Logout">
+                        <span data-i18n-key="dd_logout">Logout</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
 
     <div class="page-wrapper">
         <main class="home-main">
@@ -108,20 +191,179 @@
             <!-- Фоновое изображение инкубатора, расположенное внизу -->
             <img src="assets/INCUBATOR.svg" alt="Incubator Background" class="home-main__incubator-bg">
             <!-- Контейнер для отображения токенов, принадлежащих текущему пользователю -->
-            <div class="my-tokens-container centered-content">
-                <!-- Пример карточки токена пользователя -->
-                <a href="token_detail.html" class="token-card-link">
-                    <div class="token-card">
-                        <div class="token-logo"></div>
-                        <div class="token-details">
-                            <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
-                            <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
-                            <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
-                            <p class="token-name">nametokens</p>
+            <div class="listing-container">
+                 <h1 class="all-tokens-title" data-i18n-key="my_tokens_title">My tokens</h1>
+                <!-- Сетка для отображения карточек токенов -->
+                <div class="token-cards-grid">
+                    <!-- Пример карточки токена -->
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
                         </div>
-                        <div class="token-tag">20s age</div>
-                    </div>
-                </a>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
+                    <a href="token_detail.html" class="token-card-link">
+                        <div class="token-card">
+                            <div class="token-logo"></div>
+                            <div class="token-details">
+                                <p class="created-by"><span data-i18n-key="token_created_by">Created by</span>: <span class="creator-name">noname</span></p>
+                                <p class="market-cap"><span data-i18n-key="token_market_cap">Market cap</span>: <strong>$</strong>4.4k</p>
+                                <p class="replies"><span data-i18n-key="token_replies">Replies</span>: <strong>1728</strong></p>
+                                <p class="token-name">nametokens</p>
+                            </div>
+                            <div class="token-tag">20s age</div>
+                        </div>
+                    </a>
             </div>
         </main>
     </div>

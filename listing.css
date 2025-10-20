@@ -4,9 +4,8 @@
     left: 313px;
     top: 22px; /* Смещение вниз */
     width: 1296px;
-    height: 763px;
+    /* height: 763px; */ /* REMOVED for auto height */
     z-index: 5; /* Поверх фоновых элементов */
-    /* background-color: rgba(255, 0, 0, 0.1); /* Для отладки макета */
 }
 
 /* Заголовок 'Все токены' */
@@ -25,10 +24,10 @@
     position: absolute;
     top: 77px; /* Ниже заголовка */
     width: 1296px;
-    height: 686px;
+    /* height: 686px; */ /* REMOVED for auto height */
     display: grid;
-    grid-template-columns: repeat(3, 408px); /* 3 колонки по 408px */
-    grid-template-rows: repeat(5, 114px); /* 5 рядов по 114px */
+    grid-template-columns: repeat(3, 408px);
+    /* grid-template-rows: repeat(5, 114px); */ /* REMOVED to allow infinite rows */
     gap: 31px 24px; /* Вертикальный и горизонтальный отступы */
     justify-content: start; /* Выравнивание сетки по началу */
     align-content: start; /* Выравнивание содержимого сетки по началу */
@@ -103,3 +102,60 @@
   .token-card-link .token-details p {                                                                         
      text-decoration: none;                                                                                  
 }  
+
+/* ============================================
+   АДАПТАЦИЯ LISTING
+   ============================================ */
+
+.listing-container {
+    position: relative;
+    width: clamp(350px, 90vw, 1296px);
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 22px;
+    padding-bottom: 50px;
+}
+
+.all-tokens-title {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.token-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: clamp(15px, 4vw, 46px) clamp(15px, 2vw, 24px);
+    position: relative;
+    width: 100%;
+    height: auto;
+    top: 20px;
+    /* Remove fixed grid settings */
+    grid-template-rows: unset;
+    justify-content: unset;
+    align-content: unset;
+}
+
+.token-card {
+    width: 100%; /* Let the grid control the width */
+    height: 114px;
+}
+
+@media (max-width: 767px) {
+    .listing-container {
+        top: 0;
+        padding-top: 30px;
+    }
+    .all-tokens-title {
+        text-align: center;
+        width: 100%;
+    }
+}
+
+@media (max-width: 360px) {
+    .token-card {
+        width: 350px;
+        height: 100px;
+    }
+}
