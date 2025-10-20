@@ -30,6 +30,7 @@
     transform: scale(0.98);
 }
 
+/* Mobile Layout */
 @media (max-width: 767px) {
     .skip-button {
         font-size: 15px;
@@ -37,5 +38,27 @@
     }
     .liquidity-container .create-token-form-container {
         height: auto;
+    }
+}
+
+/* Small Mobile Layout */
+@media (max-width: 360px) {
+    .skip-button {
+        font-size: 14px;
+        margin-top: 20px;
+    }
+    
+    .liquidity-container .create-token-form-container {
+        padding: 10px;
+    }
+    
+    .input-section input {
+        height: 36px;
+        font-size: 14px;
+    }
+    
+    .create-token-submit-btn {
+        height: 40px;
+        font-size: 15px;
     }
 }

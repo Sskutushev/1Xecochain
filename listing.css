@@ -124,7 +124,9 @@
 }
 
 .token-cards-grid {
+    display: -ms-grid; /* IE10 support */
     display: grid;
+    -ms-grid-columns: 1fr; /* IE10 fallback */
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: clamp(15px, 4vw, 46px) clamp(15px, 2vw, 24px);
     position: relative;
@@ -153,9 +155,25 @@
     }
 }
 
+/* Small Mobile Layout */
 @media (max-width: 360px) {
     .token-card {
         width: 350px;
         height: 100px;
+    }
+    
+    .token-logo {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .token-details p {
+        font-size: 13px;
+    }
+    
+    .token-tag {
+        font-size: 11px;
+        width: 60px;
+        height: 20px;
     }
 }

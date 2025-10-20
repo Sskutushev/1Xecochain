@@ -235,7 +235,9 @@
 /* Mobile */
 @media (max-width: 767px) {
   .token-detail-main-container {
+    -ms-flex-direction: column; /* IE10 support */
     flex-direction: column;
+    -ms-flex-align: center; /* IE10 support */
     align-items: center;
     width: 100%;
     max-width: 350px;
@@ -251,6 +253,7 @@
   }
 
   .token-detail-left-container {
+    display: -ms-grid; /* IE10 support */
     display: contents;
   }
 
@@ -320,5 +323,73 @@
   }
   .token-summary-item {
       font-size: 14px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 360px) {
+  .token-detail-main-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 0 5px;
+    gap: 10px;
+  }
+  
+  .token-detail-right-container {
+    padding: 12px;
+    gap: 8px;
+  }
+  
+  .token-detail-top-block {
+    padding: 0 5px;
+    gap: 8px;
+  }
+  
+  .token-detail-logo {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .token-detail-title {
+    font-size: 18px;
+  }
+  
+  .token-detail-subtitle {
+    font-size: 9px;
+  }
+  
+  .token-detail-graph-block {
+    max-width: 100%;
+    height: 180px;
+  }
+  
+  .token-detail-text-block {
+    padding: 5px;
+    font-size: 13px;
+  }
+  
+  .token-detail-button,
+  .quantity-input {
+    width: 100% !important;
+    max-width: 280px;
+    height: 32px !important;
+    font-size: 14px;
+  }
+  
+  .token-detail-price {
+    font-size: 24px;
+  }
+  
+  .token-detail-raised {
+    font-size: 12px;
+  }
+  
+  .token-detail-summary-title {
+    font-size: 18px;
+  }
+  
+  .token-summary-item {
+    font-size: 13px;
   }
 }
