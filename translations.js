@@ -25,6 +25,7 @@ const translations = {
         'card_btn_discover': 'Discover all tokens',
         // Listing Page
         'listing_title': 'All tokens',
+        'my_tokens_title': 'My tokens',
         'token_created_by': 'Created by',
         'token_market_cap': 'Market cap',
         'token_replies': 'Replies',
@@ -93,6 +94,7 @@ const translations = {
         'card_btn_discover': 'Посмотреть все токены',
         // Listing Page
         'listing_title': 'Все токены',
+        'my_tokens_title': 'Мои токены',
         'token_created_by': 'Создано:',
         'token_market_cap': 'Капитализация:',
         'token_replies': 'Ответы:',
