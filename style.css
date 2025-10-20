@@ -599,6 +599,11 @@ body.dark-theme .card-top-image.dark-theme-image {
     transform: rotate(180deg);
 }
 
+/* Стрелочка в темной теме */
+body.dark-theme .dropdown-arrow {
+    filter: brightness(0) invert(1); /* Делает стрелочку белой на темной теме */
+}
+
 .language-submenu {
     display: none;
     position: absolute;
