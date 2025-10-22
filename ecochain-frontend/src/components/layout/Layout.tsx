@@ -19,7 +19,7 @@ import CreateTokenModal from '@/components/features/CreateTokenModal';
 
 function Layout() {
   return (
-    <div className="min-h-screen bg-light-bg dark:bg-dark-bg transition-colors duration-300">
+    <div className="relative min-h-screen bg-light-bg dark:bg-dark-bg transition-colors duration-300">
       {/* Background components - only show on specific pages */}
       <PageBackground />
       
@@ -27,7 +27,7 @@ function Layout() {
       <Header />
       
       {/* Main content area - Router outlet for page components */}
-      <main className="relative z-1">
+      <main className="relative z-0">
         <Outlet />
       </main>
       

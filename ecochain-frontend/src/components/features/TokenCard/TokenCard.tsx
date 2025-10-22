@@ -70,8 +70,8 @@ function TokenCard({ token }: TokenCardProps) {
       </div>
 
       {/* Time Badge */}
-      <div className="absolute top-2 right-2 mobile:top-1.5 mobile:right-1.5 w-[65px] h-6 mobile:w-[55px] mobile:h-[22px] rounded-20 bg-[#E2E2E2] dark:bg-[rgba(217,217,217,0.05)] flex items-center justify-center">
-        <span className="text-xs mobile:text-[11px] text-light-text dark:text-dark-text">
+      <div className="absolute top-2 right-2 mobile:top-1.5 mobile:right-1.5 w-[65px] h-6 mobile:w-[55px] mobile:h-[22px] rounded-20 bg-light-badgeBg dark:bg-dark-bgSecondary flex items-center justify-center">
+        <span className="text-xs font-light mobile:text-[11px] text-light-text dark:text-dark-text">
           {timeAgo.replace('about ', '').replace(' ago', '')}
         </span>
       </div>

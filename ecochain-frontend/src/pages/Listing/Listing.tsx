@@ -23,6 +23,7 @@ import { useTranslation } from 'react-i18next';
 import { useTokenStore } from '@/store/useTokenStore';
 import { mockTokens } from '@/lib/mockData';
 import TokenCard from '@/components/features/TokenCard/TokenCard';
+import Button from '@/components/common/Button';
 
 const LISTING_PAGE_SIZE = 15; // Show 15 tokens per "page" as per spec
 
@@ -32,7 +33,6 @@ const Listing: React.FC = () => {
   const [visibleTokens, setVisibleTokens] = useState(LISTING_PAGE_SIZE);
   const [isLoading, setIsLoading] = useState(false);
   
-  // Initialize with mock tokens
   useEffect(() => {
     setTokens(mockTokens);
   }, [setTokens]);
@@ -45,19 +45,16 @@ const Listing: React.FC = () => {
     }, 500); // Simulate loading
   };
 
-  // Prepare tokens to display
   const tokensToDisplay = tokens.slice(0, visibleTokens);
-
-  // Check if there are more tokens to load
   const hasMoreTokens = visibleTokens < tokens.length;
 
   return (
-    <div className="max-w-[1295px] mx-auto px-[25px] pt-[80px] relative z-1">
-      <h1 className="text-3xl mobile:text-2xl font-semibold text-primary-green dark:text-dark-accent mb-[80px] mobile:mb-10">
+    <div className="container mx-auto px-4 py-20 relative z-1">
+      <h1 className="text-2xl font-semibold text-primary-green dark:text-dark-accent mb-20 mobile:mb-10">
         {t('listing.title')}
       </h1>
       
-      <div className="grid grid-cols-5 tablet:grid-cols-2 mobile:grid-cols-1 gap-[30px] mb-[50px]">
+      <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-5 gap-[30px] mb-12">
         {tokensToDisplay.map(token => (
           <TokenCard key={token.id} token={token} />
         ))}
@@ -65,32 +62,33 @@ const Listing: React.FC = () => {
       
       {hasMoreTokens && (
         <div className="flex justify-center">
-          <button 
+          <Button 
             onClick={handleShowMore}
-            disabled={isLoading}
-            className={`
-              w-[200px] h-[44px] rounded-20 flex items-center justify-center
-              ${isLoading 
-                ? 'bg-gray-400 dark:bg-gray-600 cursor-not-allowed' 
-                : 'bg-primary-green hover:bg-[#4a7a06] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(91,157,7,0.3)]'}
-            `}
+            isLoading={isLoading}
+            variant="primary"
+            size="md"
+            className="w-[200px]"
           >
-            {isLoading ? (
-              <>
-                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                </svg>
-                {t('listing.loading')}
-              </>
-            ) : (
-              <span className="text-sm font-semibold text-white">
-                {t('listing.showMore')}
-              </span>
-            )}
-          </button>
+            {t('listing.showMore')}
+          </Button>
         </div>
       )}
+      
+      {/* Vector Background - appears at x=590px from left, y=100px from top */}
+      <img
+        src="/assets/Vector.svg"
+        alt="Vector Background"
+        className="fixed top-[100px] left-[590px] w-[1660px] h-[900px] pointer-events-none z-[-30] dark:brightness-[0.22] dark:contrast-[1.2] dark:saturate-[1.5]"
+      />
+      
+      {/* Incubator Element - full width with 25px margins, size 1870x260, flush with bottom */}
+      <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-50px)] max-w-[1870px] h-[260px] bg-transparent z-[-10] pointer-events-none overflow-hidden">
+        <img
+          src="/assets/INCUBATOR.svg"
+          alt="Incubator Background"
+          className="absolute bottom-0 left-0 w-full h-auto dark:brightness-[0.22] dark:contrast-[1.2]"
+        />
+      </div>
     </div>
   );
 };

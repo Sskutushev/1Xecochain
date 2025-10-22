@@ -59,7 +59,7 @@ function DashboardCard({ imageLight, imageDark }: DashboardCardProps) {
       </h3>
 
       {/* Описание - Card description */}
-      <p className="text-base mobile:text-sm font-normal leading-[1.4] text-light-text dark:text-dark-text mb-auto mobile:mb-[30px]">
+      <p className="text-base font-light leading-[1.4] text-light-text dark:text-dark-text mb-auto mobile:mb-[30px]">
         {t('dashboard.description')}
       </p>
 
@@ -69,7 +69,7 @@ function DashboardCard({ imageLight, imageDark }: DashboardCardProps) {
         size="lg"
         fullWidth
         onClick={() => navigate('/listing')}
-        className="mt-auto mobile:!h-11 mobile:!text-sm"
+        className="mt-auto !h-[54px] text-lg mobile:!h-11 mobile:!text-sm"
       >
         {t('dashboard.discoverButton')}
         <ArrowRight className="ml-1.5 w-3 h-3 mobile:w-2.5 mobile:h-2.5" />

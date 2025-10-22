@@ -120,7 +120,7 @@ const DesktopHeader: React.FC = () => {
         <span className="text-xs font-bold text-white dark:text-black">
           {t('header.createToken')}
         </span>
-        <img src="/assets/Icon.svg" alt="arrow" className="w-[5px] h-[10px] brightness-0 dark:brightness-[2.5] invert dark:invert-0" />
+        <img src="/assets/Icon.svg" alt="arrow" className="w-[5px] h-[10px] brightness-0 invert dark:brightness-100 dark:invert" />
       </button>
 
       {/* User Profile */}

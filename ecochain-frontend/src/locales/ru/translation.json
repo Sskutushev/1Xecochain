@@ -30,8 +30,8 @@
     "title": "Создать новый токен",
     "uploadImage": "Загрузите изображение вашего токена",
     "uploadButton": "Загрузить",
-    "namePlaceholder": "Новый токен",
-    "symbolPlaceholder": "НТК",
+    "namePlaceholder": "Newtoken01",
+    "symbolPlaceholder": "NTK",
     "emissionPlaceholder": "300 000 000",
     "infoPlaceholder": "Описание вашего токена",
     "createButton": "Создать токен"

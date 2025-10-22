@@ -36,7 +36,7 @@ const MobileHeader: React.FC = () => {
           <img 
             src="/assets/Icon (1).svg" 
             alt="Create Token" 
-            className="w-4 h-4 brightness-0 dark:brightness-[2.5] invert dark:invert-0"
+            className="w-4 h-4 brightness-0 dark:brightness-[2.5] invert dark:invert-0 dark:filter-none"
           />
         </button>
       </header>

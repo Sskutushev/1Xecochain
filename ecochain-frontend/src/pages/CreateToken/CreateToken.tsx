@@ -184,6 +184,14 @@ const CreateToken: React.FC = () => {
         onSubmit={handleSubmit}
         className="w-[480px] mobile:w-[350px] rounded-10 bg-white dark:bg-[rgba(217,217,217,0.05)] dark:shadow-card-dark dark:backdrop-blur-[73.2px] p-5 mobile:p-4"
       >
+        {/* Create Token Background Element - full width with 25px margins, flush with bottom */}
+        <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-50px)] max-w-[1870px] h-[1000px] bg-transparent z-[-10] pointer-events-none overflow-hidden">
+          <img
+            src="/assets/Create token.svg"
+            alt="Create Token Background"
+            className="absolute bottom-0 left-0 w-full h-auto"
+          />
+        </div>
         {/* Upload Image */}
         <div className="w-[442px] mobile:w-full h-[74px] mobile:h-[70px] flex items-center gap-2.5 mb-5">
           <div className="w-[74px] mobile:w-[60px] h-[74px] mobile:h-[60px] rounded-full bg-light-avatar flex items-center justify-center cursor-pointer relative overflow-hidden"
@@ -216,9 +224,7 @@ const CreateToken: React.FC = () => {
             <span className="text-[12px] font-bold text-primary-green dark:text-white">
               {t('createToken.uploadButton')}
             </span>
-            <svg className="w-1.5 h-1 text-primary-green dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 8 4">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1l3 3 3-3" />
-            </svg>
+            <img src="/assets/Icon (1).svg" alt="upload" className="w-4 h-4" />
           </button>
         </div>
         
@@ -290,6 +296,22 @@ const CreateToken: React.FC = () => {
           {isCreating ? t('listing.loading') : t('createToken.createButton')}
         </Button>
       </form>
+      
+      {/* Vector Background - appears at x=590px from left, y=100px from top */}
+      <img
+        src="/assets/Vector.svg"
+        alt="Vector Background"
+        className="fixed top-[100px] left-[590px] w-[1660px] h-[900px] pointer-events-none z-[-30] dark:brightness-[0.22] dark:contrast-[1.2] dark:saturate-[1.5]"
+      />
+      
+      {/* Create Token Background Element - full width with 25px margins, flush with bottom */}
+      <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-50px)] max-w-[1870px] h-[1000px] bg-transparent z-[-10] pointer-events-none overflow-hidden">
+        <img
+          src="/assets/Create token.svg"
+          alt="Create Token Background"
+          className="absolute bottom-0 left-0 w-full h-auto dark:brightness-[0.22] dark:contrast-[1.2]"
+        />
+      </div>
     </div>
   );
 };
