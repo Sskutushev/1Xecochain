@@ -20,13 +20,13 @@ const MobileHeader: React.FC = () => {
         </button>
         
         {/* Logo */}
-        <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
+        <a href="https://x1ecochain.com/" className="absolute left-1/2 transform -translate-x-1/2">
           <img 
             src="/assets/Group 131.svg" 
             alt="EcoChain Logo" 
             className="h-[18px] dark:brightness-0 dark:invert"
           />
-        </Link>
+        </a>
 
         {/* Create Token Button */}
         <button

@@ -50,13 +50,13 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       >
         {/* Header */}
         <div className="flex items-center justify-between h-[70px] border-b border-light-inputBorder dark:border-dark-inputBorder px-5 flex-shrink-0">
-          <Link to="/" onClick={onClose}>
+          <a href="https://x1ecochain.com/" onClick={(e) => {e.preventDefault(); onClose();}}>
             <img 
               src="/assets/Logo X1 Ecochain.svg" 
               alt="EcoChain Logo" 
               className="h-[27px] dark:brightness-0 dark:invert"
             />
-          </Link>
+          </a>
           <button 
             onClick={onClose}
             className="p-1 rounded-lg hover:rotate-90 transition-transform"

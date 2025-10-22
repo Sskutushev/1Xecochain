@@ -51,13 +51,13 @@ const DesktopHeader: React.FC = () => {
         flex items-center px-[25px]"
     >
       {/* Logo */}
-      <Link to="/" className="mr-[50px] flex-shrink-0">
+      <a href="https://x1ecochain.com/" className="mr-[50px] flex-shrink-0">
         <img 
           src="/assets/Logo X1 Ecochain.svg" 
           alt="EcoChain Logo" 
           className="h-[27px] w-auto max-w-full"
         />
-      </Link>
+      </a>
 
       {/* Navigation */}
       <nav className="flex gap-[50px]">

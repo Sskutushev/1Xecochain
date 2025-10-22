@@ -43,13 +43,13 @@ const TabletHeader: React.FC = () => {
         </button>
 
         {/* Logo - center */}
-        <Link to="/" className="absolute left-1/2 transform -translate-x-1/2">
+        <a href="https://x1ecochain.com/" className="absolute left-1/2 transform -translate-x-1/2">
           <img 
             src="/assets/Group 131.svg" 
             alt="EcoChain Logo" 
             className="h-[18px] w-auto max-w-full"
           />
-        </Link>
+        </a>
 
         {/* Spacer to push create button to right */}
         <div className="flex-grow" />
