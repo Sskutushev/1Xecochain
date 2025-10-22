@@ -1,0 +1,28 @@
+{
+  "name": "ecochain-web3-platform",
+  "version": "1.0.0",
+  "description": "Modern Web3 token creation platform for X1 blockchain",
+  "private": true,
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "serve": "vite preview",
+    "clean": "rm -rf dist node_modules .vite"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sskutushev/1Xecochain-web3.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "web3",
+    "blockchain",
+    "ethereum",
+    "token",
+    "defi",
+    "tailwindcss"
+  ],
+  "author": "EcoChain Team",
+  "license": "UNLICENSED"
+}

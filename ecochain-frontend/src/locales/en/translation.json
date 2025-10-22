@@ -1,0 +1,69 @@
+{
+  "header": {
+    "dashboard": "Dashboard",
+    "listing": "Listing",
+    "myTokens": "My Tokens",
+    "createToken": "Create new token",
+    "search": "Search tokens"
+  },
+  "dropdown": {
+    "profile": "Profile Settings",
+    "language": "Language",
+    "theme": "Theme",
+    "balance": "Balance",
+    "logout": "Logout"
+  },
+  "dashboard": {
+    "newTokens": "New tokens",
+    "description": "Create, Manage, and Distribute X1 based tokens with X1 no code solution",
+    "discoverButton": "Discover all tokens"
+  },
+  "listing": {
+    "title": "All tokens",
+    "createdBy": "Created by:",
+    "marketCap": "market cap:",
+    "replies": "replies:",
+    "showMore": "Show More",
+    "loading": "Loading..."
+  },
+  "createToken": {
+    "title": "Create new token",
+    "uploadImage": "Upload your token image",
+    "uploadButton": "Upload",
+    "namePlaceholder": "Newtoken01",
+    "symbolPlaceholder": "NTK",
+    "emissionPlaceholder": "300 000 000",
+    "infoPlaceholder": "Your token description",
+    "createButton": "Create token"
+  },
+  "addLiquidity": {
+    "title": "Add token liquidity",
+    "x1Amount": "X1 Token Amount",
+    "nktAmount": "NKT Token Amount",
+    "priceUSD": "Token Price (USD)",
+    "priceX1": "Token Price (X1)",
+    "createButton": "Create token",
+    "skipButton": "Skip"
+  },
+  "tokenDetail": {
+    "summary": "Token summary",
+    "symbol": "Symbol",
+    "blockchain": "Blockchain",
+    "price": "Price",
+    "holders": "Holders",
+    "volume": "Volume",
+    "quantityPlaceholder": "Quantity of tokens",
+    "buyButton": "Buy",
+    "sellButton": "Sell"
+  },
+  "modal": {
+    "createTitle": "Create new token",
+    "withoutLiquidity": "Launch without liquidity",
+    "withLiquidity": "Launch with own liquidity"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist",
+    "button": "Go to Dashboard"
+  }
+}

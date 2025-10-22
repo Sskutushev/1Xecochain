@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations */
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+.pulse {
+  animation: pulse 0.6s ease;
+  animation-iteration-count: infinite;
+}
+
+/* Base styles */
+body {
+  font-family: 'Nunito Sans', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(91, 157, 7, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 157, 7, 0.5);
+}
+
+body.dark ::-webkit-scrollbar-thumb {
+  background: rgba(88, 255, 132, 0.3);
+}
+
+body.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(88, 255, 132, 0.5);
+}
+
+/* Focus styles for accessibility */
+* {
+  outline-offset: 2px;
+  outline-color: #5B9D07;
+}
+
+.dark * {
+  outline-color: #58FF84;
+}
+
+*:focus-visible {
+  outline: 2px solid;
+}

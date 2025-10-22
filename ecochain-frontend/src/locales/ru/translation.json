@@ -1,0 +1,69 @@
+{
+  "header": {
+    "dashboard": "Панель",
+    "listing": "Список",
+    "myTokens": "Мои токены",
+    "createToken": "Создать токен",
+    "search": "Поиск токенов"
+  },
+  "dropdown": {
+    "profile": "Настройки профиля",
+    "language": "Язык",
+    "theme": "Тема",
+    "balance": "Баланс",
+    "logout": "Выход"
+  },
+  "dashboard": {
+    "newTokens": "Новые токены",
+    "description": "Создавайте, управляйте и распределяйте токены на базе X1 без кода",
+    "discoverButton": "Открыть все токены"
+  },
+  "listing": {
+    "title": "Все токены",
+    "createdBy": "Создал:",
+    "marketCap": "капитализация:",
+    "replies": "ответов:",
+    "showMore": "Показать ещё",
+    "loading": "Загрузка..."
+  },
+  "createToken": {
+    "title": "Создать новый токен",
+    "uploadImage": "Загрузите изображение вашего токена",
+    "uploadButton": "Загрузить",
+    "namePlaceholder": "Новый токен",
+    "symbolPlaceholder": "НТК",
+    "emissionPlaceholder": "300 000 000",
+    "infoPlaceholder": "Описание вашего токена",
+    "createButton": "Создать токен"
+  },
+  "addLiquidity": {
+    "title": "Добавить ликвидность токена",
+    "x1Amount": "Количество X1 токенов",
+    "nktAmount": "Количество НТК токенов",
+    "priceUSD": "Цена токена (USD)",
+    "priceX1": "Цена токена (X1)",
+    "createButton": "Создать токен",
+    "skipButton": "Пропустить"
+  },
+  "tokenDetail": {
+    "summary": "Сводка по токену",
+    "symbol": "Символ",
+    "blockchain": "Блокчейн",
+    "price": "Цена",
+    "holders": "Держателей",
+    "volume": "Объём",
+    "quantityPlaceholder": "Количество токенов",
+    "buyButton": "Купить",
+    "sellButton": "Продать"
+  },
+  "modal": {
+    "createTitle": "Создать новый токен",
+    "withoutLiquidity": "Запустить без ликвидности",
+    "withLiquidity": "Запустить со своей ликвидностью"
+  },
+  "notFound": {
+    "title": "Страница не найдена",
+    "description": "Страница, которую вы ищете, не существует",
+    "button": "Вернуться на главную"
+  }
+}
