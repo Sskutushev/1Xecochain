@@ -10,8 +10,7 @@ const Dashboard: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="container mx-auto px-4 py-20 relative z-1">
-
+    <div className="relative z-1">
       
       {/* Vector Background - appears at x=590px from left, y=100px from top */}
       <img
@@ -20,19 +19,34 @@ const Dashboard: React.FC = () => {
         className="fixed top-[100px] left-[590px] w-[1660px] h-[900px] pointer-events-none z-[-30] dark:brightness-[0.22] dark:contrast-[1.2] dark:saturate-[1.5]"
       />
       
-      <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-x-[45px] gap-y-20">
-        <DashboardCard 
-          imageLight="/assets/Rectangle 1.png" 
-          imageDark="/assets/Rectangle 1 (1).png" 
-        />
-        <DashboardCard 
-          imageLight="/assets/Rectangle 1 (2).png" 
-          imageDark="/assets/Rectangle 1 (1).svg" 
-        />
-        <DashboardCard 
-          imageLight="/assets/Rectangle 1 (2).svg" 
-          imageDark="/assets/Rectangle 1.svg" 
-        />
+      {/* Cards Container - centered and responsive with smooth adaptation */}
+      <div className="absolute top-[190px] left-1/2 transform -translate-x-1/2 w-[min(100vw-50px,1295px)]">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-[15px] desktop:gap-[45px]">
+          <DashboardCard 
+            imageLight="/assets/Rectangle 1.svg" 
+            imageDark="/assets/Rectangle 1.png" 
+            title="New Tokens"
+            description="Discover, Create, and Manage ERC20 Polygon based tokens with X1 no code solution"
+            buttonText="Discover all tokens"
+            onButtonClick={() => navigate('/listing')}
+          />
+          <DashboardCard 
+            imageLight="/assets/Rectangle 1 (1).svg" 
+            imageDark="/assets/Rectangle 1 (1).png" 
+            title="Create tokens"
+            description="Create, Manage, and Distribute ERC20 Polygon based tokens with X1 no code solution"
+            buttonText="Create new token"
+            onButtonClick={() => {/* Открыть попап создания токена */}}
+          />
+          <DashboardCard 
+            imageLight="/assets/Rectangle 1 (2).svg" 
+            imageDark="/assets/Rectangle 1 (2).png" 
+            title="My tokens"
+            description="Create, Manage, and Distribute BEP20 based tokens with X1 no code solution"
+            buttonText="Manage my tokens"
+            onButtonClick={() => navigate('/my-tokens')}
+          />
+        </div>
       </div>
       
       {/* Incubator Element - full width with 25px margins, size 1870x260, flush with bottom */}
