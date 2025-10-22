@@ -1,35 +1,37 @@
 import { useLocation } from 'react-router-dom';
 
 const INCUBATOR_BG = '/assets/INCUBATOR.svg';
-const CREATE_TOKEN_BG = '/assets/Create token.svg';
 const VECTOR_BG = '/assets/Vector.svg';
 
 const PageBackground = () => {
   const location = useLocation();
 
-  const isCreatePage = location.pathname === '/create-token' || location.pathname === '/add-liquidity';
+  // Don't show backgrounds on token detail page
   const isTokenDetailPage = location.pathname.startsWith('/token/');
-
-  let mainBgImage = null;
-  if (isCreatePage) {
-    mainBgImage = CREATE_TOKEN_BG;
-  } else if (!isTokenDetailPage) {
-    mainBgImage = INCUBATOR_BG;
-  }
 
   return (
     <>
-      {/* Vector Background (BEHIND) */}
+      {/* Vector Background - appears at x=994px from left, y=100px from top */}
       <div
-        className="fixed top-0 right-0 h-[900px] w-1/2 max-w-[960px] bg-right-top bg-no-repeat bg-contain z-[-2] dark:opacity-[0.22]"
-        style={{ backgroundImage: `url(${VECTOR_BG})` }}
+        className="fixed top-[100px] left-[994px] w-[1200px] h-[900px] bg-no-repeat bg-contain z-[-2] opacity-40"
+        style={{ 
+          backgroundImage: `url(${VECTOR_BG})`,
+          backgroundBlendMode: 'soft-light',
+          backgroundColor: '#D9D9D9',
+          width: '2000px',
+          height: '1200px'
+        }}
       />
 
-      {/* Main Background (IN FRONT) */}
-      {mainBgImage && (
+      {/* Incubator Background - at bottom of page, full width with side margins, flush with bottom */}
+      {!isTokenDetailPage && (
         <div
-          className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1870px] h-[1000px] bg-bottom bg-no-repeat bg-contain z-[-1] dark:opacity-[0.22]"
-          style={{ backgroundImage: `url(${mainBgImage})` }}
+          className="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[1870px] h-[1000px] bg-bottom bg-no-repeat bg-contain z-[-1]"
+          style={{ 
+            backgroundImage: `url(${INCUBATOR_BG})`,
+            backgroundBlendMode: 'overlay',
+            backgroundColor: '#FFFFFF'
+          }}
         />
       )}
     </>
