@@ -9,6 +9,30 @@ export const BREAKPOINTS = {
 } as const;
 
 /**
+ * Адаптивные размеры для хедера на разных разрешениях
+ */
+export const HEADER_RESPONSIVE = {
+  MOBILE: {
+    width: 'calc(100% - 50px)',
+    maxWidth: 350,
+    height: 36,
+    padding: 16,
+  },
+  TABLET: {
+    width: 'calc(100% - 50px)',
+    maxWidth: 768,
+    height: 'clamp(40px, 5vw, 60px)',
+    padding: 'clamp(10px, 2.5vw, 20px)',
+  },
+  DESKTOP: {
+    width: 'calc(100% - 50px)',
+    maxWidth: 1870,
+    height: 'clamp(50px, 3.5vw, 70px)',
+    padding: 'clamp(20px, 3.5vw, 50px)',
+  },
+} as const;
+
+/**
  * Размеры контейнеров на разных разрешениях
  */
 export const CONTAINER_SIZES = {

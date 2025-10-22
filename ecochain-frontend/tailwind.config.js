@@ -20,7 +20,9 @@ export default {
           text50: "rgba(28, 68, 48, 0.5)",
           avatar: "#D9D9D9",
           inputBg: "#FFFFFF",
+          inputBgAlt: "#F5F5F5",
           inputBorder: "rgba(28, 68, 48, 0.1)",
+          badgeBg: "#E2E2E2",
         },
         // Dark theme colors
         dark: {
@@ -32,6 +34,7 @@ export default {
           cardBg: "rgba(217, 217, 217, 0.05)",
           inputBg: "rgba(255, 255, 255, 0.05)",
           inputBorder: "rgba(255, 255, 255, 0.1)",
+          overlay: "rgba(255, 255, 255, 0.22)",
         },
         // Sell button color
         sell: {
@@ -40,12 +43,48 @@ export default {
         },
       },
       spacing: {
-        18: "4.5rem", // 72px
-        25: "6.25rem", // 100px (для отступов от края)
-        30: "7.5rem", // 120px
-        45: "11.25rem", // 180px
-        50: "12.5rem", // 200px
-        80: "20rem", // 320px
+        '15px': '0.9375rem', // 15px
+        '18px': '1.125rem',  // 18px
+        '25px': '1.5625rem', // 25px
+        '30px': '1.875rem',  // 30px
+        '35px': '2.1875rem',  // 35px
+        '45px': '2.8125rem',  // 45px
+        '50px': '3.125rem',  // 50px
+        '60px': '3.75rem',   // 60px
+        '80px': '5rem',      // 80px
+        '300px': '18.75rem', // 300px
+      },
+      // Responsive font sizes using clamp for smooth scaling
+      fontSize: {
+        // Кастомные размеры для проекта
+        xs: [
+          'clamp(0.75rem, 1vw, 0.8rem)', 
+          { lineHeight: '1.4' }
+        ],
+        sm: [
+          'clamp(0.8rem, 1.2vw, 0.9rem)', 
+          { lineHeight: '1.5' }
+        ],
+        base: [
+          'clamp(0.9rem, 1.4vw, 1.1rem)', 
+          { lineHeight: '1.6' }
+        ],
+        lg: [
+          'clamp(1rem, 1.5vw, 1.2rem)', 
+          { lineHeight: '1.4' }
+        ],
+        xl: [
+          'clamp(1.2rem, 1.8vw, 1.5rem)', 
+          { lineHeight: '1.3' }
+        ],
+        '2xl': [
+          'clamp(1.5rem, 2.2vw, 1.8rem)', 
+          { lineHeight: '1.2' }
+        ],
+        '3xl': [
+          'clamp(2rem, 3vw, 3.125rem)', 
+          { lineHeight: '1.2' }
+        ],
       },
       maxWidth: {
         mobile: "350px",
@@ -76,16 +115,18 @@ export default {
       },
       screens: {
         mobile: "360px",
+        sm: "640px",
+        md: "768px",  // Добавляем md брейкпоинт для адаптивности навигации
         tablet: "768px",
         desktop: "1240px",
         xl: "1920px",
       },
       fontSize: {
         // Кастомные размеры для проекта
-        xs: ["12px", { lineHeight: "1.4" }],
+        xs: ["12.6px", { lineHeight: "1.4" }],
         sm: ["14px", { lineHeight: "1.5" }],
         base: ["18px", { lineHeight: "1.6" }],
-        lg: ["20px", { lineHeight: "1.4" }],
+        lg: ["19px", { lineHeight: "1.4" }],
         xl: ["24px", { lineHeight: "1.3" }],
         "2xl": ["30px", { lineHeight: "1.2" }],
         "3xl": ["50px", { lineHeight: "1.2" }],
