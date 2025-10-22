@@ -1,192 +1,192 @@
-# EcoChain Token Creation Platform
+# Платформа создания токенов EcoChain
 
-## 📋 Overview
+## 📋 Обзор
 
-The EcoChain Token Creation Platform is a modern Web3-ready application that enables users to create, manage, and distribute tokens on the X1 blockchain. The platform features a complete token lifecycle management system with dashboard, token listing, creation, liquidity management, and detailed token information pages.
+Платформа создания токенов EcoChain - это современное Web3-приложение, позволяющее пользователям создавать, управлять и распространять токены на блокчейне X1. Платформа предоставляет полную систему управления жизненным циклом токенов с дашбордом, списком токенов, созданием, управлением ликвидностью и подробной информацией о токенах.
 
-## 🚀 Key Features
+## 🚀 Основные функции
 
-### 📱 Responsive Design
-- Desktop (>1240px), Tablet (768px-1239px), Mobile (<768px)
-- Adaptive layouts with proper breakpoints
-- Touch-friendly interactions for mobile users
+### 📱 Адаптивный дизайн
+- Десктоп (>1375px), Планшет (578px-1374px), Мобильный (<578px)
+- Адаптивные макеты с правильными точками останова
+- Удобные сенсорные взаимодействия для мобильных пользователей
 
-### 🎨 Theme System
-- Light/Dark theme switching
-- Theme persistence in localStorage
-- Smooth transitions between themes
+### 🎨 Система тем
+- Переключение между светлой/темной темой
+- Сохранение темы в localStorage
+- Плавные переходы между темами
 
-### 🌐 Internationalization
-- Multi-language support (EN/RU)
-- i18n translation system
-- Language persistence
+### 🌐 Интернационализация
+- Поддержка нескольких языков (EN/RU)
+- Система переводов i18n
+- Сохранение языка
 
-### 🪙 Token Management
-- Dashboard with featured tokens
-- Token listing with grid view
-- Personal token management
-- Token creation form with validation
-- Liquidity management
-- Token detail pages with trading
+### 🪙 Управление токенами
+- Дашборд с избранными токенами
+- Список токенов с сеткой
+- Управление личными токенами
+- Форма создания токенов с валидацией
+- Управление ликвидностью
+- Страницы деталей токенов с торговлей
 
-### 🔧 Web3 Ready Architecture
-- Wallet connection hooks
-- Token contract interaction hooks
-- Mock Web3 integration ready for blockchain
-- Loading states and error handling
+### 🔧 Архитектура Web3
+- Хуки подключения кошелька
+- Хуки взаимодействия с контрактами токенов
+- Готовая интеграция Mock Web3 для блокчейна
+- Состояния загрузки и обработки ошибок
 
-## 🛠️ Technology Stack
+## 🛠️ Стек технологий
 
-### Frontend
-- **React 18** - Component-based UI library
-- **TypeScript 5** - Type-safe JavaScript
-- **Vite 5** - Fast build tool and development server
-- **Tailwind CSS 3.4** - Utility-first CSS framework
-- **Zustand** - Lightweight state management
-- **React Router DOM 6** - Client-side routing
-- **i18next/react-i18next** - Internationalization
-- **Lucide React** - SVG icon library
+### Фронтенд
+- **React 18** - Библиотека компонентного UI
+- **TypeScript 5** - Типобезопасный JavaScript
+- **Vite 5** - Быстрый инструмент сборки и сервер разработки
+- **Tailwind CSS 3.4** - CSS-фреймворк с утилитарным подходом
+- **Zustand** - Легковесное управление состоянием
+- **React Router DOM 6** - Роутинг на стороне клиента
+- **i18next/react-i18next** - Интернационализация
+- **Lucide React** - Библиотека SVG-иконок
 
-### Architecture
-- Modular component structure
-- Feature-based folder organization
-- Reusable components and hooks
-- Proper TypeScript typing
-- Responsive design with breakpoints
+### Архитектура
+- Модульная структура компонентов
+- Организация по функциям
+- Повторно используемые компоненты и хуки
+- Правильная типизация TypeScript
+- Адаптивный дизайн с точками останова
 
-## 📁 Project Structure
+## 📁 Структура проекта
 
 ```
 ecochain-frontend/
-├── public/                    # Static assets
-│   └── assets/               # Images, logos, icons
-├── src/                      # Source code
-│   ├── components/           # Reusable UI components
-│   │   ├── common/           # Basic components
-│   │   ├── layout/          # Layout components
-│   │   └── features/        # Feature-specific components
-│   ├── pages/                # Page components
-│   ├── hooks/               # Custom React hooks
-│   │   └── web3/            # Web3 integration hooks
-│   ├── store/                # Zustand stores
-│   ├── types/                # TypeScript types
-│   ├── lib/                  # Utilities and constants
-│   ├── locales/              # Translation files
-│   └── styles/               # Global styles
-├── tailwind.config.js        # Tailwind CSS configuration
-└── vite.config.ts            # Vite configuration
+├── public/                    # Статические ресурсы
+│   └── assets/               # Изображения, логотипы, иконки
+├── src/                      # Исходный код
+│   ├── components/           # Повторно используемые UI-компоненты
+│   │   ├── common/           # Базовые компоненты
+│   │   ├── layout/           # Компоненты макета
+│   │   └── features/         # Компоненты по функциям
+│   ├── pages/                # Компоненты страниц
+│   ├── hooks/               # Пользовательские React-хуки
+│   │   └── web3/            # Хуки интеграции Web3
+│   ├── store/                # Хранилища Zustand
+│   ├── types/                # Типы TypeScript
+│   ├── lib/                  # Утилиты и константы
+│   ├── locales/              # Файлы переводов
+│   └── styles/               # Глобальные стили
+├── tailwind.config.js        # Конфигурация Tailwind CSS
+└── vite.config.ts            # Конфигурация Vite
 ```
 
-## 🚀 Getting Started
+## 🚀 Начало работы
 
-### Prerequisites
-- Node.js 16+ installed
-- npm or yarn package manager
+### Предварительные требования
+- Установлен Node.js 16+
+- Менеджер пакетов npm или yarn
 
-### Installation
+### Установка
 
 ```bash
 cd ecochain-frontend
 npm install
 ```
 
-### Development
+### Разработка
 
 ```bash
 npm run dev
 ```
 
-The application will be available at http://localhost:5173/
+Приложение будет доступно по адресу http://localhost:5173/
 
-### Production Build
+### Сборка для продакшена
 
 ```bash
 npm run build
 ```
 
-## 🔄 Web3 Integration
+## 🔄 Интеграция Web3
 
-The frontend is completely ready for Web3 integration:
+Фронтенд полностью готов к интеграции Web3:
 
-1. **Web3 Hooks** - Located in `src/hooks/web3/`
-   - `useWallet()` for wallet connection
-   - `useTokenContract()` for token operations
+1. **Web3-хуки** - Расположены в `src/hooks/web3/`
+   - `useWallet()` для подключения кошелька
+   - `useTokenContract()` для операций с токенами
 
-2. **Mock Implementation** - Ready to replace with real blockchain calls
-   - Token creation
-   - Liquidity addition
-   - Buy/sell tokens
-   - Transaction handling
+2. **Mock-реализация** - Готова к замене на реальные вызовы блокчейна
+   - Создание токенов
+   - Добавление ликвидности
+   - Покупка/продажа токенов
+   - Обработка транзакций
 
-3. **Smart Contract Ready** - All forms and validation prepared
+3. **Готовность к смарт-контрактам** - Все формы и валидации подготовлены
 
-## 📱 Responsive Behavior
+## 📱 Адаптивное поведение
 
-### Breakpoints
-- **Mobile**: 360px and up
-- **Tablet**: 768px to 1239px
-- **Desktop**: 1240px and up
-- **Large Desktop**: 1920px and up
+### Точки останова
+- **Мобильный**: 360px и выше
+- **Планшет**: 578px до 1374px
+- **Десктоп**: 1375px и выше
+- **Большой десктоп**: 1920px и выше
 
-### Adaptive Features
-- Flexible grid layouts
-- Component resizing
-- Touch-friendly controls
-- Orientation support
+### Адаптивные функции
+- Гибкие сеточные макеты
+- Изменение размера компонентов
+- Удобные сенсорные элементы управления
+- Поддержка ориентации
 
-## 🎨 Design System
+## 🎨 Дизайн-система
 
-### Color Palette
-- **Primary Green**: #5B9D07
-- **Primary Purple**: #8247E5
-- **Primary Yellow**: #F0B90B
-- **Dark Green**: #05521A
-- **Light Mode**: #F1F1F1 background, #FFFFFF cards
-- **Dark Mode**: #0F0F16 background, rgba(217,217,217,0.05) cards
+### Цветовая палитра
+- **Основной зеленый**: #5B9D07
+- **Основной фиолетовый**: #8247E5
+- **Основной желтый**: #F0B90B
+- **Темно-зеленый**: #05521A
+- **Светлая тема**: #F1F1F1 фон, #FFFFFF карточки
+- **Темная тема**: #0F0F16 фон, rgba(217,217,217,0.05) карточки
 
-### Typography
-- **Font Family**: Nunito Sans (Google Fonts)
-- **Weights**: 300, 400, 600, 700
-- **Sizes**: Responsive scaling with clamp()
+### Типографика
+- **Семейство шрифтов**: Nunito Sans (Google Fonts)
+- **Насыщенность**: 300, 400, 600, 700
+- **Размеры**: Адаптивное масштабирование с clamp()
 
-### Spacing
-- **Scale**: 4px increments (xs:4, sm:8, md:12, lg:16, xl:20, etc.)
-- **Responsive**: Proper spacing for all device sizes
+### Расстояния
+- **Шкала**: 4px шаги (xs:4, sm:8, md:12, lg:16, xl:20, и т.д.)
+- **Адаптивность**: Правильные расстояния для всех размеров устройств
 
-## 🧪 Testing
+## 🧪 Тестирование
 
-The application includes comprehensive mock data and UI states:
+Приложение включает комплексные mock-данные и состояния UI:
 
-- All form validations
-- Loading states
-- Error states
-- Empty states
-- Responsive variations
-- Theme variations
+- Все валидации форм
+- Состояния загрузки
+- Состояния ошибок
+- Пустые состояния
+- Адаптивные вариации
+- Вариации тем
 
-## 🔮 Future Enhancements
+## 🔮 Будущие улучшения
 
-### Web3 Integration
-- MetaMask wallet connection
-- Real smart contract deployment
-- Live token creation transactions
-- Blockchain data feeds
+### Интеграция Web3
+- Подключение кошелька MetaMask
+- Развертывание реальных смарт-контрактов
+- Транзакции создания токенов в реальном времени
+- Потоки данных блокчейна
 
-### Advanced Features
-- User authentication system
-- Token analytics and reporting
-- Social features and comments
-- Notification system
-- Advanced trading dashboard
+### Расширенные функции
+- Система аутентификации пользователей
+- Аналитика токенов и отчетность
+- Социальные функции и комментарии
+- Система уведомлений
+- Расширенный торговый дашборд
 
-## 📄 License
+## 📄 Лицензия
 
-This project is proprietary and confidential. All rights reserved.
+Этот проект является собственностью и конфиденциальным. Все права защищены.
 
-## 🆘 Support
+## 🆘 Поддержка
 
-For issues or questions about the platform:
-1. Check browser console for errors
-2. Verify all dependencies are installed
-3. Ensure correct file paths in imports
-4. Contact development team for assistance
+При возникновении проблем или вопросов о платформе:
+1. Проверьте консоль браузера на наличие ошибок
+2. Убедитесь, что все зависимости установлены
+3. Проверьте правильность путей к файлам в импортах
+4. Обратитесь к команде разработчиков за помощью
