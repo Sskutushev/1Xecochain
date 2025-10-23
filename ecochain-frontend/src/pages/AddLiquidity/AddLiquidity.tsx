@@ -36,7 +36,7 @@ const AddLiquidity: React.FC = () => {
       
       {/* Main Container */}
       <div className="w-full max-w-[350px] md:max-w-[480px]">
-        <h1 className="text-xl md:text-3xl font-semibold text-[#5B9D07] dark:text-white text-center mb-[25px]">
+        <h1 className="text-lg md:text-xl font-semibold text-[#5B9D07] dark:text-white text-center mb-[25px]">
           {t('addLiquidity.title', 'Add token liquidity')}
         </h1>
 
