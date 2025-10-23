@@ -4,7 +4,7 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: './',
+  base: '/1Xecochain/',
   plugins: [react()],
   resolve: {
     alias: {

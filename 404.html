@@ -4,17 +4,22 @@
   <meta charset="UTF-8">
   <title>Page Not Found</title>
   <script>
-    // Сохраняем текущий URL
-    sessionStorage.redirect = location.href;
-    
-    // Проверяем, не находится ли пользователь уже на главной странице GitHub Pages
-    if (location.pathname !== '/1Xecochain/' && !location.pathname.startsWith('/1Xecochain/index.html')) {
-      // Перенаправляем на главную страницу приложения
-      window.location.href = '/1Xecochain/';
+    // Перенаправляем все внутренние маршруты на index.html
+    // Это позволяет React Router обработать маршруты корректно
+    if (location.pathname.startsWith('/1Xecochain/') && 
+        location.pathname !== '/1Xecochain/' && 
+        !location.pathname.includes('.')) {
+      // Сохраняем текущий маршрут для возможного использования
+      sessionStorage.redirect = location.href;
+      // Перенаправляем на главную, где клиентский роутинг обработает маршрут
+      window.location.href = '/1Xecochain/index.html';
+    } else if (location.pathname === '/1Xecochain/') {
+      // Если пользователь на главной странице - перенаправляем на index.html
+      window.location.href = '/1Xecochain/index.html';
     }
   </script>
 </head>
 <body>
-  <p>Redirecting to the main page...</p>
+  <p>Redirecting to the application...</p>
 </body>
 </html>

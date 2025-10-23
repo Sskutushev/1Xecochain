@@ -53,7 +53,7 @@ const DesktopHeader: React.FC = () => {
       {/* Logo */}
       <a href="https://x1ecochain.com/" className="mr-[50px] flex-shrink-0">
         <img 
-          src="assets/Logo X1 Ecochain.svg" 
+          src="/1Xecochain/assets/Logo X1 Ecochain.svg" 
           alt="EcoChain Logo" 
           className="h-[27px] w-auto max-w-full"
         />
@@ -101,7 +101,7 @@ const DesktopHeader: React.FC = () => {
 
       {/* Search - Maintain minimum width of 280px */}
       <div className="ml-[50px] w-full max-w-[480px] min-w-[280px] h-[36px] bg-light-bg dark:bg-dark-inputBg rounded-20 flex items-center px-3">
-        <img src="assets/Icon-loop.svg" alt="Search" className="w-4 h-4 mr-2" />
+        <img src="/1Xecochain/assets/Icon-loop.svg" alt="Search" className="w-4 h-4 mr-2" />
         <input
           type="text"
           placeholder={t('header.search')}
@@ -120,7 +120,7 @@ const DesktopHeader: React.FC = () => {
         <span className="text-xs font-bold text-white dark:text-black">
           {t('header.createToken')}
         </span>
-        <img src="assets/Icon.svg" alt="arrow" className="w-[5px] h-[10px] brightness-0 invert dark:brightness-100 dark:invert" />
+        <img src="/1Xecochain/assets/Icon.svg" alt="arrow" className="w-[5px] h-[10px] brightness-0 invert dark:brightness-100 dark:invert" />
       </button>
 
       {/* User Profile */}
@@ -137,12 +137,12 @@ const DesktopHeader: React.FC = () => {
           </span>
         </div>
         <img
-          src={user?.avatar || 'assets/Frame 9.svg'}
+          src={user?.avatar || '/1Xecochain/assets/Frame 9.svg'}
           alt="User Avatar"
           className="w-9 h-9 rounded-full bg-light-avatar"
         />
         <img 
-          src="assets/Icon-sett.svg" 
+          src="/1Xecochain/assets/Icon-sett.svg" 
           alt="Open menu"
           className="w-4 h-4 text-light-text dark:text-dark-text"
         />
