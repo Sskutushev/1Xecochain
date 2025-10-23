@@ -37,13 +37,13 @@ const AddLiquidity: React.FC = () => {
     <div className="w-full min-h-screen flex justify-center items-start pt-[132px] relative z-1">
       {/* Decorative Backgrounds */}
       <img
-        src="/1Xecochain/assets/Vector.svg"
+        src="assets/Vector.svg"
         alt="Vector Background"
         className="fixed top-[100px] left-[590px] w-[1660px] h-[900px] pointer-events-none z-[-30] dark:brightness-[0.22] dark:contrast-[1.2] dark:saturate-[1.5]"
       />
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-50px)] max-w-[1870px] h-[1000px] bg-transparent z-[-10] pointer-events-none overflow-hidden">
         <img
-          src="/1Xecochain/assets/Create token.svg"
+          src="assets/Create token.svg"
           alt="Create Token Background"
           className="absolute bottom-0 left-0 w-full h-auto dark:opacity-[.46]"
         />

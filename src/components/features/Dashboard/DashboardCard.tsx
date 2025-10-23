@@ -79,7 +79,7 @@ export default function DashboardCard({
               {buttonText}
             </span>
             <img 
-              src="/1Xecochain/assets/Icon.svg" 
+              src="assets/Icon.svg" 
               alt="arrow" 
               className="w-3 h-3 text-white dark:text-black brightness-100 dark:brightness-0 transform translate-x-0.5" 
             />

@@ -47,13 +47,13 @@ const CreateToken: React.FC = () => {
     <div className="w-full min-h-screen flex justify-center items-start pt-[132px] relative z-1">
       {/* Decorative Backgrounds */}
       <img
-        src="/1Xecochain/assets/Vector.svg"
+        src="assets/Vector.svg"
         alt="Vector Background"
         className="fixed top-[100px] left-[590px] w-[1660px] h-[900px] pointer-events-none z-[-30] dark:brightness-[0.22] dark:contrast-[1.2] dark:saturate-[1.5]"
       />
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-50px)] max-w-[1870px] h-[1000px] bg-transparent z-[-10] pointer-events-none overflow-hidden">
         <img
-          src="/1Xecochain/assets/Create token.svg"
+          src="assets/Create token.svg"
           alt="Create Token Background"
           className="absolute bottom-0 left-0 w-full h-auto dark:opacity-[.46]"
         />
@@ -80,7 +80,7 @@ const CreateToken: React.FC = () => {
                 onClick={() => document.getElementById('file-upload')?.click()}
                 className="absolute top-[20px] right-0 w-[100px] h-[30px] rounded-[15px] bg-white dark:bg-[#1C4430] border border-[#5B9D07] flex items-center justify-center gap-1 text-[#5B9D07] dark:text-white text-xs font-bold">
                 {t('createToken.uploadButton', 'Загрузить')}
-                <div style={{ maskImage: 'url(/1Xecochain/assets/wallet_2.svg)', maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center' }} className="w-5 h-4 bg-[#5B9D07] dark:bg-white"></div>
+                <div style={{ maskImage: 'url(assets/wallet_2.svg)', maskSize: 'contain', maskRepeat: 'no-repeat', maskPosition: 'center' }} className="w-5 h-4 bg-[#5B9D07] dark:bg-white"></div>
               </button>
             </div>
 

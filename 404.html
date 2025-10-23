@@ -4,9 +4,15 @@
   <meta charset="UTF-8">
   <title>Page Not Found</title>
   <script>
+    // Сохраняем текущий URL
     sessionStorage.redirect = location.href;
+    
+    // Проверяем, не находится ли пользователь уже на главной странице GitHub Pages
+    if (location.pathname !== '/1Xecochain/' && !location.pathname.startsWith('/1Xecochain/index.html')) {
+      // Перенаправляем на главную страницу приложения
+      window.location.href = '/1Xecochain/';
+    }
   </script>
-  <meta http-equiv="refresh" content="0;URL='/1Xecochain/'">
 </head>
 <body>
   <p>Redirecting to the main page...</p>
