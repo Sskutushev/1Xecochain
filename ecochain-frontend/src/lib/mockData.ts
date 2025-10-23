@@ -255,7 +255,7 @@ export const mockTokenDetail: TokenDetail = {
 
 export const myMockTokens: Token[] = mockTokens.slice(0, 5).map(token => ({
   ...token,
-  id: `my-${token.id}`,
+
   createdBy: 'Noname',
 }));
 
