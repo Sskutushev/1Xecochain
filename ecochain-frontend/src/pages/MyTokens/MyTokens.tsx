@@ -1,27 +1,7 @@
-// src/pages/MyTokens/MyTokens.tsx
-// 
-// PURPOSE: Page displaying tokens created by the current user
-// RESPONSIBILITY: Shows user's tokens with same layout as listing page
-// IMPLEMENTS: User token management specifications
-// 
-// KEY FEATURES:
-// - Grid layout of user's tokens
-// - Responsive design with adaptive columns
-// - "Show more" pagination functionality
-// - Translated content
-// - Mock data integration (filtered by user in real app)
-// 
-// SPECIFICATION COMPLIANCE:
-// - Container: 1295px max width
-// - Grid: 5 columns desktop, 2 tablet, 1 mobile
-// - Gap: 30px between cards
-// - Header: "My tokens" with green accent
-// - Button: "Show More" with green styling
-
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useTokenStore } from '@/store/useTokenStore';
-import { mockTokens } from '@/lib/mockData';
+import { myMockTokens } from '@/lib/mockData'; // Используем новые моковые данные
 import TokenCard from '@/components/features/TokenCard/TokenCard';
 import Button from '@/components/common/Button';
 
@@ -29,15 +9,14 @@ const LISTING_PAGE_SIZE = 15;
 
 const MyTokens: React.FC = () => {
   const { t } = useTranslation();
-  // In a real app, you would filter tokens by user ID
-  const { tokens, setTokens } = useTokenStore();
+  // Состояние для токенов теперь можно сделать локальным, если они не нужны в глобальном сторе
+  const [tokens, setTokens] = useState<any[]>([]);
   const [visibleTokens, setVisibleTokens] = useState(LISTING_PAGE_SIZE);
   const [isLoading, setIsLoading] = useState(false);
   
   useEffect(() => {
-    // In a real app, fetch user-specific tokens
-    setTokens(mockTokens);
-  }, [setTokens]);
+    setTokens(myMockTokens); // Устанавливаем токены пользователя
+  }, []);
 
   const handleShowMore = () => {
     setIsLoading(true);
@@ -51,45 +30,47 @@ const MyTokens: React.FC = () => {
   const hasMoreTokens = visibleTokens < tokens.length;
 
   return (
-    <div className="container mx-auto px-4 py-20 relative z-1">
-      <h1 className="text-2xl font-semibold text-primary-green dark:text-dark-accent mb-20 mobile:mb-10">
-        {t('header.myTokens')}
-      </h1>
-      
-      <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-5 gap-[30px] mb-12">
-        {tokensToDisplay.map(token => (
-          <TokenCard key={token.id} token={token} />
-        ))}
-      </div>
-      
-      {hasMoreTokens && (
-        <div className="flex justify-center">
-          <Button 
-            onClick={handleShowMore}
-            isLoading={isLoading}
-            variant="primary"
-            size="md"
-            className="w-[200px]"
-          >
-            {t('listing.showMore')}
-          </Button>
-        </div>
-      )}
-      
-      {/* Vector Background - appears at x=590px from left, y=100px from top */}
+    <div className="w-full flex justify-center relative z-1">
+      {/* Vector Background */}
       <img
         src="/assets/Vector.svg"
         alt="Vector Background"
         className="fixed top-[100px] left-[590px] w-[1660px] h-[900px] pointer-events-none z-[-30] dark:brightness-[0.22] dark:contrast-[1.2] dark:saturate-[1.5]"
       />
       
-      {/* Incubator Element - full width with 25px margins, size 1870x260, flush with bottom */}
+      {/* Incubator Element */}
       <div className="fixed bottom-0 left-1/2 transform -translate-x-1/2 w-[calc(100%-50px)] max-w-[1870px] h-[260px] bg-transparent z-[-10] pointer-events-none overflow-hidden">
         <img
           src="/assets/INCUBATOR.svg"
           alt="Incubator Background"
-          className="absolute bottom-0 left-0 w-full h-auto dark:brightness-[0.22] dark:contrast-[1.2]"
+          className="absolute bottom-0 left-0 w-full h-auto dark:opacity-[.46]"
         />
+      </div>
+
+      <div className="w-full max-w-[1295px] pt-[150px] px-4">
+        <h1 className="text-3xl font-semibold text-[#5B9D07] mb-[30px]">
+          {t('header.myTokens', 'My tokens')} { /* Измененный заголовок */}
+        </h1>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[25px] mb-12">
+          {tokensToDisplay.map(token => (
+            <TokenCard key={token.id} token={token} />
+          ))}
+        </div>
+        
+        {hasMoreTokens && (
+          <div className="flex justify-center pb-20">
+            <Button 
+              onClick={handleShowMore}
+              isLoading={isLoading}
+              variant="primary"
+              size="md"
+              className="w-[200px]"
+            >
+              {t('listing.showMore')}
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -253,6 +253,12 @@ export const mockTokenDetail: TokenDetail = {
   raisePercentage: '150%',
 };
 
+export const myMockTokens: Token[] = mockTokens.slice(0, 5).map(token => ({
+  ...token,
+  id: `my-${token.id}`,
+  createdBy: 'Noname',
+}));
+
 export const mockUser = {
   address: '0x2...006728',
   name: 'Noname',

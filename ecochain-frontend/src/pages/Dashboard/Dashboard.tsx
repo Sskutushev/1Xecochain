@@ -54,7 +54,7 @@ const Dashboard: React.FC = () => {
         <img
           src="/assets/INCUBATOR.svg"
           alt="Incubator Background"
-          className="absolute bottom-0 left-0 w-full h-auto dark:brightness-[0.22] dark:contrast-[1.2]"
+          className="absolute bottom-0 left-0 w-full h-auto dark:opacity-[.46]"
         />
       </div>
     </div>
