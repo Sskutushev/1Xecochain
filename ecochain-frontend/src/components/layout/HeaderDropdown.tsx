@@ -82,7 +82,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
         {showLanguageOptions && (
           <div 
             ref={languageDropdownRef}
-            className="absolute left-0 top-full w-full bg-white dark:bg-dark-bgSecondary rounded-10 shadow-dropdown dark:backdrop-blur-30 py-2 mt-1 z-10"
+            className="absolute left-0 top-full w-full bg-white dark:bg-[#1f2937] rounded-10 shadow-dropdown py-2 mt-1 z-10"
           >
             <div 
               className={`h-9 flex items-center justify-between gap-2 px-3 cursor-pointer hover:bg-light-bg dark:hover:bg-[rgba(255,255,255,0.05)]`}
