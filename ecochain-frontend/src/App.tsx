@@ -1,19 +1,19 @@
 // src/App.tsx
 // 
-// PURPOSE: Main application component with routing configuration
-// RESPONSIBILITY: Sets up React Router and defines all application routes
-// IMPLEMENTS: Single-page application with client-side routing
+// НАЗНАЧЕНИЕ: Главный компонент приложения с конфигурацией маршрутизации
+// ОТВЕТСТВЕННОСТЬ: Настраивает React Router и определяет все маршруты приложения
+// РЕАЛИЗУЕТ: Одностраничное приложение с клиентской маршрутизацией
 // 
-// ROUTE DEFINITION:
-// - / (index) -> Dashboard page
-// - /listing -> Token listing page
-// - /my-tokens -> User's tokens page
-// - /create-token -> Token creation form
-// - /add-liquidity -> Liquidity addition form
-// - /token/:id -> Token detail page (dynamic route)
-// - * (wildcard) -> Not found page
+// ОПРЕДЕЛЕНИЕ МАРШРУТОВ:
+// - / (главная) -> Страница дашборда
+// - /listing -> Страница списка токенов
+// - /my-tokens -> Страница токенов пользователя
+// - /create-token -> Форма создания токена
+// - /add-liquidity -> Форма добавления ликвидности
+// - /token/:id -> Страница детального просмотра токена (динамический маршрут)
+// - * (универсальный) -> Страница ошибки (не найдено)
 // 
-// ARCHITECTURE: All routes are wrapped in Layout component for consistent UI
+// АРХИТЕКТУРА: Все маршруты обернуты в компонент Layout для обеспечения единообразного интерфейса
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

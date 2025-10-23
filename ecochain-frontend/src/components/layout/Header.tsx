@@ -1,15 +1,15 @@
 // src/components/layout/Header/Header.tsx
 // 
-// PURPOSE: Main header component that adapts between desktop, tablet and mobile layouts
-// RESPONSIBILITY: Provides navigation, search, user profile, and theme controls
-// IMPLEMENTS: Responsive design based on breakpoints (desktop, tablet, mobile)
+// НАЗНАЧЕНИЕ: Основной компонент шапки, адаптирующийся под десктоп, планшет и мобильные макеты
+// ОТВЕТСТВЕННОСТЬ: Обеспечивает навигацию, поиск, профиль пользователя и управление темой
+// РЕАЛИЗУЕТ: Адаптивный дизайн на основе контрольных точек (десктоп, планшет, мобильный)
 // 
-// KEY FEATURES:
-// - Responsive layout switching based on screen width
-// - Desktop: 1375px+ (full UI with search, nav, profile)
-// - Tablet: 578px-1374px (simplified UI - menu, logo, create button like mobile)
-// - Mobile: <578px (simple UI - menu, logo, create button)
-// - Fixed 70px height for desktop, 40px for tablet/mobile
+// КЛЮЧЕВЫЕ ФУНКЦИИ:
+// - Переключение адаптивного макета в зависимости от ширины экрана
+// - Десктоп: 1375px+ (полноценный интерфейс с поиском, навигацией, профилем)
+// - Планшет: 578px-1374px (упрощенный интерфейс - меню, логотип, кнопка создания как на мобильном)
+// - Мобильный: <578px (простой интерфейс - меню, логотип, кнопка создания)
+// - Фиксированная высота 70px для десктопа, 40px для планшета/мобильного
 
 import DesktopHeader from './DesktopHeader';
 import TabletHeader from './TabletHeader';

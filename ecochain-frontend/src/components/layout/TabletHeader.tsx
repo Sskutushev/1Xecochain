@@ -1,16 +1,16 @@
 // src/components/layout/TabletHeader.tsx
 // 
-// PURPOSE: Tablet-specific header component with simplified mobile-like layout
-// RESPONSIBILITY: Provides header UI for tablet screens (578px-1374px)
-// IMPLEMENTS: Mobile-like layout for intermediate screen sizes
+// НАЗНАЧЕНИЕ: Компонент шапки для планшетов с упрощенным мобильным макетом
+// ОТВЕТСТВЕННОСТЬ: Обеспечивает интерфейс шапки для планшетных экранов (578px-1374px)
+// РЕАЛИЗУЕТ: Мобильный макет для промежуточных размеров экрана
 // 
-// KEY FEATURES:
-// - Full width header with simplified layout
-// - Fixed height of 40px
-// - Elements: Burger menu (left), Logo (center), Create Token button (right)
-// - Create token button: 63x30px with white icon
-// - Fixed 25px margins on top and sides
-// - Burger menu button opens mobile menu
+// КЛЮЧЕВЫЕ ФУНКЦИИ:
+// - Шапка на всю ширину с упрощенным макетом
+// - Фиксированная высота 40px
+// - Элементы: Бургер-меню (слева), Логотип (по центру), Кнопка создания токена (справа)
+// - Кнопка создания токена: 63x30px с белой иконкой
+// - Фиксированные отступы 25px сверху и по бокам
+// - Кнопка бургер-меню открывает мобильное меню
 
 import { useState } from 'react';
 import { useModalStore } from '@/store/useModalStore';

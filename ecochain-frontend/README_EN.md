@@ -1,192 +1,222 @@
-# EcoChain Token Creation Platform
+# EcoChain Web3 Platform
 
-## 📋 Overview
+## Project Description
 
-The EcoChain Token Creation Platform is a modern Web3-ready application that enables users to create, manage, and distribute tokens on the X1 blockchain. The platform features a complete token lifecycle management system with dashboard, token listing, creation, liquidity management, and detailed token information pages.
+EcoChain is a modern Web3 platform for creating tokens on the X1 blockchain. The platform provides users with the ability to create, manage, and distribute tokens without programming knowledge.
 
-## 🚀 Key Features
+## Technology Stack
 
-### 📱 Responsive Design
-- Desktop (>1240px), Tablet (768px-1239px), Mobile (<768px)
-- Adaptive layouts with proper breakpoints
-- Touch-friendly interactions for mobile users
+- **React 19** - Library for creating user interfaces
+- **TypeScript** - Typed programming language
+- **Vite** - Fast build tool
+- **Tailwind CSS** - Styling framework
+- **React Router DOM** - Navigation management
+- **Zustand** - State management
+- **i18next** - Internationalization and localization
+- **Lucide React** - Icon library
+- **Date-fns** - Working with dates
+- **Axios** - HTTP client for API requests
 
-### 🎨 Theme System
-- Light/Dark theme switching
-- Theme persistence in localStorage
-- Smooth transitions between themes
+## Project Architecture
 
-### 🌐 Internationalization
-- Multi-language support (EN/RU)
-- i18n translation system
-- Language persistence
-
-### 🪙 Token Management
-- Dashboard with featured tokens
-- Token listing with grid view
-- Personal token management
-- Token creation form with validation
-- Liquidity management
-- Token detail pages with trading
-
-### 🔧 Web3 Ready Architecture
-- Wallet connection hooks
-- Token contract interaction hooks
-- Mock Web3 integration ready for blockchain
-- Loading states and error handling
-
-## 🛠️ Technology Stack
-
-### Frontend
-- **React 18** - Component-based UI library
-- **TypeScript 5** - Type-safe JavaScript
-- **Vite 5** - Fast build tool and development server
-- **Tailwind CSS 3.4** - Utility-first CSS framework
-- **Zustand** - Lightweight state management
-- **React Router DOM 6** - Client-side routing
-- **i18next/react-i18next** - Internationalization
-- **Lucide React** - SVG icon library
-
-### Architecture
-- Modular component structure
-- Feature-based folder organization
-- Reusable components and hooks
-- Proper TypeScript typing
-- Responsive design with breakpoints
-
-## 📁 Project Structure
+### Folder Structure
 
 ```
-ecochain-frontend/
-├── public/                    # Static assets
-│   └── assets/               # Images, logos, icons
-├── src/                      # Source code
-│   ├── components/           # Reusable UI components
-│   │   ├── common/           # Basic components
-│   │   ├── layout/          # Layout components
-│   │   └── features/        # Feature-specific components
-│   ├── pages/                # Page components
-│   ├── hooks/               # Custom React hooks
-│   │   └── web3/            # Web3 integration hooks
-│   ├── store/                # Zustand stores
-│   ├── types/                # TypeScript types
-│   ├── lib/                  # Utilities and constants
-│   ├── locales/              # Translation files
-│   └── styles/               # Global styles
-├── tailwind.config.js        # Tailwind CSS configuration
-└── vite.config.ts            # Vite configuration
+src/
+├── assets/           # Static resources (images, icons)
+├── components/       # Reusable components
+│   ├── common/       # Common components (Button, Input, etc.)
+│   ├── features/     # Business logic components
+│   └── layout/       # Layout components (header, navigation, etc.)
+├── hooks/            # Custom hooks
+├── lib/              # Helper libraries and constants
+├── locales/          # Localization files
+├── pages/            # Application pages
+├── store/            # Global state (Zustand)
+├── types/            # TypeScript types
+├── App.tsx           # Main application component
+├── main.tsx          # Application entry point
+└── index.css         # Global styles
 ```
 
-## 🚀 Getting Started
+### File Descriptions
+
+#### Components (components/)
+
+- **common/Button** - Common button component with different display options
+- **common/Input** - Input field with label support and styling
+- **common/Modal** - Modal window for displaying information and forms
+- **common/Switch** - Theme switch (light/dark)
+- **features/Dashboard/DashboardCard** - Dashboard card with various functions
+- **features/TokenCard** - Token card with information display
+- **layout/Header** - Main application header with responsive design
+- **layout/DesktopHeader** - Header for desktop devices
+- **layout/MobileHeader** - Header for mobile devices
+- **layout/MobileMenu** - Mobile navigation menu
+- **layout/PageBackground** - Page background component
+
+#### Pages (pages/)
+
+- **AddLiquidity** - Token liquidity addition page
+- **CreateToken** - New token creation page
+- **Dashboard** - Main page with function cards
+- **Listing** - Page with a list of all tokens
+- **MyTokens** - User's tokens page
+- **NotFound** - 404 error page
+- **TokenDetail** - Token detail information page
+
+#### Stores (store/)
+
+- **useLanguageStore** - Language settings management
+- **useModalStore** - Modal windows management
+- **useThemeStore** - Theme management (light/dark)
+- **useTokenStore** - Token information management
+- **useUserStore** - User information management
+
+#### Hooks (hooks/)
+
+- **useClickOutside** - Hook for detecting clicks outside an element
+- **useKeyPress** - Hook for tracking key presses
+- **useMediaQuery** - Hook for responsive design
+- **web3/useTokenContract** - Hook for working with token contracts
+- **web3/useWallet** - Hook for wallet connection
+
+## Installation and Local Launch
 
 ### Prerequisites
-- Node.js 16+ installed
-- npm or yarn package manager
+
+- Installed [Node.js](https://nodejs.org/) (version 18 or higher)
+- Installed [Git](https://git-scm.com/)
 
 ### Installation
 
-```bash
-cd ecochain-frontend
-npm install
-```
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Sskutushev/1Xecochain.git
+   cd 1Xecochain
+   ```
 
-### Development
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-```bash
-npm run dev
-```
+3. Run the application in development mode:
+   ```bash
+   npm run dev
+   ```
 
-The application will be available at http://localhost:5173/
+The application will be available at http://localhost:5173
 
 ### Production Build
 
+To build the application for production:
 ```bash
 npm run build
 ```
 
-## 🔄 Web3 Integration
+To run the built application locally:
+```bash
+npm run serve
+```
 
-The frontend is completely ready for Web3 integration:
+## Deployment to Internet
 
-1. **Web3 Hooks** - Located in `src/hooks/web3/`
-   - `useWallet()` for wallet connection
-   - `useTokenContract()` for token operations
+### Deployment to GitHub Pages
 
-2. **Mock Implementation** - Ready to replace with real blockchain calls
-   - Token creation
-   - Liquidity addition
-   - Buy/sell tokens
-   - Transaction handling
+1. Build the project:
+   ```bash
+   npm run build
+   ```
 
-3. **Smart Contract Ready** - All forms and validation prepared
+2. Create a `gh-pages` branch and put the contents of the `dist` folder there
 
-## 📱 Responsive Behavior
+3. Push the `gh-pages` branch to the repository
 
-### Breakpoints
-- **Mobile**: 360px and up
-- **Tablet**: 768px to 1239px
-- **Desktop**: 1240px and up
-- **Large Desktop**: 1920px and up
+4. Enable GitHub Pages in the repository settings
 
-### Adaptive Features
-- Flexible grid layouts
-- Component resizing
-- Touch-friendly controls
-- Orientation support
+### Deployment via Vercel
 
-## 🎨 Design System
+1. Register at [Vercel](https://vercel.com/)
 
-### Color Palette
-- **Primary Green**: #5B9D07
-- **Primary Purple**: #8247E5
-- **Primary Yellow**: #F0B90B
-- **Dark Green**: #05521A
-- **Light Mode**: #F1F1F1 background, #FFFFFF cards
-- **Dark Mode**: #0F0F16 background, rgba(217,217,217,0.05) cards
+2. Create a new project and import your GitHub repository
 
-### Typography
-- **Font Family**: Nunito Sans (Google Fonts)
-- **Weights**: 300, 400, 600, 700
-- **Sizes**: Responsive scaling with clamp()
+3. Vercel will automatically detect that this is a Vite/React project and configure the build
 
-### Spacing
-- **Scale**: 4px increments (xs:4, sm:8, md:12, lg:16, xl:20, etc.)
-- **Responsive**: Proper spacing for all device sizes
+### Deployment via Netlify
 
-## 🧪 Testing
+1. Register at [Netlify](https://netlify.com/)
 
-The application includes comprehensive mock data and UI states:
+2. Import your GitHub repository
 
-- All form validations
-- Loading states
-- Error states
-- Empty states
-- Responsive variations
-- Theme variations
+3. Specify the build command: `npm run build`
+4. Specify the publish folder: `dist`
 
-## 🔮 Future Enhancements
+## Integration with Web3, Blockchain, and Wallets
 
-### Web3 Integration
-- MetaMask wallet connection
-- Real smart contract deployment
-- Live token creation transactions
-- Blockchain data feeds
+### Wallet Connection
 
-### Advanced Features
-- User authentication system
-- Token analytics and reporting
-- Social features and comments
-- Notification system
-- Advanced trading dashboard
+To integrate with Web3 wallets, use the hooks in the `src/hooks/web3/` folder:
 
-## 📄 License
+- Use the `useWallet` hook to connect and interact with wallets
+- Use `useTokenContract` to interact with token contracts
 
-This project is proprietary and confidential. All rights reserved.
+### Replacing Stubs
 
-## 🆘 Support
+Stubs (mock data) are located in `src/lib/mockData.ts`. They can be replaced with real API calls:
 
-For issues or questions about the platform:
-1. Check browser console for errors
-2. Verify all dependencies are installed
-3. Ensure correct file paths in imports
-4. Contact development team for assistance
+1. Replace `myMockTokens` with real data from the API
+2. Create API services for blockchain interaction
+3. Update stores to use real data
+
+### Blockchain Integration
+
+1. Add a Web3 provider (e.g., MetaMask, WalletConnect)
+2. Integrate a web3 library (web3.js, ethers.js)
+3. Update hooks in `src/hooks/web3/` to work with the real blockchain
+
+## TradingView Widget Replacement
+
+To replace the TradingView widget:
+
+1. Find files where TradingView is used (usually in TokenDetail or Chart components)
+2. Embed a new widget or create a custom chart
+3. Update dependencies and imports accordingly
+
+Example widget integration:
+- Chart.js for custom charts
+- D3.js for complex visualizations
+- ApexCharts for ready-made solutions
+
+## Localization
+
+The application supports Russian and English languages:
+
+- Localization files are in `src/locales/`
+- Russian: `src/locales/ru/translation.json`
+- English: `src/locales/en/translation.json`
+
+To add new languages:
+1. Add a new file to `src/locales/`
+2. Update `src/lib/i18n.ts` with the new language
+
+## Styling and Customization
+
+The project uses Tailwind CSS for styling:
+
+- Tailwind configuration in `tailwind.config.js`
+- Global styles in `src/index.css`
+- Custom classes can be added to `src/App.css`
+
+## State Management
+
+The project uses Zustand for state management:
+
+- Stores are in `src/store/`
+- Global data (users, tokens, settings) are managed through Zustand
+
+## Rights and Contact Information
+
+Author of implementation: Kutushev Sergey
+Telegram: @sskutushev
+Email: sskutushev@gmail.com
