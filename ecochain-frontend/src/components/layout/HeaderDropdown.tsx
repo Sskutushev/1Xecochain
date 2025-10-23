@@ -7,6 +7,20 @@ import Switch from '@/components/common/Switch/Switch';
 import { useClickOutside } from '@/hooks/useClickOutside';
 import { Sun, Moon, ChevronDown, Check } from 'lucide-react';
 
+// ==================================================================================================
+// ВСТРАИВАЕМАЯ SVG-ИКОНКА ВЫХОДА
+// SVG-код иконки вынесен в отдельный React-компонент, чтобы можно было управлять
+// его цветом через `fill="currentColor"` и CSS-класс `-text-`.
+// ==================================================================================================
+const ExitIcon = (props: any) => (
+  <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
+    <path fillRule="evenodd" clipRule="evenodd" d="M15.1923 21.799C15.1923 22.3513 15.6401 22.799 16.1923 22.799C16.7446 22.799 17.1923 22.3513 17.1923 21.799V5.82843L19.6984 8.3345C20.0889 8.72502 20.7221 8.72502 21.1126 8.3345C21.5032 7.94397 21.5032 7.31081 21.1126 6.92028L16.1923 2L10.889 7.3033C10.4985 7.69383 10.4985 8.32699 10.889 8.71751C11.2796 9.10804 11.9127 9.10804 12.3033 8.71751L15.1923 5.82843V21.799ZM6 16.4142C6 15.8619 5.55228 15.4142 5 15.4142C4.44772 15.4142 4 15.8619 4 16.4142V25.4142C4 27.0711 5.34314 28.4142 7 28.4142H25C26.6569 28.4142 28 27.0711 28 25.4142V16.4142C28 15.8619 27.5523 15.4142 27 15.4142C26.4477 15.4142 26 15.8619 26 16.4142V25.4142C26 25.9665 25.5523 26.4142 25 26.4142H7C6.44772 26.4142 6 25.9665 6 25.4142V16.4142Z" fill="currentColor"/>
+  </svg>
+);
+
+// ==================================================================================================
+// КОМПОНЕНТ ВЫПАДАЮЩЕГО МЕНЮ ПРОФИЛЯ
+// ==================================================================================================
 interface HeaderDropdownProps {
   isOpen: boolean;
   onClose: () => void;
@@ -129,11 +143,11 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
       
       {/* Logout */}
       <div 
-        className="h-11 flex items-center gap-3 px-4 cursor-pointer hover:bg-[rgba(255,88,88,0.1)] transition-colors rounded-b-10"
+        className="h-11 flex items-center gap-3 px-4 cursor-pointer hover:bg-[rgba(255,114,85,0.1)] transition-colors rounded-b-10"
         onClick={handleLogout}
       >
-        <img src="/assets/exit.svg" alt="Logout" className="w-5 h-5" />
-        <span className="text-sm text-sell-red">
+        <ExitIcon className="w-5 h-5 text-[#FF7255]" />
+        <span className="text-sm text-[#FF7255]">
           {t('dropdown.logout')}
         </span>
       </div>
