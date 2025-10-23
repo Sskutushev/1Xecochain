@@ -1,12 +1,10 @@
 // src/pages/Dashboard/Dashboard.tsx
 
 import React from 'react';
-import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import DashboardCard from '@/components/features/Dashboard/DashboardCard';
 
 const Dashboard: React.FC = () => {
-  const { t } = useTranslation();
   const navigate = useNavigate();
 
   return (

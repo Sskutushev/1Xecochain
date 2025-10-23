@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist, StateStorage } from 'zustand/middleware';
+import { persist } from 'zustand/middleware';
 
 type Theme = 'light' | 'dark';
 
@@ -8,20 +8,6 @@ interface ThemeState {
   setTheme: (theme: Theme) => void;
   toggleTheme: () => void;
 }
-
-// Custom storage to handle migration
-const createCustomStorage = (): StateStorage => ({
-  getItem: (name: string) => {
-    const item = localStorage.getItem(name);
-    return item || null;
-  },
-  setItem: (name: string, value: string) => {
-    localStorage.setItem(name, value);
-  },
-  removeItem: (name: string) => {
-    localStorage.removeItem(name);
-  },
-});
 
 export const useThemeStore = create<ThemeState>()(
   persist(

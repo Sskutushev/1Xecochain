@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useTokenStore } from '@/store/useTokenStore';
 import { myMockTokens } from '@/lib/mockData'; // Используем новые моковые данные
 import TokenCard from '@/components/features/TokenCard/TokenCard';
 import Button from '@/components/common/Button';

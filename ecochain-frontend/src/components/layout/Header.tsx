@@ -11,17 +11,14 @@
 // - Mobile: <578px (simple UI - menu, logo, create button)
 // - Fixed 70px height for desktop, 40px for tablet/mobile
 
-import React from 'react';
 import DesktopHeader from './DesktopHeader';
 import TabletHeader from './TabletHeader';
 import MobileHeader from './MobileHeader';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
-import { BREAKPOINTS } from '@/lib/constants';
 
 const Header: React.FC = () => {
   const isMobile = useMediaQuery('(max-width: 577px)');
   const isTablet = useMediaQuery('(min-width: 578px) and (max-width: 1374px)');
-  const isDesktop = useMediaQuery('(min-width: 1375px)');
 
   return (
     <>

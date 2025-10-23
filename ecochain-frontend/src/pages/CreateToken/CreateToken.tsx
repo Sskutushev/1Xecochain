@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import i18n from '@/lib/i18n';
-import { useNavigate } from 'react-router-dom';
 import Button from '@/components/common/Button';
 
 // Этот компонент можно вынести в common, если он будет переиспользоваться
@@ -43,7 +42,6 @@ const CustomTextarea = ({ label, ...props }: any) => (
 // ==================================================================================================
 const CreateToken: React.FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
 
   return (
     <div className="w-full min-h-screen flex justify-center items-start pt-[132px] relative z-1">

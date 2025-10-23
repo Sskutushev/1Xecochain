@@ -11,7 +11,7 @@ interface SwitchProps {
 
 function Switch({ checked: controlledChecked, onChange, disabled = false }: SwitchProps) {
   const [isChecked, setIsChecked] = useState(controlledChecked || false);
-  const { theme, setTheme } = useThemeStore();
+  const { setTheme } = useThemeStore();
   
   // Sync internal state with controlled prop
   useEffect(() => {

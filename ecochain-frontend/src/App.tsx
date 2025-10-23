@@ -15,7 +15,7 @@
 // 
 // ARCHITECTURE: All routes are wrapped in Layout component for consistent UI
 
-import React from 'react';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import Dashboard from '@/pages/Dashboard';

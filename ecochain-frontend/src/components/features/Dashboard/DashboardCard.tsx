@@ -17,8 +17,6 @@
 // - Макет контента с наложением изображения
 // - Эффекты при наведении с трансформацией и тенью
 
-import { useNavigate } from 'react-router-dom';
-import { useTranslation } from 'react-i18next';
 import { useThemeStore } from '@/store/useThemeStore';
 
 interface DashboardCardProps {
@@ -38,7 +36,7 @@ export default function DashboardCard({
   buttonText,
   onButtonClick 
 }: DashboardCardProps) {
-  const { t } = useTranslation();
+
   const theme = useThemeStore((state) => state.theme);
 
   const currentImage = theme === 'dark' ? imageDark : imageLight;
