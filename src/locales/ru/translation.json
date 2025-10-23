@@ -15,8 +15,12 @@
   },
   "dashboard": {
     "newTokens": "Новые токены",
+    "createTokens": "Создать токены",
+    "myTokens": "Мои токены",
     "description": "Создавайте, управляйте и распределяйте токены на базе X1 без кода",
-    "discoverButton": "Открыть все токены"
+    "discoverButton": "Открыть все токены",
+    "createButton": "Создать токен",
+    "manageButton": "Управление"
   },
   "listing": {
     "title": "Все токены",

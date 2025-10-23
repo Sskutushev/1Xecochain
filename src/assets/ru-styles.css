@@ -1,0 +1,37 @@
+/* Стили для русского языка */
+/* Уменьшаем размер шрифта для русского текста, чтобы он помещался в те же размеры */
+
+/* Для заголовков карточек дашборда */
+[data-lang="ru"] .dashboard-card-title {
+  font-size: calc(1.5rem * 0.9) !important; /* Уменьшаем на 10% */
+}
+
+/* Для описаний карточек дашборда */
+[data-lang="ru"] .dashboard-card-description {
+  font-size: calc(1rem * 0.95) !important; /* Уменьшаем на 5% */
+}
+
+/* Для кнопок карточек дашборда */
+[data-lang="ru"] .dashboard-card-button {
+  font-size: calc(1rem * 0.95) !important; /* Уменьшаем на 5% */
+}
+
+/* Для заголовков страниц */
+[data-lang="ru"] .page-title {
+  font-size: calc(1.875rem * 0.95) !important; /* Уменьшаем на 5% */
+}
+
+/* Для кнопок формы */
+[data-lang="ru"] .form-button {
+  font-size: calc(1rem * 0.95) !important; /* Уменьшаем на 5% */
+}
+
+/* Для текста ввода */
+[data-lang="ru"] .input-label {
+  font-size: calc(0.75rem * 0.95) !important; /* Уменьшаем на 5% */
+}
+
+/* Для placeholder текста */
+[data-lang="ru"] .input-placeholder {
+  font-size: calc(1rem * 0.95) !important; /* Уменьшаем на 5% */
+}

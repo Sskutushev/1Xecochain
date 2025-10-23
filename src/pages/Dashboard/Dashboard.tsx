@@ -44,17 +44,17 @@ const Dashboard: React.FC = () => {
           <DashboardCard 
             imageLight="/1Xecochain/assets/Rectangle 1 (1).svg" 
             imageDark="/1Xecochain/assets/Rectangle 1 (1).png" 
-            title={t('createToken.title')}
-            description="Create, Manage, and Distribute ERC20 Polygon based tokens with X1 no code solution"
-            buttonText={t('header.createToken')}
+            title={t('dashboard.createTokens')}
+            description={t('dashboard.description')}
+            buttonText={t('dashboard.createButton')}
             onButtonClick={() => {/* Открыть попап создания токена */}}
           />
           <DashboardCard 
             imageLight="/1Xecochain/assets/Rectangle 1 (2).svg" 
             imageDark="/1Xecochain/assets/Rectangle 1 (2).png" 
-            title={t('header.myTokens')}
-            description="Create, Manage, and Distribute BEP20 based tokens with X1 no code solution"
-            buttonText={t('header.myTokens')}
+            title={t('dashboard.myTokens')}
+            description={t('dashboard.description')}
+            buttonText={t('dashboard.manageButton')}
             onButtonClick={() => navigate('/my-tokens')}
           />
         </div>

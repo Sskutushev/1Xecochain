@@ -14,9 +14,13 @@
     "logout": "Logout"
   },
   "dashboard": {
-    "newTokens": "New tokens",
+    "newTokens": "New Tokens",
+    "createTokens": "Create Tokens",
+    "myTokens": "My Tokens",
     "description": "Create, Manage, and Distribute X1 based tokens with X1 no code solution",
-    "discoverButton": "Discover all tokens"
+    "discoverButton": "Discover all tokens",
+    "createButton": "Create token",
+    "manageButton": "Manage"
   },
   "listing": {
     "title": "All tokens",

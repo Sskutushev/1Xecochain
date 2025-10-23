@@ -63,11 +63,11 @@ export default function DashboardCard({
         {/* КОНТЕНТ: Адаптивные отступы и размеры шрифтов/кнопок */}
         <div className="absolute top-[calc(0px+192px+20px)] md:top-[calc(0px+221px+20px)] left-0 right-0 px-5">
           
-          <h3 className="text-xl md:text-2xl font-bold text-primary-green dark:text-dark-accent mb-[15px]">
+          <h3 className="text-xl md:text-2xl font-bold text-primary-green dark:text-dark-accent mb-[15px] dashboard-card-title">
             {title}
           </h3>
           
-          <p className="text-base md:text-lg font-light leading-[1.4] text-light-text dark:text-dark-text mb-[10px] md:mb-[40px]">
+          <p className="text-base md:text-lg font-light leading-[1.4] text-light-text dark:text-dark-text mb-[10px] md:mb-[40px] dashboard-card-description">
             {description}
           </p>
 
@@ -75,7 +75,7 @@ export default function DashboardCard({
             onClick={onButtonClick}
             className="w-[217px] h-[47px] md:w-[250px] md:h-[55px] bg-primary-green dark:bg-white rounded-20 flex items-center gap-2 pl-6 hover:bg-primary-darkGreen dark:hover:bg-[rgba(255,255,255,0.9)] transition-colors"
           >
-            <span className="text-base md:text-lg font-bold text-white dark:text-black">
+            <span className="text-base md:text-lg font-bold text-white dark:text-black dashboard-card-button">
               {buttonText}
             </span>
             <img 

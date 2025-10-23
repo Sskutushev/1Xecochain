@@ -16,7 +16,9 @@
 // АРХИТЕКТУРА: Все маршруты обернуты в компонент Layout для обеспечения единообразного интерфейса
 
 
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import Layout from '@/components/layout/Layout';
 import Dashboard from '@/pages/Dashboard';
 import Listing from '@/pages/Listing';
@@ -25,8 +27,27 @@ import CreateToken from '@/pages/CreateToken';
 import AddLiquidity from '@/pages/AddLiquidity';
 import TokenDetail from '@/pages/TokenDetail';
 import NotFound from '@/pages/NotFound';
+import '@/assets/ru-styles.css';
 
 function App() {
+  const { i18n } = useTranslation();
+
+  useEffect(() => {
+    // Устанавливаем атрибут data-lang на body для определения текущего языка
+    document.body.setAttribute('data-lang', i18n.language);
+    
+    // Следим за изменением языка
+    const handleLanguageChange = () => {
+      document.body.setAttribute('data-lang', i18n.language);
+    };
+    
+    i18n.on('languageChanged', handleLanguageChange);
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChange);
+    };
+  }, [i18n]);
+
   return (
     <BrowserRouter basename="/1Xecochain">
       <Routes>
