@@ -19,9 +19,9 @@ const Dashboard: React.FC = () => {
         className="fixed top-[100px] left-[590px] w-[1660px] h-[900px] pointer-events-none z-[-30] dark:brightness-[0.22] dark:contrast-[1.2] dark:saturate-[1.5]"
       />
       
-      {/* Cards Container - centered and responsive with smooth adaptation */}
-      <div className="absolute top-[190px] left-1/2 transform -translate-x-1/2 w-[min(100vw-50px,1295px)]">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 desktop:grid-cols-3 gap-[15px] desktop:gap-[45px]">
+      {/* Cards Container - centered and responsive with flex-wrap */}
+      <div className="w-full flex justify-center pt-[195px] pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-10 max-w-screen-xl">
           <DashboardCard 
             imageLight="/assets/Rectangle 1.svg" 
             imageDark="/assets/Rectangle 1.png" 

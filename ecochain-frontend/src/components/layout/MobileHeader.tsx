@@ -9,7 +9,7 @@ const MobileHeader: React.FC = () => {
 
   return (
     <>
-      <header className="fixed top-[25px] left-1/2 transform -translate-x-1/2 w-[calc(100%-50px)] max-w-[350px] h-[40px] bg-white dark:bg-dark-bgSecondary rounded-8 shadow-header z-50 flex items-center justify-between px-4">
+      <header className="fixed top-[25px] left-1/2 transform -translate-x-1/2 w-[calc(100%-50px)] min-w-[350px] h-[70px] bg-white dark:bg-dark-bgSecondary rounded-8 shadow-header z-50 flex items-center justify-between px-4">
         {/* Burger Menu */}
         <button onClick={() => setIsMobileMenuOpen(true)} className="p-1">
           <img 
@@ -24,7 +24,7 @@ const MobileHeader: React.FC = () => {
           <img 
             src="/assets/Group 131.svg" 
             alt="EcoChain Logo" 
-            className="h-[18px] dark:brightness-0 dark:invert"
+            className="w-[43px] h-[30px] dark:brightness-0 dark:invert"
           />
         </a>
 

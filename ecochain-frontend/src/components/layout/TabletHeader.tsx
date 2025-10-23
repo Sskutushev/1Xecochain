@@ -26,7 +26,7 @@ const TabletHeader: React.FC = () => {
       <header 
         className="fixed top-[25px] left-1/2 transform -translate-x-1/2 
           w-[calc(100%-50px)] 
-          h-[40px] 
+          h-[70px] 
           bg-white dark:bg-dark-bgSecondary rounded-8 shadow-header z-50 
           flex items-center px-[25px]"
       >
@@ -47,7 +47,7 @@ const TabletHeader: React.FC = () => {
           <img 
             src="/assets/Group 131.svg" 
             alt="EcoChain Logo" 
-            className="h-[18px] w-auto max-w-full"
+            className="w-[43px] h-[30px]"
           />
         </a>
 

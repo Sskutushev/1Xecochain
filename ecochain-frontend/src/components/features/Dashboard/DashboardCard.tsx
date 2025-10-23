@@ -41,49 +41,48 @@ export default function DashboardCard({
   const { t } = useTranslation();
   const theme = useThemeStore((state) => state.theme);
 
-  // Switch image based on current theme
   const currentImage = theme === 'dark' ? imageDark : imageLight;
 
   return (
-    <div className="relative w-full desktop:w-[401px] desktop:h-[508px] tablet:w-[min(100vw-50px,350px)] tablet:h-[508px] mobile:w-[min(100vw-50px,350px)] mobile:h-[508px] rounded-20 bg-white dark:bg-[rgba(217,217,217,0.05)] dark:shadow-card-dark dark:backdrop-blur-[73.2px] p-5 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-      {/* Выступающая картинка - Absolutely positioned over other elements */}
-      <div className="absolute -top-[125px] left-1/2 -translate-x-1/2 w-[350px] h-[230px] rounded-[500px] overflow-hidden bg-transparent z-20">
+    <div className="relative w-full sm:w-[350px] md:w-[401px] h-[515px] rounded-20 bg-white dark:bg-[rgba(217,217,217,0.05)] dark:shadow-card-dark dark:backdrop-blur-[73.2px] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden">
+      
+      {/* Цветная картинка сверху (абсолют) */}
+      <div className="absolute -top-[125px] left-1/2 -translate-x-1/2 w-[350px] h-[250px] z-10">
         <img
           src={currentImage}
-          alt="Dashboard card"
+          alt="Decorative element"
           className="w-full h-full object-cover transition-opacity duration-300"
         />
       </div>
 
-      {/* Content Container - Positioned with proper margins */}
-      <div className="pt-[0px]">
-        {/* Content Box - With fixed margins for desktop, adaptive for mobile/tablet */}
-        <div className="w-full h-[221px] rounded-10 bg-[rgba(0,0,0,0.05)] dark:bg-[rgba(0,0,0,0.05)] mb-[50px] mx-[0px] mt-[0px] tablet:mb-[25px] mobile:mb-[25px]" />
+      {/* Контейнер под будущие картинки (относительный) */}
+      <div className="relative w-full h-full">
+        <div className="absolute top-[0px] left-1/2 -translate-x-1/2 w-[321px] h-[192px] md:w-[369px] md:h-[221px] rounded-[8.7px] bg-black/5 dark:bg-black/5 dark:ring-1 dark:ring-inset dark:ring-white/80" />
 
-        {/* Заголовок - Card title */}
-        <h3 className="text-xl tablet:text-lg mobile:text-lg font-semibold text-primary-green dark:text-dark-accent mb-[50px] tablet:mb-[50px] mobile:mb-[50px] mx-[16px]">
-          {title}
-        </h3>
+        {/* Контентная часть: заголовок, текст, кнопка */}
+        <div className="absolute top-[calc(17px+192px+10px)] md:top-[calc(17px+221px+10px)] left-0 right-0 px-5">
+          <h3 className="text-2xl font-bold text-primary-green dark:text-dark-accent mb-[15px]">
+            {title}
+          </h3>
+          
+          <p className="text-lg font-light leading-[1.4] text-light-text dark:text-dark-text mb-[40px]">
+            {description}
+          </p>
 
-        {/* Описание - Card description */}
-        <p className="text-base tablet:text-sm mobile:text-sm font-light leading-[1.4] text-light-text dark:text-dark-text mb-auto tablet:mb-[50px] mobile:mb-[50px] mx-[16px]">
-          {description}
-        </p>
-
-        {/* Кнопка - Action button that navigates to token listing */}
-        <button
-          onClick={onButtonClick}
-          className="w-[250px] tablet:w-[217px] mobile:w-[217px] h-[54px] tablet:h-[47px] mobile:h-[47px] bg-primary-green dark:bg-white rounded-20 flex items-center gap-2 pl-[34px] tablet:pl-[20px] mobile:pl-[20px] hover:bg-primary-darkGreen dark:hover:bg-[rgba(255,255,255,0.9)] transition-colors mx-[16px]"
-        >
-          <span className="text-sm font-bold text-white dark:text-black">
-            {buttonText}
-          </span>
-          <img 
-            src="/assets/Icon.svg" 
-            alt="arrow" 
-            className="w-3 h-3 tablet:w-2.5 tablet:h-2.5 mobile:w-2.5 mobile:h-2.5 text-white dark:text-black brightness-100 dark:brightness-0" 
-          />
-        </button>
+          <button
+            onClick={onButtonClick}
+            className="w-[250px] h-[55px] bg-primary-green dark:bg-white rounded-20 flex items-center gap-2 pl-6 hover:bg-primary-darkGreen dark:hover:bg-[rgba(255,255,255,0.9)] transition-colors"
+          >
+            <span className="text-lg font-bold text-white dark:text-black">
+              {buttonText}
+            </span>
+            <img 
+              src="/assets/Icon.svg" 
+              alt="arrow" 
+              className="w-3 h-3 text-white dark:text-black brightness-100 dark:brightness-0 transform translate-x-0.5" 
+            />
+          </button>
+        </div>
       </div>
     </div>
   );
