@@ -30,11 +30,11 @@ interface DashboardCardProps {
   onButtonClick: () => void; // Обработчик клика по кнопке
 }
 
-export default function DashboardCard({ 
-  imageLight, 
-  imageDark, 
-  title, 
-  description, 
+export default function DashboardCard({
+  imageLight,
+  imageDark,
+  title,
+  description,
   buttonText,
   onButtonClick 
 }: DashboardCardProps) {
@@ -44,7 +44,8 @@ export default function DashboardCard({
   const currentImage = theme === 'dark' ? imageDark : imageLight;
 
   return (
-    <div className="relative w-full sm:w-[350px] md:w-[401px] h-[515px] rounded-20 bg-white dark:bg-[rgba(217,217,217,0.05)] dark:shadow-card-dark dark:backdrop-blur-[73.2px] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden">
+    // КАРТОЧКА: Фиксированные размеры для десктопа и мобильных
+    <div className="relative w-[350px] h-[442px] md:w-[401px] md:h-[508px] rounded-20 bg-white dark:bg-[rgba(217,217,217,0.05)] dark:shadow-card-dark dark:backdrop-blur-[73.2px] p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg overflow-hidden">
       
       {/* Цветная картинка сверху (абсолют) */}
       <div className="absolute -top-[125px] left-1/2 -translate-x-1/2 w-[350px] h-[250px] z-10">
@@ -55,25 +56,28 @@ export default function DashboardCard({
         />
       </div>
 
-      {/* Контейнер под будущие картинки (относительный) */}
+      {/* Контейнер-обертка для позиционирования */}
       <div className="relative w-full h-full">
-        <div className="absolute top-[0px] left-1/2 -translate-x-1/2 w-[321px] h-[192px] md:w-[369px] md:h-[221px] rounded-[8.7px] bg-black/5 dark:bg-black/5 dark:ring-1 dark:ring-inset dark:ring-white/80" />
+        
+        {/* СЕРЫЙ КОНТЕЙНЕР: Адаптивные размеры */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[321px] h-[192px] md:w-[369px] md:h-[221px] rounded-[8.7px] bg-black/5 dark:bg-black/5 dark:ring-1 dark:ring-inset dark:ring-white/80" />
 
-        {/* Контентная часть: заголовок, текст, кнопка */}
-        <div className="absolute top-[calc(17px+192px+10px)] md:top-[calc(17px+221px+10px)] left-0 right-0 px-5">
-          <h3 className="text-2xl font-bold text-primary-green dark:text-dark-accent mb-[15px]">
+        {/* КОНТЕНТ: Адаптивные отступы и размеры шрифтов/кнопок */}
+        <div className="absolute top-[calc(0px+192px+20px)] md:top-[calc(0px+221px+20px)] left-0 right-0 px-5">
+          
+          <h3 className="text-xl md:text-2xl font-bold text-primary-green dark:text-dark-accent mb-[15px]">
             {title}
           </h3>
           
-          <p className="text-lg font-light leading-[1.4] text-light-text dark:text-dark-text mb-[40px]">
+          <p className="text-base md:text-lg font-light leading-[1.4] text-light-text dark:text-dark-text mb-[10px] md:mb-[40px]">
             {description}
           </p>
 
           <button
             onClick={onButtonClick}
-            className="w-[250px] h-[55px] bg-primary-green dark:bg-white rounded-20 flex items-center gap-2 pl-6 hover:bg-primary-darkGreen dark:hover:bg-[rgba(255,255,255,0.9)] transition-colors"
+            className="w-[217px] h-[47px] md:w-[250px] md:h-[55px] bg-primary-green dark:bg-white rounded-20 flex items-center gap-2 pl-6 hover:bg-primary-darkGreen dark:hover:bg-[rgba(255,255,255,0.9)] transition-colors"
           >
-            <span className="text-lg font-bold text-white dark:text-black">
+            <span className="text-base md:text-lg font-bold text-white dark:text-black">
               {buttonText}
             </span>
             <img 

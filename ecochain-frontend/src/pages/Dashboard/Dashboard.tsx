@@ -21,7 +21,7 @@ const Dashboard: React.FC = () => {
       
       {/* Cards Container - centered and responsive with flex-wrap */}
       <div className="w-full flex justify-center pt-[195px] pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-wrap justify-center gap-4 md:gap-6 lg:gap-10 max-w-screen-xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 place-items-center max-w-screen-xl">
           <DashboardCard 
             imageLight="/assets/Rectangle 1.svg" 
             imageDark="/assets/Rectangle 1.png" 
