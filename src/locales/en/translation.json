@@ -22,7 +22,7 @@
     "myTokensDescription": "Create, Manage, and Distribute BEP20 based tokens with X1 no code solution",
     "discoverButton": "Discover all tokens",
     "createButton": "Create token",
-    "manageButton": "Manage"
+    "manageButton": "Manage my tokens"
   },
   "listing": {
     "title": "All tokens",

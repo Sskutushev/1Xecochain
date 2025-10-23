@@ -11,14 +11,27 @@
 //
 // АРХИТЕКТУРА: Использует компонент DashboardCard для отображения карточек
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import DashboardCard from '@/components/features/Dashboard/DashboardCard';
 
 const Dashboard: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
+  const [language, setLanguage] = useState(i18n.language);
+
+  useEffect(() => {
+    const handleLanguageChanged = () => {
+      setLanguage(i18n.language);
+    };
+
+    i18n.on('languageChanged', handleLanguageChanged);
+    
+    return () => {
+      i18n.off('languageChanged', handleLanguageChanged);
+    };
+  }, [i18n]);
 
   return (
     <div className="relative z-1">
