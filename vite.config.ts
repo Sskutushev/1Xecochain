@@ -11,7 +11,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
-  // Настройки для GitHub Pages
+  // Настройки для Vercel
   build: {
     rollupOptions: {
       output: {
