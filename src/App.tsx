@@ -16,7 +16,7 @@
 // АРХИТЕКТУРА: Все маршруты обернуты в компонент Layout для обеспечения единообразного интерфейса
 
 
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import Layout from '@/components/layout/Layout';
 import Dashboard from '@/pages/Dashboard';
 import Listing from '@/pages/Listing';
@@ -28,7 +28,7 @@ import NotFound from '@/pages/NotFound';
 
 function App() {
   return (
-    <BrowserRouter basename="/1Xecochain">
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
@@ -40,7 +40,7 @@ function App() {
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
 
