@@ -68,17 +68,3 @@ body.dark ::-webkit-scrollbar-thumb {
 body.dark ::-webkit-scrollbar-thumb:hover {
   background: rgba(88, 255, 132, 0.5);
 }
-
-/* Focus styles for accessibility */
-* {
-  outline-offset: 2px;
-  outline-color: #5B9D07;
-}
-
-.dark * {
-  outline-color: #58FF84;
-}
-
-*:focus-visible {
-  outline: 2px solid;
-}
