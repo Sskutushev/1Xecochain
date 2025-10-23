@@ -28,7 +28,7 @@ import NotFound from '@/pages/NotFound';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/1Xecochain">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />
