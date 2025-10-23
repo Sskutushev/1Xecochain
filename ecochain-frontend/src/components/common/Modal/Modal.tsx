@@ -62,11 +62,10 @@ function Modal({
         aria-modal="true"
         aria-labelledby={title ? 'modal-title' : undefined}
         className={clsx(
-          'relative z-[1000] w-[calc(100%-40px)]',
+          'relative z-[1000] w-[calc(100%-40px)] min-w-[350px]',
           sizeStyles[size],
-          'bg-white dark:bg-[rgba(217,217,217,0.05)]',
-          'rounded-20 shadow-modal',
-          'dark:backdrop-blur-[73.2px]',
+          'bg-transparent',
+          'rounded-20',
           'p-10 mobile:p-[30px]',
           'animate-scale-in'
         )}
@@ -86,7 +85,7 @@ function Modal({
         {title && (
           <h2
             id="modal-title"
-            className="text-2xl font-semibold text-center mb-20 mobile:mb-[50px] text-primary-green dark:text-white"
+            className="text-[30px] md:text-3xl font-semibold text-center mb-20 mobile:mb-[50px] text-primary-green dark:text-white whitespace-nowrap"
           >
             {title}
           </h2>

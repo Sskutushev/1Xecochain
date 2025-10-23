@@ -37,6 +37,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
   return (
     <div 
       ref={dropdownRef}
+      onClick={(e) => e.stopPropagation()} // Prevent click from bubbling up and closing the menu
       className="absolute top-[55px] right-0 w-[250px] bg-white dark:bg-dark-bgSecondary rounded-10 shadow-dropdown dark:backdrop-blur-30 py-3 z-[101] animate-scale-in"
     >
       {/* Profile Settings */}
@@ -44,7 +45,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
         <img 
           src="/assets/schoolteacher.svg" 
           alt="Settings"
-          className="w-5 h-5"
+          className="w-5 h-5 dark:invert"
         />
         <span className="text-sm text-light-text dark:text-dark-text">
           {t('dropdown.profile')}
@@ -57,7 +58,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
         onClick={() => setShowLanguageOptions(!showLanguageOptions)}
       >
         <div className="flex items-center gap-3">
-            <img src="/assets/site.svg" alt="Language" className="w-5 h-5" />
+            <img src="/assets/site.svg" alt="Language" className="w-5 h-5 dark:invert" />
             <span className="text-sm text-light-text dark:text-dark-text">
                 {t('dropdown.language')}
             </span>
@@ -113,7 +114,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
       {/* Balance */}
       <div className="h-11 flex items-center justify-between px-4">
         <div className="flex items-center gap-3">
-          <img src="/assets/wallet.svg" alt="Balance" className="w-5 h-5" />
+          <img src="/assets/wallet.svg" alt="Balance" className="w-5 h-5 dark:invert" />
           <span className="text-sm text-light-text dark:text-dark-text">
             {t('dropdown.balance')}
           </span>

@@ -28,8 +28,9 @@ const CreateTokenModal = () => {
       onClose={closeModal}
       title={t('modal.createTitle')}
       size="md"
+      showCloseButton={false}
     >
-      <div className="flex flex-col gap-[35px]">
+      <div className="flex flex-col gap-[20px]">
         <Button
           onClick={handleLaunchWithoutLiquidity}
           variant="primary"

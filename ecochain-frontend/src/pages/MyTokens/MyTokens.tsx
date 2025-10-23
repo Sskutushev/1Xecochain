@@ -48,7 +48,7 @@ const MyTokens: React.FC = () => {
       </div>
 
       <div className="w-full max-w-[1295px] pt-[150px] px-4">
-        <h1 className="text-3xl font-semibold text-[#5B9D07] mb-[30px]">
+        <h1 className="text-xl md:text-3xl font-semibold text-[#5B9D07] dark:text-white mb-[30px]">
           {t('header.myTokens', 'My tokens')} { /* Измененный заголовок */}
         </h1>
         

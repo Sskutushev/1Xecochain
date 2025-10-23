@@ -66,8 +66,8 @@ const DesktopHeader: React.FC = () => {
           className={clsx(
             'text-[0.85rem] sm:text-[0.9rem] md:text-base font-semibold pb-1 whitespace-nowrap',
             {
-              'text-primary-green dark:text-dark-accent border-b-2 border-primary-green dark:border-dark-accent': isActive('/'),
-              'text-light-text dark:text-dark-text': !isActive('/')
+              'text-primary-green dark:text-[#58FF84] border-b-2 border-primary-green dark:border-[#58FF84]': isActive('/'),
+              'text-light-text dark:text-white': !isActive('/')
             }
           )}
         >
@@ -78,8 +78,8 @@ const DesktopHeader: React.FC = () => {
           className={clsx(
             'text-[0.85rem] sm:text-[0.9rem] md:text-base font-semibold pb-1 whitespace-nowrap',
             {
-              'text-primary-green dark:text-dark-accent border-b-2 border-primary-green dark:border-dark-accent': isActive('/listing'),
-              'text-light-text dark:text-dark-text': !isActive('/listing')
+              'text-primary-green dark:text-[#58FF84] border-b-2 border-primary-green dark:border-[#58FF84]': isActive('/listing'),
+              'text-light-text dark:text-white': !isActive('/listing')
             }
           )}
         >
@@ -90,8 +90,8 @@ const DesktopHeader: React.FC = () => {
           className={clsx(
             'text-[0.85rem] sm:text-[0.9rem] md:text-base font-semibold pb-1 whitespace-nowrap',
             {
-              'text-primary-green dark:text-dark-accent border-b-2 border-primary-green dark:border-dark-accent': isActive('/my-tokens'),
-              'text-light-text dark:text-dark-text': !isActive('/my-tokens')
+              'text-primary-green dark:text-[#58FF84] border-b-2 border-primary-green dark:border-[#58FF84]': isActive('/my-tokens'),
+              'text-light-text dark:text-white': !isActive('/my-tokens')
             }
           )}
         >
@@ -128,7 +128,7 @@ const DesktopHeader: React.FC = () => {
         className="flex-shrink-0 w-[170px] h-[36px] bg-transparent rounded-20 flex items-center gap-2.5 px-2 hover:bg-[rgba(0,0,0,0.02)] dark:hover:bg-[rgba(255,255,255,0.05)] transition-colors cursor-pointer relative"
         onClick={toggleDropdown}
       >
-        <div className="flex flex-col text-left">
+        <div className="flex flex-col text-right">
           <span className="text-sm font-bold text-primary-darkGreen dark:text-white">
             {user?.name || 'Noname'}
           </span>

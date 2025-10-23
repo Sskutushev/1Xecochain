@@ -46,7 +46,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
       
       <div 
         ref={menuRef}
-        className="fixed top-0 left-0 z-[100] w-[300px] max-w-[80vw] h-full bg-white dark:bg-dark-bgSecondary animate-slide-in-left flex flex-col"
+        className="fixed top-0 left-0 z-[100] w-[300px] max-w-[80vw] h-full bg-white dark:bg-[#192321] animate-slide-in-left flex flex-col"
       >
         {/* Header */}
         <div className="flex items-center justify-between h-[70px] border-b border-light-inputBorder dark:border-dark-inputBorder px-5 flex-shrink-0">
@@ -82,9 +82,9 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
 
             {/* Navigation Links */}
             <nav className="flex flex-col gap-[15px] mt-[30px]">
-                <Link to="/" className={clsx('font-semibold', { 'text-primary-green': isActive('/') })} onClick={onClose}>{t('header.dashboard')}</Link>
-                <Link to="/listing" className={clsx('font-semibold', { 'text-primary-green': isActive('/listing') })} onClick={onClose}>{t('header.listing')}</Link>
-                <Link to="/my-tokens" className={clsx('font-semibold', { 'text-primary-green': isActive('/my-tokens') })} onClick={onClose}>{t('header.myTokens')}</Link>
+                <Link to="/" className={clsx('font-semibold text-light-text dark:text-white', { 'text-primary-green dark:text-[#58FF84]': isActive('/') })} onClick={onClose}>{t('header.dashboard')}</Link>
+                <Link to="/listing" className={clsx('font-semibold text-light-text dark:text-white', { 'text-primary-green dark:text-[#58FF84]': isActive('/listing') })} onClick={onClose}>{t('header.listing')}</Link>
+                <Link to="/my-tokens" className={clsx('font-semibold text-light-text dark:text-white', { 'text-primary-green dark:text-[#58FF84]': isActive('/my-tokens') })} onClick={onClose}>{t('header.myTokens')}</Link>
             </nav>
 
             {/* Profile Block */}
@@ -107,14 +107,14 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose }) => {
                         </span>
                     </div>
                     <img 
-                        src="/assets/Icon-down-arrow.svg" 
+                        src="/assets/Icon-sett.svg" 
                         alt="Open menu"
-                        className={`w-4 h-4 text-light-text dark:text-dark-text transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
+                        className={`w-5 h-5 text-light-text dark:text-dark-text transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`}
                     />
                     {/* User Dropdown - positioned relative to this block */}
                     {isDropdownOpen && (
                         <div 
-                            className="absolute top-full right-0 mt-1 w-[250px] z-50"
+                            className="absolute top-full right-0 mt-[-45px] w-[250px] z-50"
                         >
                             <HeaderDropdown 
                                 isOpen={isDropdownOpen} 
