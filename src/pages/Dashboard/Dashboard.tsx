@@ -37,7 +37,7 @@ const Dashboard: React.FC = () => {
             imageLight="/1Xecochain/assets/Rectangle 1.svg" 
             imageDark="/1Xecochain/assets/Rectangle 1.png" 
             title={t('dashboard.newTokens')}
-            description={t('dashboard.description')}
+            description={t('dashboard.newTokensDescription')}
             buttonText={t('dashboard.discoverButton')}
             onButtonClick={() => navigate('/listing')}
           />
@@ -45,7 +45,7 @@ const Dashboard: React.FC = () => {
             imageLight="/1Xecochain/assets/Rectangle 1 (1).svg" 
             imageDark="/1Xecochain/assets/Rectangle 1 (1).png" 
             title={t('dashboard.createTokens')}
-            description={t('dashboard.description')}
+            description={t('dashboard.createTokensDescription')}
             buttonText={t('dashboard.createButton')}
             onButtonClick={() => {/* Открыть попап создания токена */}}
           />
@@ -53,7 +53,7 @@ const Dashboard: React.FC = () => {
             imageLight="/1Xecochain/assets/Rectangle 1 (2).svg" 
             imageDark="/1Xecochain/assets/Rectangle 1 (2).png" 
             title={t('dashboard.myTokens')}
-            description={t('dashboard.description')}
+            description={t('dashboard.myTokensDescription')}
             buttonText={t('dashboard.manageButton')}
             onButtonClick={() => navigate('/my-tokens')}
           />

@@ -17,7 +17,9 @@
     "newTokens": "New Tokens",
     "createTokens": "Create Tokens",
     "myTokens": "My Tokens",
-    "description": "Create, Manage, and Distribute X1 based tokens with X1 no code solution",
+    "newTokensDescription": "Discover, Create, and Manage ERC20 Polygon based tokens with X1 no code solution",
+    "createTokensDescription": "Create, Manage, and Distribute ERC20 Polygon based tokens with X1 no code solution",
+    "myTokensDescription": "Create, Manage, and Distribute BEP20 based tokens with X1 no code solution",
     "discoverButton": "Discover all tokens",
     "createButton": "Create token",
     "manageButton": "Manage"
