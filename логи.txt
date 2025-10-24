@@ -42,3 +42,62 @@ npm error /vercel/.npm/_logs/2025-10-24T13_43_22_770Z-eresolve-report.txt
 npm error A complete log of this run can be found in: /vercel/.npm/_logs/2025-10-24T13_43_22_770Z-debug-0.log
 16:43:29.446 
 Error: Command "npm install" exited with 1
+npm error code ERESOLVE
+npm error ERESOLVE unable to resolve dependency tree
+npm error
+npm error While resolving: ecochain-web3-platform@1.0.0
+npm error Found: vite@7.1.12
+npm error node_modules/vite
+npm error   dev vite@"^7.1.7" from the root project
+npm error
+npm error Could not resolve dependency:
+npm error peer vite@"^4.0.0 || ^5.0.0 || ^6.0.0" from @storybook/react-vite@8.6.14
+npm error node_modules/@storybook/react-vite
+npm error   dev @storybook/react-vite@"^8.6.14" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+16:47:58.356 
+npm error code ERESOLVE
+16:47:58.356 
+npm error ERESOLVE unable to resolve dependency tree
+16:47:58.356 
+npm error
+16:47:58.356 
+npm error While resolving: ecochain-web3-platform@1.0.0
+16:47:58.356 
+npm error Found: vite@7.1.12
+16:47:58.357 
+npm error node_modules/vite
+16:47:58.357 
+npm error   dev vite@"^7.1.7" from the root project
+16:47:58.357 
+npm error
+16:47:58.357 
+npm error Could not resolve dependency:
+16:47:58.357 
+npm error peer vite@"^4.0.0 || ^5.0.0 || ^6.0.0" from @storybook/react-vite@8.6.14
+16:47:58.357 
+npm error node_modules/@storybook/react-vite
+16:47:58.357 
+npm error   dev @storybook/react-vite@"^8.6.14" from the root project
+16:47:58.358 
+npm error
+16:47:58.358 
+npm error Fix the upstream dependency conflict, or retry
+16:47:58.358 
+npm error this command with --force or --legacy-peer-deps
+16:47:58.358 
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+16:47:58.358 
+npm error
+16:47:58.358 
+npm error
+16:47:58.358 
+npm error For a full report see:
+16:47:58.358 
+npm error /vercel/.npm/_logs/2025-10-24T13_47_51_805Z-eresolve-report.txt
+16:47:58.360 
+npm error A complete log of this run can be found in: /vercel/.npm/_logs/2025-10-24T13_47_51_805Z-debug-0.log
+16:47:58.397 
+Error: Command "npm install" exited with 1
