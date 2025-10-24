@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite preview",
+    "vercel-build": "npm run build",
     "clean": "rm -rf dist node_modules .vite",
     "test": "vitest -c vitest.config.mjs",
     "test:run": "vitest -c vitest.config.mjs --run",
