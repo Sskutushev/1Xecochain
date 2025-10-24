@@ -1,24 +1,24 @@
-Running build in Washington, D.C., USA (East) – iad1
-Build machine configuration: 2 cores, 8 GB
-Cloning github.com/Sskutushev/1Xecochain (Branch: master, Commit: 2132281)
-Cloning completed: 662.000ms
-Restored build cache from previous deployment (H3kv9eEzZetXPbK1LmrBe3SM9dK7)
-Running "vercel build"
-Vercel CLI 48.6.0
-WARN! Due to `builds` existing in your configuration file, the Build and Development Settings defined in your Project Settings will not apply. Learn More: https://vercel.link/unused-build-settings
-Installing dependencies...
-npm warn ERESOLVE overriding peer dependency
-npm warn While resolving: @storybook/addon-actions@8.6.14
-npm warn Found: storybook@9.1.13
-npm warn node_modules/storybook
-npm warn   peer storybook@"^9.1.13" from @storybook/addon-a11y@9.1.13
-npm warn   node_modules/@storybook/addon-a11y
-npm warn     dev @storybook/addon-a11y@"^9.1.13" from the root project
-npm warn   6 more (@storybook/addon-links, @storybook/builder-vite, ...)
-npm warn
-npm warn Could not resolve dependency:
-npm warn peer storybook@"^8.6.14" from @storybook/addon-actions@8.6.14
-npm warn node_modules/@storybook/addon-actions
-npm warn   @storybook/addon-actions@"8.6.14" from @storybook/addon-essentials@8.6.14
-npm warn   node_modules/@storybook/addon-essentials
-npm warn
+npm error   node_modules/@storybook/addon-links
+npm error     dev @storybook/addon-links@"^9.1.13" from the root project
+npm error   5 more (@storybook/builder-vite, @storybook/csf-plugin, ...)
+npm error
+npm error Could not resolve dependency:
+npm error peer storybook@"^8.6.14" from @storybook/addon-essentials@8.6.14
+npm error node_modules/@storybook/addon-essentials
+npm error   dev @storybook/addon-essentials@"^8.6.14" from the root project
+npm error
+npm error Conflicting peer dependency: storybook@8.6.14
+npm error node_modules/storybook
+npm error   peer storybook@"^8.6.14" from @storybook/addon-essentials@8.6.14
+npm error   node_modules/@storybook/addon-essentials
+npm error     dev @storybook/addon-essentials@"^8.6.14" from the root project
+npm error
+npm error Fix the upstream dependency conflict, or retry
+npm error this command with --force or --legacy-peer-deps
+npm error to accept an incorrect (and potentially broken) dependency resolution.
+npm error
+npm error
+npm error For a full report see:
+npm error /vercel/.npm/_logs/2025-10-24T13_38_20_779Z-eresolve-report.txt
+npm error A complete log of this run can be found in: /vercel/.npm/_logs/2025-10-24T13_38_20_779Z-debug-0.log
+Error: Command "npm install" exited with 1
