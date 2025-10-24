@@ -12,7 +12,7 @@ const MobileHeader: React.FC = () => {
         {/* Burger Menu */}
         <button onClick={() => setIsMobileMenuOpen(true)} className="p-1">
           <img 
-            src="/1Xecochain/assets/Frame 12.svg" 
+            src="/assets/Frame 12.svg" 
             alt="Menu" 
             className="w-6 h-6 text-light-text dark:text-dark-text cursor-pointer" 
           />
@@ -21,7 +21,7 @@ const MobileHeader: React.FC = () => {
         {/* Logo */}
         <a href="https://x1ecochain.com/" className="absolute left-1/2 transform -translate-x-1/2">
           <img 
-            src="/1Xecochain/assets/Group 131.svg" 
+            src="/assets/Group 131.svg" 
             alt="EcoChain Logo" 
             className="w-[43px] h-[30px] dark:brightness-0 dark:invert"
           />
@@ -33,7 +33,7 @@ const MobileHeader: React.FC = () => {
           className="w-[63px] h-[30px] bg-primary-green dark:bg-white dark:text-black rounded-20 flex items-center justify-center"
         >
           <img 
-            src="/1Xecochain/assets/Icon (1).svg" 
+            src="/assets/Icon (1).svg" 
             alt="Create Token" 
             className="w-4 h-4 brightness-0 dark:brightness-[2.5] invert dark:invert-0 dark:filter-none"
           />

@@ -29,6 +29,8 @@ import TokenDetail from '@/pages/TokenDetail';
 import NotFound from '@/pages/NotFound';
 import '@/assets/ru-styles.css';
 
+const basename = import.meta.env.DEV ? '/' : '/1Xecochain';
+
 function App() {
   const { i18n } = useTranslation();
 
@@ -39,6 +41,7 @@ function App() {
     // Следим за изменением языка
     const handleLanguageChange = () => {
       document.body.setAttribute('data-lang', i18n.language);
+      console.log('App.tsx: Language changed to', i18n.language);
     };
     
     i18n.on('languageChanged', handleLanguageChange);
@@ -49,7 +52,7 @@ function App() {
   }, [i18n]);
 
   return (
-    <BrowserRouter basename="/1Xecochain">
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Dashboard />} />

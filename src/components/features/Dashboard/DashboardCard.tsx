@@ -17,28 +17,28 @@
 // - Макет контента с наложением изображения
 // - Эффекты при наведении с трансформацией и тенью
 
+import { useTranslation } from 'react-i18next';
 import { useThemeStore } from '@/store/useThemeStore';
 
 interface DashboardCardProps {
-  imageLight: string;  // Изображение для отображения в светлой теме
-  imageDark: string;   // Изображение для отображения в темной теме
-  title: string;       // Заголовок карточки
-  description: string; // Описание карточки
-  buttonText: string;  // Текст на кнопке
-  onButtonClick: () => void; // Обработчик клика по кнопке
+  imageLight: string;
+  imageDark: string;
+  titleKey: string;
+  descriptionKey: string;
+  buttonTextKey: string;
+  onButtonClick: () => void;
 }
 
 export default function DashboardCard({
   imageLight,
   imageDark,
-  title,
-  description,
-  buttonText,
+  titleKey,
+  descriptionKey,
+  buttonTextKey,
   onButtonClick 
 }: DashboardCardProps) {
-
+  const { t } = useTranslation();
   const theme = useThemeStore((state) => state.theme);
-
   const currentImage = theme === 'dark' ? imageDark : imageLight;
 
   return (
@@ -64,11 +64,11 @@ export default function DashboardCard({
         <div className="absolute top-[calc(0px+192px+20px)] md:top-[calc(0px+221px+20px)] left-0 right-0 px-5">
           
           <h3 className="text-xl md:text-2xl font-bold text-primary-green dark:text-dark-accent mb-[15px] dashboard-card-title">
-            {title}
+            {t(titleKey)}
           </h3>
           
           <p className="text-base md:text-lg font-light leading-[1.4] text-light-text dark:text-dark-text mb-[10px] md:mb-[40px] dashboard-card-description">
-            {description}
+            {t(descriptionKey)}
           </p>
 
           <button
@@ -76,10 +76,10 @@ export default function DashboardCard({
             className="w-[217px] h-[47px] md:w-[250px] md:h-[55px] bg-primary-green dark:bg-white rounded-20 flex items-center gap-2 pl-6 hover:bg-primary-darkGreen dark:hover:bg-[rgba(255,255,255,0.9)] transition-colors"
           >
             <span className="text-base md:text-lg font-bold text-white dark:text-black dashboard-card-button">
-              {buttonText}
+              {t(buttonTextKey)}
             </span>
             <img 
-              src="/1Xecochain/assets/Icon.svg" 
+              src="/assets/Icon.svg" 
               alt="arrow" 
               className="w-3 h-3 text-white dark:text-black brightness-100 dark:brightness-0 transform translate-x-0.5" 
             />

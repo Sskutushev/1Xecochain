@@ -19,7 +19,7 @@ import { useThemeStore } from '@/store/useThemeStore';
 import { useUserStore } from '@/store/useUserStore';
 import { useLanguageStore } from '@/store/useLanguageStore';
 import Switch from '@/components/common/Switch/Switch';
-import { useClickOutside } from '@/hooks/useClickOutside';
+// import { useClickOutside } from '@/hooks/useClickOutside'; // Temporarily removed
 import { Sun, Moon, ChevronDown, Check } from 'lucide-react';
 
 // ==================================================================================================
@@ -48,12 +48,13 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
   const { locale, setLocale } = useLanguageStore();
   const [showLanguageOptions, setShowLanguageOptions] = useState(false);
   
-  const dropdownRef = useClickOutside<HTMLDivElement>(onClose);
+  const dropdownRef = useRef<HTMLDivElement>(null); // useClickOutside temporarily removed
   const languageDropdownRef = useRef<HTMLDivElement>(null);
 
   if (!isOpen) return null;
 
   const changeLanguage = (lang: 'en' | 'ru') => {
+    console.log('HeaderDropdown: changeLanguage called with', lang);
     setLocale(lang);
     setShowLanguageOptions(false);
   };
@@ -72,7 +73,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
       {/* Profile Settings */}
       <div className="h-11 flex items-center gap-3 px-4 cursor-pointer hover:bg-light-bg dark:hover:bg-[rgba(255,255,255,0.05)] transition-colors">
         <img 
-          src="/1Xecochain/assets/schoolteacher.svg" 
+          src="/assets/schoolteacher.svg" 
           alt="Settings"
           className="w-5 h-5 dark:invert"
         />
@@ -87,7 +88,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
         onClick={() => setShowLanguageOptions(!showLanguageOptions)}
       >
         <div className="flex items-center gap-3">
-            <img src="/1Xecochain/assets/site.svg" alt="Language" className="w-5 h-5 dark:invert" />
+            <img src="/assets/site.svg" alt="Language" className="w-5 h-5 dark:invert" />
             <span className="text-sm text-light-text dark:text-dark-text">
                 {t('dropdown.language')}
             </span>
@@ -97,14 +98,14 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
         {showLanguageOptions && (
           <div 
             ref={languageDropdownRef}
-            className="absolute left-0 top-full w-full bg-white dark:bg-[#1f2937] rounded-10 shadow-dropdown py-2 mt-1 z-10"
+            className="absolute left-0 top-full w-full bg-white dark:bg-[#1f2937] rounded-10 shadow-dropdown py-2 mt-1 z-[1000]" // Increased z-index
           >
             <div 
               className={`h-9 flex items-center justify-between gap-2 px-3 cursor-pointer hover:bg-light-bg dark:hover:bg-[rgba(255,255,255,0.05)]`}
               onClick={(e) => { e.stopPropagation(); changeLanguage('en'); }}
             >
                 <div className="flex items-center gap-2">
-                    <img src="/1Xecochain/assets/Eng.svg" alt="English Flag" className="w-5 h-5" />
+                    <img src="/assets/Eng.svg" alt="English Flag" className="w-5 h-5" />
                     <span className="text-sm text-light-text dark:text-dark-text">English</span>
                 </div>
               {locale === 'en' && <Check className="w-4 h-4 text-primary-green dark:text-dark-accent" />}
@@ -114,7 +115,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
               onClick={(e) => { e.stopPropagation(); changeLanguage('ru'); }}
             >
                 <div className="flex items-center gap-2">
-                    <img src="/1Xecochain/assets/Rus.svg" alt="Russian Flag" className="w-5 h-5" />
+                    <img src="/assets/Rus.svg" alt="Russian Flag" className="w-5 h-5" />
                     <span className="text-sm text-light-text dark:text-dark-text">Русский</span>
                 </div>
               {locale === 'ru' && <Check className="w-4 h-4 text-primary-green dark:text-dark-accent" />}
@@ -143,7 +144,7 @@ const HeaderDropdown: React.FC<HeaderDropdownProps> = ({ isOpen, onClose }) => {
       {/* Balance */}
       <div className="h-11 flex items-center justify-between px-4">
         <div className="flex items-center gap-3">
-          <img src="/1Xecochain/assets/wallet.svg" alt="Balance" className="w-5 h-5 dark:invert" />
+          <img src="/assets/wallet.svg" alt="Balance" className="w-5 h-5 dark:invert" />
           <span className="text-sm text-light-text dark:text-dark-text">
             {t('dropdown.balance')}
           </span>

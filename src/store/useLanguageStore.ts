@@ -25,43 +25,17 @@ interface LanguageState {
 
 export const useLanguageStore = create<LanguageState>()(
   persist(
-    (set) => ({
+    (set, get) => ({
       locale: 'en',
       setLocale: (locale) => {
+        console.log('useLanguageStore: Setting locale to', locale);
         set({ locale });
         i18n.changeLanguage(locale);
+        console.log('useLanguageStore: i18n.changeLanguage called with', locale);
       },
     }),
     {
       name: 'language-storage',
-      migrate: (persistedState: any) => {
-        // Migration function to handle state changes
-        if (typeof persistedState === 'string') {
-          try {
-            return JSON.parse(persistedState);
-          } catch {
-            return { locale: 'en' };
-          }
-        }
-        return persistedState || { locale: 'en' };
-      },
-      version: 1,
     }
   )
 );
-
-// Initialize language on app startup
-if (typeof window !== 'undefined') {
-  const storedLanguage = localStorage.getItem('language-storage');
-  if (storedLanguage) {
-    try {
-      const parsed = JSON.parse(storedLanguage);
-      if (parsed.state?.locale) {
-        i18n.changeLanguage(parsed.state.locale);
-      }
-    } catch (e) {
-      // Fallback to English
-      i18n.changeLanguage('en');
-    }
-  }
-}
