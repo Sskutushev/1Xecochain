@@ -29,7 +29,7 @@ import TokenDetail from '@/pages/TokenDetail';
 import NotFound from '@/pages/NotFound';
 import '@/assets/ru-styles.css';
 
-const basename = import.meta.env.DEV ? '/' : '/1Xecochain';
+const basename = import.meta.env.DEV ? '/' : '';
 
 function App() {
   const { i18n } = useTranslation();

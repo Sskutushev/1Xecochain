@@ -51,14 +51,19 @@ export const useThemeStore = create<ThemeState>()(
       name: 'theme-storage', // Ключ в localStorage
       migrate: (persistedState: any) => {
         // Migration function to handle state changes
-        if (typeof persistedState === 'string') {
-          try {
-            return JSON.parse(persistedState);
-          } catch {
-            return { theme: 'light' };
+        if (persistedState) {
+          if (typeof persistedState === 'string') {
+            try {
+              return JSON.parse(persistedState);
+            } catch (error) {
+              return { theme: 'light' };
+            }
+          } else if (typeof persistedState === 'object' && persistedState.state) {
+            return persistedState.state;
           }
+          return persistedState;
         }
-        return persistedState || { theme: 'light' };
+        return { theme: 'light' };
       },
       version: 1,
     }
@@ -71,8 +76,11 @@ if (typeof window !== 'undefined') {
   if (storedTheme) {
     try {
       const parsed = JSON.parse(storedTheme);
-      if (parsed.state?.theme === 'dark') {
+      const theme = parsed.state?.theme || parsed.theme || 'light';
+      if (theme === 'dark') {
         document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
       }
     } catch (e) {
       // Fallback to light theme

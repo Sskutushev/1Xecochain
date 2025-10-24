@@ -36,6 +36,22 @@ export const useLanguageStore = create<LanguageState>()(
     }),
     {
       name: 'language-storage',
+      migrate: (persistedState: any) => {
+        if (persistedState) {
+          if (typeof persistedState === 'string') {
+            try {
+              return JSON.parse(persistedState);
+            } catch (error) {
+              return { locale: 'en' };
+            }
+          } else if (typeof persistedState === 'object' && persistedState.state) {
+            return persistedState.state;
+          }
+          return persistedState;
+        }
+        return { locale: 'en' };
+      },
+      version: 1,
     }
   )
 );
