@@ -16,6 +16,10 @@ EcoChain is a modern Web3 platform for creating tokens on the X1 blockchain. The
 - **Lucide React** - Icon library
 - **Date-fns** - Working with dates
 - **Axios** - HTTP client for API requests
+- **Vitest** - Testing framework
+- **React Testing Library** - Library for testing React components
+- **Storybook** - Tool for developing and documenting components
+- **OpenAPI/Swagger** - API documentation
 
 ## Project Architecture
 
@@ -34,6 +38,7 @@ src/
 ├── pages/            # Application pages
 ├── store/            # Global state (Zustand)
 ├── types/            # TypeScript types
+├── test/             # Testing files
 ├── App.tsx           # Main application component
 ├── main.tsx          # Application entry point
 └── index.css         # Global styles
@@ -78,8 +83,30 @@ src/
 - **useClickOutside** - Hook for detecting clicks outside an element
 - **useKeyPress** - Hook for tracking key presses
 - **useMediaQuery** - Hook for responsive design
-- **web3/useTokenContract** - Hook for working with token contracts
-- **web3/useWallet** - Hook for wallet connection
+- **web3/useTokenContract** - Hook for working with token contracts (stub)
+- **web3/useWallet** - Hook for wallet connection (stub)
+
+#### Tests (test/)
+
+- **setup.ts** - Test setup file
+- **Button.test.tsx** - Tests for Button component
+- **Input.test.tsx** - Tests for Input component
+- **TokenCard.test.tsx** - Tests for TokenCard component
+- **useTokenStore.test.ts** - Tests for token Zustand store
+- **useThemeStore.test.ts** - Tests for theme Zustand store
+- **useWallet.test.ts** - Tests for wallet connection hook
+- **useMediaQuery.test.ts** - Tests for media query hook
+
+#### API Documentation (api-docs/)
+
+- **openapi.yaml** - Complete API specification in OpenAPI format
+- **mock-server.js** - Mock server for development
+
+#### Configurations
+
+- **.storybook/main.ts** - Storybook configuration
+- **.storybook/preview.ts** - Storybook preview settings
+- **vite.config.ts** - Vite configuration with testing settings
 
 ## Installation and Local Launch
 
@@ -120,73 +147,85 @@ To run the built application locally:
 npm run serve
 ```
 
-## Deployment to Internet
+## Running Tests
 
-### Deployment to GitHub Pages
+### Run all tests
+```bash
+npm test
+```
 
-1. Build the project:
-   ```bash
-   npm run build
-   ```
+### Run tests with UI
+```bash
+npm run test:ui
+```
 
-2. Create a `gh-pages` branch and put the contents of the `dist` folder there
+### Run tests with coverage
+```bash
+npm run test:coverage
+```
 
-3. Push the `gh-pages` branch to the repository
+## Running Storybook
 
-4. Enable GitHub Pages in the repository settings
+To run Storybook:
+```bash
+npm run storybook
+```
 
-### Deployment via Vercel
+Storybook will be available at http://localhost:6006
 
-1. Register at [Vercel](https://vercel.com/)
+## Generating API Types
 
-2. Create a new project and import your GitHub repository
+To generate TypeScript types from OpenAPI specification:
+```bash
+npm run generate:api-types
+```
 
-3. Vercel will automatically detect that this is a Vite/React project and configure the build
+## Running API Mock Server
 
-### Deployment via Netlify
+To run the API mock server:
+```bash
+node api-docs/mock-server.js
+```
 
-1. Register at [Netlify](https://netlify.com/)
+Mock server will be available at http://localhost:3000/v1
 
-2. Import your GitHub repository
+## CI/CD Pipeline
 
-3. Specify the build command: `npm run build`
-4. Specify the publish folder: `dist`
+### GitHub Actions
 
-## Integration with Web3, Blockchain, and Wallets
+The project is configured with GitHub Actions:
+- `.github/workflows/ci.yml` - Pipeline for code checking (lint, test, build)
+- `.github/workflows/preview.yml` - Pipeline for preview deployment
 
-### Wallet Connection
+### Pre-commit Hooks
 
-To integrate with Web3 wallets, use the hooks in the `src/hooks/web3/` folder:
+The project uses husky and lint-staged for automatic code checking and formatting before committing.
 
-- Use the `useWallet` hook to connect and interact with wallets
-- Use `useTokenContract` to interact with token contracts
+## Environment Variables
 
-### Replacing Stubs
+The application uses the following environment variables:
+
+- `VITE_API_URL` - API URL (default: http://localhost:3000/v1 for mock server)
+
+## Replacing Stubs with Real API
+
+### Mock Data
 
 Stubs (mock data) are located in `src/lib/mockData.ts`. They can be replaced with real API calls:
 
-1. Replace `myMockTokens` with real data from the API
-2. Create API services for blockchain interaction
-3. Update stores to use real data
+1. Replace mock data imports with real API calls
+2. Update stores to use real data
+3. Use API client from `src/lib/api/client.ts`
 
-### Blockchain Integration
+### Using API Client
 
-1. Add a Web3 provider (e.g., MetaMask, WalletConnect)
-2. Integrate a web3 library (web3.js, ethers.js)
-3. Update hooks in `src/hooks/web3/` to work with the real blockchain
-
-## TradingView Widget Replacement
-
-To replace the TradingView widget:
-
-1. Find files where TradingView is used (usually in TokenDetail or Chart components)
-2. Embed a new widget or create a custom chart
-3. Update dependencies and imports accordingly
-
-Example widget integration:
-- Chart.js for custom charts
-- D3.js for complex visualizations
-- ApexCharts for ready-made solutions
+The API client is located in `src/lib/api/client.ts` and provides the following methods:
+- `getTokens()` - Get list of tokens
+- `getTokenById(id)` - Get token by ID
+- `createToken(data)` - Create new token
+- `addLiquidity(id, data)` - Add liquidity
+- `connectWallet(data)` - Connect wallet
+- `getMyTokens()` - Get user's tokens
 
 ## Localization
 
@@ -214,6 +253,7 @@ The project uses Zustand for state management:
 
 - Stores are in `src/store/`
 - Global data (users, tokens, settings) are managed through Zustand
+- All stores have TypeScript typing
 
 ## Rights and Contact Information
 

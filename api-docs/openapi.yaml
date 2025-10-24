@@ -1,0 +1,468 @@
+openapi: 3.0.0
+info:
+  title: EcoChain Web3 Platform API
+  description: API для платформы создания токенов на блокчейне X1
+  version: 1.0.0
+servers:
+  - url: https://api.ecochain.com/v1
+    description: Production server
+  - url: http://localhost:5000/v1
+    description: Development server
+paths:
+  /tokens:
+    get:
+      summary: Get all tokens with pagination
+      description: Retrieve a list of tokens with optional filtering and pagination
+      parameters:
+        - name: page
+          in: query
+          description: Page number for pagination (default: 1)
+          required: false
+          schema:
+            type: integer
+            default: 1
+        - name: limit
+          in: query
+          description: Number of items per page (default: 20)
+          required: false
+          schema:
+            type: integer
+            default: 20
+        - name: sort
+          in: query
+          description: Sorting field (price, marketCap, name, createdAt)
+          required: false
+          schema:
+            type: string
+            enum: [price, marketCap, name, createdAt]
+        - name: search
+          in: query
+          description: Search term for token name or symbol
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of tokens
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  count:
+                    type: integer
+                  page:
+                    type: integer
+                  totalPages:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Token'
+    post:
+      summary: Create a new token
+      description: Create a new token on the platform (requires authentication)
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateTokenRequest'
+      responses:
+        '201':
+          description: Token created successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/Token'
+        '400':
+          description: Validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+  /tokens/{id}:
+    get:
+      summary: Get token by ID
+      description: Retrieve detailed information about a specific token
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Token ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Token details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  data:
+                    $ref: '#/components/schemas/TokenDetails'
+        '404':
+          description: Token not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+  /tokens/{id}/liquidity:
+    post:
+      summary: Add liquidity to a token
+      description: Add liquidity to a token pool (requires authentication)
+      security:
+        - bearerAuth: []
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Token ID
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - amount
+                - tokenAmount
+              properties:
+                amount:
+                  type: number
+                  description: Amount of X1 tokens
+                tokenAmount:
+                  type: number
+                  description: Amount of token to add
+                tokenPriceUSD:
+                  type: number
+                  description: Price of token in USD
+                tokenPriceX1:
+                  type: number
+                  description: Price of token in X1
+      responses:
+        '200':
+          description: Liquidity added successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      transactionHash:
+                        type: string
+                      x1Amount:
+                        type: number
+                      nktAmount:
+                        type: number
+                      tokenPriceUSD:
+                        type: number
+                      tokenPriceX1:
+                        type: number
+        '400':
+          description: Insufficient funds or validation error
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+  /wallet/connect:
+    post:
+      summary: Connect wallet
+      description: Connect a wallet to the platform
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required:
+                - address
+                - signature
+              properties:
+                address:
+                  type: string
+                  description: Wallet address
+                signature:
+                  type: string
+                  description: Wallet signature for verification
+      responses:
+        '200':
+          description: Wallet connected successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                        description: JWT token for authentication
+                      user:
+                        $ref: '#/components/schemas/User'
+        '400':
+          description: Invalid address or signature
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+  /users/me/tokens:
+    get:
+      summary: Get user's tokens
+      description: Retrieve tokens created by the authenticated user
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: List of user's tokens
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  count:
+                    type: integer
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Token'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                  message:
+                    type: string
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    Token:
+      type: object
+      required:
+        - id
+        - name
+        - symbol
+        - price
+        - marketCap
+        - volume
+        - holders
+        - blockchain
+        - createdBy
+        - createdAt
+        - description
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the token
+        name:
+          type: string
+          description: Name of the token
+        symbol:
+          type: string
+          description: Symbol of the token (e.g. ETH, BTC)
+        imageUrl:
+          type: string
+          format: uri
+          description: URL of the token's logo image
+          nullable: true
+        price:
+          type: number
+          description: Current price of the token
+          example: 123.45
+        change24h:
+          type: number
+          description: Price change in the last 24 hours (can be negative)
+          example: 2.34
+        marketCap:
+          type: string
+          description: Market capitalization of the token
+          example: '$1,234,567,890'
+        volume24h:
+          type: string
+          description: Trading volume in last 24 hours
+          example: '$123,456,789'
+        holders:
+          type: integer
+          description: Number of token holders
+        blockchain:
+          type: string
+          description: Blockchain platform of the token
+          example: 'X1'
+        createdBy:
+          type: string
+          description: User ID who created the token
+        createdAt:
+          type: string
+          format: date-time
+          description: Token creation timestamp
+        description:
+          type: string
+          description: Description of the token
+        replies:
+          type: integer
+          description: Number of replies/comments for the token
+    TokenDetails:
+      allOf:
+        - $ref: '#/components/schemas/Token'
+        - type: object
+          properties:
+            description:
+              type: string
+              description: Detailed description of the token
+            fullDescription:
+              type: string
+              description: Extended description of the token
+            totalSupply:
+              type: number
+              description: Total supply of the token
+            circulatingSupply:
+              type: number
+              description: Circulating supply of the token
+            creator:
+              $ref: '#/components/schemas/User'
+    CreateTokenRequest:
+      type: object
+      required:
+        - name
+        - symbol
+        - totalSupply
+      properties:
+        name:
+          type: string
+          description: Name of the token
+          minLength: 3
+          maxLength: 50
+        symbol:
+          type: string
+          description: Symbol of the token
+          minLength: 2
+          maxLength: 10
+        description:
+          type: string
+          description: Description of the token
+          maxLength: 500
+        totalSupply:
+          type: number
+          minimum: 1
+          description: Total supply of the token
+        logo:
+          type: string
+          format: uri
+          description: URL of the token logo
+    User:
+      type: object
+      required:
+        - id
+        - address
+        - username
+      properties:
+        id:
+          type: string
+          description: Unique user identifier
+        address:
+          type: string
+          description: User's wallet address
+        username:
+          type: string
+          description: User's display name
+        avatar:
+          type: string
+          format: uri
+          description: URL of user's avatar
+    Pagination:
+      type: object
+      required:
+        - page
+        - limit
+        - total
+        - totalPages
+      properties:
+        page:
+          type: integer
+          description: Current page number
+        limit:
+          type: integer
+          description: Number of items per page
+        total:
+          type: integer
+          description: Total number of items
+        totalPages:
+          type: integer
+          description: Total number of pages
