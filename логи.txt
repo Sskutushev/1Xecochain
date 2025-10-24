@@ -1,103 +1,96 @@
-16:43:29.404 
-npm error code ERESOLVE
-16:43:29.405 
-npm error ERESOLVE unable to resolve dependency tree
-16:43:29.405 
+16:53:18.080 
+npm error       node_modules/@storybook/addon-essentials
+16:53:18.080 
+npm error         dev @storybook/addon-essentials@"^8.6.14" from the root project
+16:53:18.080 
+npm error   13 more (@storybook/addon-docs, @storybook/blocks, ...)
+16:53:18.080 
 npm error
-16:43:29.406 
-npm error While resolving: ecochain-web3-platform@1.0.0
-16:43:29.406 
-npm error Found: vite@7.1.12
-16:43:29.406 
-npm error node_modules/vite
-16:43:29.406 
-npm error   dev vite@"^7.1.7" from the root project
-16:43:29.407 
-npm error
-16:43:29.407 
+16:53:18.080 
 npm error Could not resolve dependency:
-16:43:29.407 
-npm error peer vite@"^4.0.0 || ^5.0.0 || ^6.0.0" from @storybook/react-vite@8.6.14
-16:43:29.407 
-npm error node_modules/@storybook/react-vite
-16:43:29.408 
-npm error   dev @storybook/react-vite@"^8.6.14" from the root project
-16:43:29.408 
+16:53:18.080 
+npm error peer react@"^18.0.0" from @testing-library/react@14.3.1
+16:53:18.080 
+npm error node_modules/@testing-library/react
+16:53:18.081 
+npm error   dev @testing-library/react@"^14.3.1" from the root project
+16:53:18.081 
 npm error
-16:43:29.408 
+16:53:18.081 
+npm error Conflicting peer dependency: react@18.3.1
+16:53:18.081 
+npm error node_modules/react
+16:53:18.081 
+npm error   peer react@"^18.0.0" from @testing-library/react@14.3.1
+16:53:18.081 
+npm error   node_modules/@testing-library/react
+16:53:18.081 
+npm error     dev @testing-library/react@"^14.3.1" from the root project
+16:53:18.081 
+npm error
+16:53:18.081 
 npm error Fix the upstream dependency conflict, or retry
-16:43:29.408 
+16:53:18.081 
 npm error this command with --force or --legacy-peer-deps
-16:43:29.408 
+16:53:18.081 
 npm error to accept an incorrect (and potentially broken) dependency resolution.
-16:43:29.409 
+16:53:18.081 
 npm error
-16:43:29.409 
+16:53:18.081 
 npm error
-16:43:29.409 
+16:53:18.081 
 npm error For a full report see:
-16:43:29.409 
-npm error /vercel/.npm/_logs/2025-10-24T13_43_22_770Z-eresolve-report.txt
-16:43:29.410 
-npm error A complete log of this run can be found in: /vercel/.npm/_logs/2025-10-24T13_43_22_770Z-debug-0.log
-16:43:29.446 
+16:53:18.081 
+npm error /vercel/.npm/_logs/2025-10-24T13_53_06_919Z-eresolve-report.txt
+16:53:18.081 
+npm error A complete log of this run can be found in: /vercel/.npm/_logs/2025-10-24T13_53_06_919Z-debug-0.log
+16:53:18.117 
 Error: Command "npm install" exited with 1
-npm error code ERESOLVE
-npm error ERESOLVE unable to resolve dependency tree
+16:53:33.629 
+npm error       node_modules/@storybook/addon-essentials
+16:53:33.629 
+npm error         dev @storybook/addon-essentials@"^8.6.14" from the root project
+16:53:33.629 
+npm error   13 more (@storybook/addon-docs, @storybook/blocks, ...)
+16:53:33.629 
 npm error
-npm error While resolving: ecochain-web3-platform@1.0.0
-npm error Found: vite@7.1.12
-npm error node_modules/vite
-npm error   dev vite@"^7.1.7" from the root project
-npm error
+16:53:33.629 
 npm error Could not resolve dependency:
-npm error peer vite@"^4.0.0 || ^5.0.0 || ^6.0.0" from @storybook/react-vite@8.6.14
-npm error node_modules/@storybook/react-vite
-npm error   dev @storybook/react-vite@"^8.6.14" from the root project
+16:53:33.629 
+npm error peer react@"^18.0.0" from @testing-library/react@14.3.1
+16:53:33.629 
+npm error node_modules/@testing-library/react
+16:53:33.629 
+npm error   dev @testing-library/react@"^14.3.1" from the root project
+16:53:33.629 
 npm error
+16:53:33.629 
+npm error Conflicting peer dependency: react@18.3.1
+16:53:33.629 
+npm error node_modules/react
+16:53:33.629 
+npm error   peer react@"^18.0.0" from @testing-library/react@14.3.1
+16:53:33.629 
+npm error   node_modules/@testing-library/react
+16:53:33.629 
+npm error     dev @testing-library/react@"^14.3.1" from the root project
+16:53:33.630 
+npm error
+16:53:33.630 
 npm error Fix the upstream dependency conflict, or retry
+16:53:33.630 
 npm error this command with --force or --legacy-peer-deps
-16:47:58.356 
-npm error code ERESOLVE
-16:47:58.356 
-npm error ERESOLVE unable to resolve dependency tree
-16:47:58.356 
-npm error
-16:47:58.356 
-npm error While resolving: ecochain-web3-platform@1.0.0
-16:47:58.356 
-npm error Found: vite@7.1.12
-16:47:58.357 
-npm error node_modules/vite
-16:47:58.357 
-npm error   dev vite@"^7.1.7" from the root project
-16:47:58.357 
-npm error
-16:47:58.357 
-npm error Could not resolve dependency:
-16:47:58.357 
-npm error peer vite@"^4.0.0 || ^5.0.0 || ^6.0.0" from @storybook/react-vite@8.6.14
-16:47:58.357 
-npm error node_modules/@storybook/react-vite
-16:47:58.357 
-npm error   dev @storybook/react-vite@"^8.6.14" from the root project
-16:47:58.358 
-npm error
-16:47:58.358 
-npm error Fix the upstream dependency conflict, or retry
-16:47:58.358 
-npm error this command with --force or --legacy-peer-deps
-16:47:58.358 
+16:53:33.630 
 npm error to accept an incorrect (and potentially broken) dependency resolution.
-16:47:58.358 
+16:53:33.630 
 npm error
-16:47:58.358 
+16:53:33.630 
 npm error
-16:47:58.358 
+16:53:33.630 
 npm error For a full report see:
-16:47:58.358 
-npm error /vercel/.npm/_logs/2025-10-24T13_47_51_805Z-eresolve-report.txt
-16:47:58.360 
-npm error A complete log of this run can be found in: /vercel/.npm/_logs/2025-10-24T13_47_51_805Z-debug-0.log
-16:47:58.397 
+16:53:33.630 
+npm error /vercel/.npm/_logs/2025-10-24T13_53_23_073Z-eresolve-report.txt
+16:53:33.631 
+npm error A complete log of this run can be found in: /vercel/.npm/_logs/2025-10-24T13_53_23_073Z-debug-0.log
+16:53:33.667 
 Error: Command "npm install" exited with 1
