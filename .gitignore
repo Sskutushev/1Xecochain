@@ -147,3 +147,8 @@ ntuser.dat.LOG1
 ntuser.dat.LOG2
 settings.ini
 .vercel
+"node_modules/"  
+"dist/"  
+".storybook/"  
+"storybook-static/"  
+"api-docs/mock-server.js" 
